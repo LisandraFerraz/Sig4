@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Lista de Produtos</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+<body>
+	<header th:replace="fragments/header :: menuSuperior">
+		<div>header</div>
+	</header>
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h5 class="panel-title">Lista de Produtos</h5>
+			<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+			<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+		</div>
+		<div class="panel-body" th:switch="${produtos}">
+			<h5 th:case="null">Não existem produtos cadastrados ainda!</h5>
+			<div th:case="*">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nome</th>
+							<th>Preço</th>
+							<th>Dt. Cadastro</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="produto : ${produtos}">
+							<td th:text="${produto.id}"></td>
+							<td th:text="${produto.nome}"></td>
+							<td th:text="${produto.preco}"></td>
+							<td th:text="${produto.dataCadastro}"></td>
+
+							<td>
+								<div class="btn-group pull-right">
+									<a class="btn btn-sm btn-primary"
+										th:href="@{/sig/produtos/{nome}(nome=${produto.nome})}">Editar</a>
+									<a class="delete btn btn-sm btn-danger"
+										th:href="@{/sig/produtos/id/{id}(id=${produto.id})}">Excluir</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+</body>
+
+</html>
