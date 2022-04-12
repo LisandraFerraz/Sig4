@@ -23,7 +23,7 @@ public class Produto {
 	private Long id;
 	@NotBlank(message = "Nome é requerido")
 	private String nome;
-
+	private int qtdEstoque;
 	private Double preco;
 	private String dataCadastro;
 
@@ -44,6 +44,14 @@ public class Produto {
 		this.id = id;
 	}
 
+	public int getQtdEstoque() {
+		return qtdEstoque;
+	}
+
+	public void setQtdEstoque(int qtdEstoque) {
+		this.qtdEstoque = qtdEstoque;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -83,6 +91,8 @@ public class Produto {
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
 		this.dataCadastro = dataAtual.toString(fmt);
 	}
+
+
 
 	// equals e tostring omitidos. Cliado na aula de 05/04/2022
 
