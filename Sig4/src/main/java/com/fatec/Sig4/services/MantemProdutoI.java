@@ -45,7 +45,7 @@ public class MantemProdutoI implements MantemProduto {
 
 	@Override
 	public Optional<Produto> altera(Produto produto) {
-		logger.info(">>>>>> 1.servico altera cliente chamado");
+		logger.info(">>>>>> 1.servico altera produto chamado");
 		Optional<Produto> umProduto = consultaPorId(produto.getId());
 
 		if (umProduto.isPresent()) {

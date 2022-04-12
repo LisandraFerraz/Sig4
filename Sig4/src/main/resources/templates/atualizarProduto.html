@@ -46,13 +46,14 @@
 							</div>
 						</div>
 						
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="preco" class="col-form-label">Preço</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="preco"
-									placeholder="Preço">
-							</div>
-						</div>			
+						<div class="form-group col-md-8">
+								<label for="dataNascimento" class="col-form-label">Quantidade de produtos</label>
+								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
+									placeholder="Qtd. Estoque">
+								<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{qtdEstoque}"
+									class="text-danger">
+								</span>
+							</div>		
 
 						<div class="row">
 							<div class="form-group col-md-8">

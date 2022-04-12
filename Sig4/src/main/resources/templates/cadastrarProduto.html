@@ -31,7 +31,8 @@
 						<div class="row">
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">Nome do Produto</label>
-								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome Produto">
+								<input type="text" th:field="*{nome}" class="form-control" id="nome"
+									placeholder="Nome Produto">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
 							</div>
@@ -39,7 +40,8 @@
 						<div class="row">
 							<div class="form-group col-md-8">
 								<label for="nome" class="col-form-label">Preço do Produto</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="nome" placeholder="Preço Produto">
+								<input type="text" th:field="*{preco}" class="form-control" id="nome"
+									placeholder="Preço Produto">
 								<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-danger">
 								</span>
 							</div>
