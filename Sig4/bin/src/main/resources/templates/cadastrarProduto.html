@@ -4,10 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Atualizar Produto</title>
+	<title>Cadastrar Produto</title>
 	<script type="text/javascript">
 		function consulta() {
-			window.open("/sig/produtos");
+			window.open("/sig/clientes");
 		}
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,65 +16,69 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
-<header th:replace="fragments/header :: menuSuperior">
-	<div>header</div>
-</header>
 
 <body>
+	<header th:replace="fragments/header :: menuSuperior">
+		<div>header</div>
+	</header>
 	<div class="container my-5">
 		<br />
-		<h3>Atualizar Produto</h3>
+		<h3>Cadastrar Produto</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
-					<form action="#" th:action="@{/sig/produtos/id/{id} (id=${produto.id}) }" th:object="${produto}"
-						method="post">
+					<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
 						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="nome" class="col-form-label">Nome</label>
-								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
+							<div class="form-group col-md-4">
+								<label for="cpf" class="col-form-label">Nome do Produto</label>
+								<input type="text" th:field="*{nome}" class="form-control" id="nome"
+									placeholder="Nome Produto">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
 							</div>
 						</div>
-
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="preco" class="col-form-label">Preço</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="preco"
-									placeholder="Preço">
+								<label for="nome" class="col-form-label">Preço do Produto</label>
+								<input type="text" th:field="*{preco}" class="form-control" id="nome"
+									placeholder="Preço Produto">
+								<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-danger">
+								</span>
 							</div>
 						</div>
-						
-						<div class="form-group col-md-8">
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="dataNascimento" class="col-form-label">Data de Cadastro do Produto</label>
+								<input type="text" th:field="*{dataCadastro}" class="form-control" id="dataCadastro"
+									placeholder="Data Cadastro">
+								<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
+									class="text-danger">
+								</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-8">
 								<label for="dataNascimento" class="col-form-label">Quantidade de produtos</label>
 								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
 									placeholder="Qtd. Estoque">
 								<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{qtdEstoque}"
 									class="text-danger">
 								</span>
-							</div>		
-
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="preco" class="col-form-label">Dt. Cadastro</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="preco"
-									placeholder="Preço">
 							</div>
 						</div>
-
 						<div class="form-group col-md-8">
-							<input type="submit" class="btn btn-primary" value="Atualizar Produto">
+							<input type="submit" class="btn btn-primary" value="Cadastrar Produto">
 							<input type="button" class="btn btn-primary" value="Consultar Produto"
 								onclick="consulta();">
 						</div>
+					</form>
 				</div>
-				</form>
 			</div>
+			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
-		<h6 th:text="${message}" class="text-danger"></h6>
-	</div>
-	</div>
+		<footer th:replace="fragments/footer :: rodape">
+			<div>footer</div>
+		</footer>
 </body>
 
 </html>
