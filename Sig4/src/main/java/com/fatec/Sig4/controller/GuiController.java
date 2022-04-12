@@ -27,4 +27,9 @@ public class GuiController {
 		return new ModelAndView("cadastrarFornecedor");
 	}
 	
+	@GetMapping("/produtos")
+	public ModelAndView cadastrarProduto() {
+		return new ModelAndView("cadastrarProduto");
+	}
+	
 }
