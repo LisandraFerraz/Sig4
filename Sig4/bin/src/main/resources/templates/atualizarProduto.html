@@ -47,21 +47,14 @@
 						</div>
 						
 						<div class="form-group col-md-8">
-								<label for="dataNascimento" class="col-form-label">Quantidade de produtos</label>
+								<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
 								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
-									placeholder="Qtd. Estoque">
-								<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{qtdEstoque}"
+									placeholder="qtdEstoque">
+								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}"
 									class="text-danger">
 								</span>
 							</div>		
 
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="preco" class="col-form-label">Dt. Cadastro</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="preco"
-									placeholder="Preço">
-							</div>
-						</div>
 
 						<div class="form-group col-md-8">
 							<input type="submit" class="btn btn-primary" value="Atualizar Produto">

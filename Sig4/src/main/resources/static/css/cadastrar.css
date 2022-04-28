@@ -1,0 +1,78 @@
+/* HEADER */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header * {
+    background-color: #ebebeb;
+}
+
+#acessibilidade * {
+    background-color: #ebebeb;
+}
+
+#acessibilidade{
+    padding: 15px 0 0 0;
+    min-height: 35px;
+    font-weight: 450;
+    font-size: 14px;
+	height: auto;
+	margin: auto;
+}
+
+#acessibilidade ul li{
+    margin-left: 20px;
+}
+
+#acessibilidade a {
+    text-decoration: none;
+    color: #2e2e2e;
+}
+
+#acessibilidade a:hover {
+    text-decoration: underline;
+}
+
+#atalhos{
+    margin-left: 105px;
+    float: left;
+    list-style: none;
+}
+
+#atalhos2{
+    margin-right: 105px;
+    float: right;
+    list-style: none;
+}
+
+#acessibilidade li{
+    display: inline;
+}
+
+.conjuntoIcones{
+    margin-top: 12%;
+    float: right;
+}
+
+.conjuntoIcones img{
+    height: 24px;
+}
+
+.conjuntoIcones li{
+    margin-left: 5px;
+    display: inline;
+    color: rgb(255, 255, 255);
+}
+
+.conjuntoIcones a {
+    text-decoration: none;
+}
+
+.navGrid{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-auto-rows: minmax(120px,auto);
+    /* width: 100%; */
+}

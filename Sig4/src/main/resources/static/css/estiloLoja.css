@@ -1,0 +1,1639 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background-color: #ebebeb;
+    grid-template-columns: auto;
+    grid-auto-columns: auto;
+    /* font-size: 16px; */
+}
+
+
+body::-webkit-scrollbar {
+    max-width: auto;
+    max-height: 50px;
+}
+  
+body::-webkit-scrollbar-track {
+    background: #fbfbfb;
+    border-radius: 20px;
+}
+  
+body::-webkit-scrollbar-thumb {
+    display: block;
+    background-color: rgba(5, 5, 5, 0.178);
+    border-radius: 20px;
+    max-height: 5px;
+    border: 1px solid transparent; 
+}
+
+
+/* HEADER */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header * {
+    background-color: #ebebeb;
+}
+
+#acessibilidade * {
+    background-color: #ebebeb;
+}
+
+#acessibilidade{
+    padding: 15px 0 0 0;
+    min-height: 35px;
+    font-weight: 450;
+    font-size: 14px;
+	height: auto;
+	margin: auto;
+}
+
+#acessibilidade ul li{
+    margin-left: 20px;
+}
+
+#acessibilidade a {
+    text-decoration: none;
+    color: #2e2e2e;
+}
+
+#acessibilidade a:hover {
+    text-decoration: underline;
+}
+
+#atalhos{
+    margin-left: 105px;
+    float: left;
+    list-style: none;
+}
+
+#atalhos2{
+    margin-right: 105px;
+    float: right;
+    list-style: none;
+}
+
+#acessibilidade li{
+    display: inline;
+}
+
+.conjuntoIcones{
+    margin-top: 12%;
+    float: right;
+}
+
+.conjuntoIcones img{
+    height: 24px;
+}
+
+.conjuntoIcones li{
+    margin-left: 5px;
+    display: inline;
+    color: rgb(255, 255, 255);
+}
+
+.conjuntoIcones a {
+    text-decoration: none;
+}
+
+.navGrid{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-auto-rows: minmax(120px,auto);
+    /* width: 100%; */
+}
+
+
+/* MENU*/
+#topo{
+    width: 100%;
+    height: auto;
+}
+
+#barraPesquisa input{
+    padding: 8px;
+    width: 350px;
+    height: 25px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+#barraPesquisa input:active{
+    border: 1px solid #fff;
+}
+
+#barraPesquisa{
+    margin-top: 12%;
+    float: left;
+}
+
+.logo img{
+    height: 100px;
+}
+
+.logo{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+}
+
+.pesquisa{
+    padding-left: 8%;
+}
+
+/* .Buscar{
+    background-color: #d1d1d1; 
+} */
+
+#menu * {
+    background-color: #a6e65a;
+}
+
+#menu ul {
+    text-align: center;
+    list-style:none;
+}
+#menu ul li {
+    display: inline;
+}
+
+#menu ul li a {
+    padding: 2px 10px;
+    display: inline-block;
+    border: 10px solid #a6e65a;
+    /* visual do link */
+    background-color: #a6e65a;
+    color: #2e2e2e;
+    text-decoration: none;
+}
+
+#menu ul a:hover {
+    /* height: 35px; */
+    background-color:#ebebeb;
+    border: 10px solid #ebebeb;
+    color: #2e2e2e;
+}
+
+#selosFoot{
+    float: right;
+    text-align: right;
+    line-height: 20px;
+}
+
+#desenvolvedoresFoot p{
+    line-height: 20px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.tituloFoot{
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.drtsFooter{
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.grid-footer{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 450px);
+}
+
+#rodape *{  
+    background-color: #fff;
+}
+
+#rodape{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    color: #313131;
+    text-align: center;
+    padding: 20px 0 30px 0;
+    grid-template-columns: auto;
+    grid-auto-columns: auto;
+}
+/* FIM DA HEADER */
+
+
+/* ACESSIBILIDADE */
+.txtAcess{
+    margin: 60px 60px 60px 60px;
+}
+.txtAcess h1{
+    text-align: center;
+    font-size: 22px;
+    color: black;
+    margin: 0 0 20px;
+}
+.txtAcess h2{
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    margin: 20px 0 20px;
+}
+.txtAcess p{
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    line-height: 25px;
+}
+/* FIM ACESSIBILIDADE */
+
+
+/*conteudo*/
+#conteudo{
+    width: 100%;
+    min-height: 600px;
+}
+
+.conjuntoNovidades{
+    margin:  30px 0 0 0;
+
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 10px;
+}
+
+.cardNov img{ 
+    height: 124px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+#marcas{
+    margin: 80px 0 0 0;
+}
+
+.doubleGrid{
+    justify-content: center;
+    margin: 0 40px 0 40px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 30px;
+}
+
+.card-FTZ *{
+    background-color: #fff;
+}
+
+.anuncioFutureZ img{
+    height: 755px;
+}
+
+.imgTenisFTZ{
+    text-align: center;
+}
+
+.card-FTZ img{
+    height: 190px;
+}
+
+.card-FTZ{
+    line-height: 25px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    width: fit-content;
+    background-color: #fff;
+}
+
+.card-FTZ:hover{
+    transition: .3s;
+    box-shadow: 0 0 6px rgba(143, 106, 106, .6);
+}
+
+.conjuntoTenisFZ{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 20px;
+}
+
+.conjuntoMarcas{
+    display: flex;
+    overflow-x: auto;
+
+    justify-content: center;
+    /* margin: 0 40px 0 40px; */
+    
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 50px;
+}
+
+.conjuntoMarcas img{
+    height: 64px;
+}
+
+/* .conjuntoMarcas img:hover{
+    height: 65px;
+} */
+
+.conjuntoMarcas::-webkit-scrollbar {
+    max-width: auto;
+    height: auto;
+}
+  
+.conjuntoMarcas::-webkit-scrollbar-track {
+    background: rgba(253, 254, 255, 0.5);
+    border-radius: 20px;
+}
+  
+.conjuntoMarcas::-webkit-scrollbar-thumb {
+    display: block;
+    background-color: rgba(153, 153, 153, 0.3);
+    border-radius: 20px;
+    border: 1px solid transparent; 
+  }
+
+
+.propaganda img {
+    min-width: 100%;
+    height: auto;
+    /* height: 470px; */
+}
+
+.categorias-grid{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 24px;
+}
+
+.tituloSec{
+    text-align: center;
+    margin: 5px 0 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 22px;
+    color: rgb(49, 49, 49);
+}
+
+#categorias img {
+    height: 430px;
+}
+
+.zoom {
+	overflow: hidden;
+}
+
+.zoom img {
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.zoom:hover img {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#produtosProcurados{
+    margin: 50px 0;
+}
+
+.conjuntoCard{
+    justify-content: center;
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 10px;
+    margin: 0 40px 0 40px;
+
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 18px;
+    
+}
+.conjuntoCard::-webkit-scrollbar {
+    max-width: auto;
+    height: auto;
+}
+  
+.conjuntoCard::-webkit-scrollbar-track {
+    background: rgba(253, 254, 255, .9);
+    border-radius: 20px;
+}
+  
+.conjuntoCard::-webkit-scrollbar-thumb {
+    display: block;
+    background-color: rgba(153, 153, 153, 0.3);
+    border-radius: 20px;
+    border: 1px solid transparent; 
+}
+
+.card *{
+    background-color: #fff;
+}
+
+.card{
+    line-height: 25px;
+    padding: 10px;
+    /* box-shadow: -5px 5px 5px rgba(0, 0, 0, .1); */
+    width: fit-content;
+    background-color: #fff;
+}
+
+.card img{
+    height: 280px;
+}
+
+.descCard{
+    color: #1b1b1b;
+}
+
+.corpoCard h3{
+    color: #1b1b1b;
+    font-size: 19px;
+}
+
+.frtGrtsCard{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    /* width: max-content; */
+    color: #62aa0b;
+    /* background-color: #a6e65a; */
+}
+
+.tituloCard{
+    font-size: 16px;
+    color: #1b1b1b;
+}
+
+.precoAnterior{
+    color: #1b1b1b;
+    text-decoration: line-through;
+}
+
+.atendimento-grid{
+    justify-content: center;
+    margin: 40px 40px 40px 40px;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 25px;
+    line-height: 40px;
+}
+
+.ilustracaoAtd img{
+    height: 565px;
+}
+
+.nomeSobre {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 25px;
+}
+
+label{
+    color: rgb(58, 58, 58);
+}
+
+.formularioAtd label{
+    color: #313131;
+}
+
+.formularioAtd input, textarea{
+    border: 1px solid rgb(175, 175, 175);
+    font-size: 14px;
+    color: rgb(58, 58, 58);
+}
+
+.formularioAtd input:focus, textarea:focus{
+    box-shadow: 0 0 3px #5aac23;
+    background-color: #fcfcfc;
+    outline: none;
+    /* border: 1px solid #5aac23; */
+}
+
+.outrosForm select{
+    min-width: 640px;
+    min-height: 24px;
+    font-size: 16px;
+    background-color: #313131;
+    background-color: #f7f7f7;
+}
+
+.outrosForm select:focus{
+    background-color: #fcfcfc;
+}
+
+.outrosForm option{
+    background-color: #f7f7f7;
+}
+
+.nomeSobre input{
+    background-color: #f7f7f7;
+    display: block;
+    min-width: 300px;
+    min-height: 24px;
+    padding: 5px;
+}
+
+.outrosForm input, textarea{
+    background-color: #f7f7f7;
+    display: block;
+    min-width: 630px;
+    min-height: 24px;
+    padding: 5px;
+
+}
+.outrosForm textarea{
+    resize: none;
+    min-height: 74px;
+}
+
+input.submit{
+    font-size: 15px;
+    color: #fff;
+    background-color: #313131;
+    min-height: 36px;
+    min-width: 200px;
+    margin: 20px 0;
+}
+
+.submit:focus{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+    outline: none;
+    border-color:rgba(0, 0, 0, .5);
+}
+
+/* equipamentos */
+
+.grid-equipamentos{
+    justify-content: center;
+    margin: 40px 40px 40px 40px;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 25px;
+}
+
+.grid-produtos-equi{
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 25px;
+}
+
+.novidade-img img{
+    height: 384px;
+}
+
+.colorPick div{
+    display: inline-block;
+}
+
+.colorPick a{
+    text-decoration: none;
+}
+
+.pink, .blue, .green, .red, .purple, .yellow, .white, .black, .gray {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #49494980;
+    margin: 2px 0;
+}
+
+.pink{background-color: pink;}.blue{background-color: blue;}.green{background-color: green;}
+.red{background-color: red;}.purple{background-color: purple;}.yellow{background-color: yellow;}
+.white{background-color: white;}.black{background-color: black;}.gray{background-color: gray;}
+
+/* .categoFiltra label input{
+    display: inline-block;
+} */
+
+.filtragem-novi , .precoFiltra,.dispoFiltra, .colorPick, .categoFiltra{
+    padding-bottom: 10px;
+    margin: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0,.1);
+    color: #2e2e2e;
+}
+
+.filtragem-novi p {
+    margin: 5px 0 ;
+}
+
+.precoFiltra select, option{
+    min-height: 24px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.dispoFiltra input{
+    display: inline-block;
+}
+
+.categoFiltra li{
+    display: flex;
+}
+.categoFiltra li label{
+    margin-left: 10px;
+    color: #1b1b1b;
+}
+
+/* fim equipamentos */
+
+/* Visualização de produto */
+#visualizacaoPrd .gridVisuPrd{
+    margin: 40px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gridVisuPrd *{
+    background-color: rgb(255, 255, 255);
+}
+
+.gridVisuPrd{
+    justify-content: center;
+    /* POSSIVEL MUDANÇA PARA 1200PX */
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    /* grid-gap: 25px; */
+}
+/* .fotosAdcPrd{
+    margin: 0 0  0 300px;
+} */
+
+.fotosAdcPrd img{
+    height: 124px;
+}
+
+.fotosAdcPrd button{
+    /* margin: 0 0 0 300px; */
+    display: block;
+    margin: 10px 0 10px 10px;
+    border: 1px solid rgba(5, 5, 5, 0.527);
+}
+
+.fotosAdcPrd button:hover{
+    border: 1px solid rgb(128, 202, 44);
+}
+
+.fotosAdcPrd button:focus{
+    border: 1px solid rgb(128, 202, 44);
+}
+
+
+.fotoPrd{
+    overflow: hidden;
+}
+
+.fotoPrd img{
+    margin: 10px 0 10px;
+    height: 460px;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.fotoPrd:hover img{
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.3);
+    cursor: zoom-in;
+}
+
+/* #zoomImg{
+    width: 500px;
+    height: 300px;
+    background-image: url("../imagem/produtos/chuteira-campo-puma-one-1.jpg");
+    background-position: center;
+    background-size: cover;
+} */
+
+#imgPrd1{display: block;} #imgPrd2, #imgPrd3, #imgPrd4{display: none;}
+
+.conteudoDescAnunPrd{
+    margin: 20px 20px 0 ;
+}
+
+.descAnunPrd{
+    color: #313131;
+    border: 2px solid rgba(0, 0, 0, 0.123);
+}
+
+.descAnunPrd *{
+    line-height: 35px;
+}
+
+.titDescPrd{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.prcPromoPrd{
+    text-decoration: line-through;
+    font-size: 16px;
+}
+
+.prcPrd{
+    font-weight: 600;
+    font-size: 26px;
+    color: #7aaa2e;
+}
+.subTitPrd{
+    font-size: 17px;
+}
+
+.tmnhPrd p{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tmnhQtd p{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tmnhQtd input{
+    width: 45px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid rgba(5, 5, 5, 0.527);
+}
+
+.tmnhQtd input:focus{
+    outline: none;
+}
+
+.btnLinkPrd{
+    line-height: 50px;
+    margin: 15px 0 ;
+    text-align: center;
+}
+
+.btnLinkPrd input{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    border: none;
+    background-color: #313131;
+
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+
+    min-width: 180px;
+    min-height: 44px;
+}
+
+.btnLinkPrd input:hover{
+    text-decoration: none;
+    background-color: rgb(0, 0, 0);
+	transform:translate(0.3s);
+}
+
+.btnLinkPrd a{
+    color: #313131;
+}
+
+/* FIM Visualização de produto */
+
+/* RESPONSIVIDADE */
+
+
+@media (min-width: 1366px) {
+    
+    /* MENU */
+    #acessibilidade{
+        padding: 10px 0 0 0;
+        font-size: 14px;
+    }
+    .conjuntoIcones img{
+        height: 22px;
+    }
+    .navGrid{
+        grid-template-columns: repeat(3, 400px);
+    }
+    #barraPesquisa input{
+        width: 350px;
+        height: 25px;
+    }
+    .logo img{
+        height: 100px;
+    }
+    #menu ul li a {
+        border: 12px solid #a6e65a;
+        font-size: 16px;
+    }
+    #menu ul a:hover {
+        background-color:#ebebeb;
+        border: 12px solid #ebebeb;
+    }
+    /* FIM MENU */
+
+    /* PÁGINA INICIAL */
+    .propaganda img {
+        max-width: 100%;
+    }
+    .tituloSec{
+        font-size: 20px;
+    }
+    .conjuntoCard{
+        grid-template-columns: repeat(10, auto);
+        grid-auto-rows: minmax(auto, auto);
+        grid-gap: 18px;
+    }
+    .cardNov img{ 
+        height: 124px;
+    }
+    .card{
+        width: fit-content;
+        line-height: 25px;
+    }
+    .card img{
+        height: 280px;
+    }
+    .tituloCard{
+        font-size: 16px;
+    }
+    .frtGrtsCard{
+        font-size: 13px;
+    }
+    .precoAnterior, .descCard p{
+        font-size: 15px;
+    }
+    .corpoCard h3{
+        font-size: 19px;
+    }
+    .anuncioFutureZ img{
+        height: 720px;
+    }
+    .card-FTZ{
+        padding: 10px;
+        line-height: 25px;
+    }
+    .card-FTZ img{
+        height: 190px;
+    }
+
+    .conjuntoMarcas{
+        margin: 20px 0 60px 0;
+    }
+    .conjuntoMarcas img{
+        height: 54px;
+    }
+    #categorias img {
+        height: 430px;
+    }
+    #categorias {
+        margin: 0 0 20px;
+    }
+    /* FIM PÁGINA INICIAL */
+
+    /* FOOTER */
+    .grid-footer{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 550px);
+    }
+    #desenvolvedoresFoot p{
+        line-height: 25px;
+        font-size: 16px;
+    }
+    .tituloFoot{
+        line-height: 25px;
+        font-size: 16px;
+    }
+    .drtsFooter{
+        font-size: 16px;
+    }
+    /* FOOTER */
+    
+    /* PÁGINA NOVIDADES */
+    .novidade-img img{
+        height: 434px;
+    }
+    .precoFiltra select, option, p{
+        font-size: 18px;
+    }
+    .dispoFiltra, .categoFiltra label{
+        font-size: 18px;
+    }
+
+    /* FIM PÁGINA NOVIDADES */
+
+    /* FORMULARIO ATENDIMENTO */
+    .ilustracaoAtd img{
+        height: 585px;
+    }
+    .formularioAtd label{
+        font-size: 18px;
+    }
+    .formularioAtd input, textarea{
+        font-size: 16px;
+    }
+    .nomeSobre input{
+        min-width: 300px;
+        min-height: 24px;
+        padding: 6px;
+    }
+    .outrosForm select{
+        min-width: 640px;
+        min-height: 24px;
+        min-height: 30px;
+    }
+    .outrosForm input, textarea{
+        min-width: 630px;
+        min-height: 24px;
+        font-size: 16px;
+    }
+    .outrosForm option{
+        font-size: 16px;
+    }
+    input.submit{
+        font-size: 16px;
+        min-height: 40px;
+        min-width: 180px;
+    }
+    /* FIM FORMULARIO ATENDIMENTO */
+
+    /* PÁGINA TENIS */
+    .fotosAdcPrd img{
+        height: 104px;
+    }
+    .fotoPrd img{
+        height: 460px;
+    }
+    .descAnunPrd *{
+        line-height: 32px;
+    }
+    .titDescPrd{
+        font-size: 20px;
+    }
+    .prcPromoPrd{
+        font-size: 18px;
+    }
+    .prcPrd{
+        font-size: 25px;
+    }
+    .subTitPrd{
+        font-size: 18px;
+    }
+    .tmnhPrd p{
+        font-size: 16px;
+    }
+    .tmnhPrd label{
+        font-size: 16px;
+    }
+    .tmnhQtd p{
+        font-size: 16px;
+    }
+    .tmnhQtd input{
+        font-size: 16px;
+        width: 55px;
+    }
+    .btnLinkPrd input{
+        min-width: 180px;
+        min-height: 40px;
+        font-size: 16px;
+    }
+    .btnLinkPrd a{
+        font-size: 16px;
+    }
+    .btnLinkPrd{
+        line-height: 60px;
+    }
+    /* FIM PÁGINA TENIS */
+}
+
+@media (min-width: 1440px) {
+    
+    /* MENU */
+    #acessibilidade{
+        padding: 15px 0 0 0;
+        font-size: 14px;
+    }
+    .conjuntoIcones img{
+        height: 28px;
+    }
+    .navGrid{
+        grid-template-columns: repeat(3, 370px);
+    }
+    #barraPesquisa input{
+        width: 370px;
+        height: 22px;
+    }
+    .logo img{
+        height: 100px;
+    }
+    #menu ul li a {
+        border: 15px solid #a6e65a;
+        font-size: 18px;
+    }
+    #menu ul a:hover {
+        background-color:#ebebeb;
+        border: 15px solid #ebebeb;
+        color: #212124;
+    }
+    /* FIM MENU */
+
+    /* PÁGINA INICIAL */
+    .propaganda img {
+        height: 100%;
+    }
+    .tituloSec{
+        font-size: 25px;
+    }
+    .conjuntoCard{
+        position:relative;
+        grid-template-columns: repeat(6, auto);
+    }
+    .cardNov img{ 
+        height: 124px;
+    }
+    .card{
+        width: fit-content;
+        line-height: 35px;
+    }
+    .card img{
+        height: 280px;
+    }
+    .tituloCard{
+        font-size: 22px;
+    }
+    .frtGrtsCard{
+        font-size: 15px;
+    }
+    .precoAnterior, .descCard p{
+        font-size: 18px;
+    }
+    .corpoCard h3{
+        font-size: 25px;
+    }
+
+    .anuncioFutureZ img{
+        height: 760px;
+    }
+    .card-FTZ{
+        padding: 18px;
+        line-height: 35px;
+    }
+    .card-FTZ img{
+        height: 210px;
+    }
+
+    .conjuntoMarcas{
+        margin: 60px 0 60px 0;
+    }
+    .conjuntoMarcas img{
+        height: 74px;
+    }
+    #categorias img {
+        height: 430px;
+    }
+    /* FIM PÁGINA INICIAL */
+
+    /* FOOTER */
+    .grid-footer{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 550px);
+    }
+    #desenvolvedoresFoot p{
+        line-height: 32px;
+        font-size: 18px;
+    }
+    .tituloFoot{
+        line-height: 42px;
+        font-size: 18px;
+    }
+    .drtsFooter{
+        font-size: 18px;
+    }
+    /* FOOTER */
+    
+    /* PÁGINA NOVIDADES */
+    .novidade-img img{
+        height: 434px;
+    }
+    .precoFiltra select, option, p{
+        font-size: 22px;
+    }
+    .dispoFiltra, .categoFiltra label{
+        font-size: 22px;
+    }
+
+    /* FIM PÁGINA NOVIDADES */
+
+    /* FORMULARIO ATENDIMENTO */
+    .ilustracaoAtd img{
+        height: 620px;
+    }
+    .formularioAtd label{
+        font-size: 22px;
+    }
+    .formularioAtd input, textarea{
+        font-size: 20px;
+    }
+    .nomeSobre input{
+        min-width: 400px;
+        min-height: 30px;
+        padding: 6px;
+    }
+    .outrosForm select{
+        font-size: 20px;
+        min-width: 410px;
+        min-height: 30px;
+    }
+    .outrosForm input, textarea{
+        min-width: 400px;
+        min-height: 30px;
+        font-size: 20px;
+    }
+    .outrosForm option{
+        font-size: 24px;
+    }
+    input.submit{
+        font-size: 20px;
+        min-height: 45px;
+        min-width: 200px;
+    }
+    /* FIM FORMULARIO ATENDIMENTO */
+
+    /* PÁGINA TENIS */
+    .fotosAdcPrd img{
+        height: 124px;
+    }
+    .fotoPrd img{
+        height: 460px;
+    }
+    .descAnunPrd *{
+        line-height: 40px;
+    }
+    .titDescPrd{
+        font-size: 25px;
+    }
+    .prcPromoPrd{
+        font-size: 20px;
+    }
+    .prcPrd{
+        font-size: 28px;
+    }
+    .tmnhPrd p{
+        font-size: 20px;
+    }
+    .tmnhPrd label{
+        font-size: 20px;
+    }
+    .subTitPrd{
+        font-size: 20px;
+    }
+    .tmnhQtd p{
+        font-size: 20px;
+    }
+    .tmnhQtd input{
+        font-size: 20px;
+        width: 55px;
+    }
+    .btnLinkPrd input{
+        min-width: 200px;
+        min-height: 50px;
+        font-size: 20px;
+    }
+    .btnLinkPrd a{
+        font-size: 20px;
+    }
+    .btnLinkPrd{
+        line-height: 70px;
+    }
+    /* FIM PÁGINA TENIS */
+}
+
+@media (min-width: 1920px) {
+    
+    /* MENU */
+    #acessibilidade{
+        padding: 15px 0 0 0;
+        font-size: 14px;
+    }
+    .conjuntoIcones img{
+        height: 28px;
+    }
+    .navGrid{
+        grid-template-columns: repeat(3, 480px);
+    }
+    #barraPesquisa input{
+        width: 430px;
+        height: 22px;
+    }
+    .logo img{
+        height: 110px;
+    }
+    #menu ul li a {
+        border: 15px solid #a6e65a;
+        font-size: 16px;
+    }
+    #menu ul a:hover {
+        background-color:#ebebeb;
+        border: 15px solid #ebebeb;
+        color: #212124;
+    }
+    /* FIM MENU */
+
+    /* PÁGINA INICIAL */
+    .propaganda img {
+        min-width: 100%;
+        height: auto;
+    }
+    .tituloSec{
+        font-size: 25px;
+    }
+    .conjuntoCard{
+        position:relative;
+        grid-template-columns: repeat(6, auto);
+    }
+    .cardNov img{ 
+        height: 124px;
+    }
+    .card{
+        width: fit-content;
+        line-height: 35px;
+    }
+    .card img{
+        height: 280px;
+    }
+    .tituloCard{
+        font-size: 18px;
+    }
+    .frtGrtsCard{
+        font-size: 15px;
+    }
+    .precoAnterior, .descCard p{
+        font-size: 16px;
+    }
+    .corpoCard h3{
+        font-size: 22px;
+    }
+
+    .anuncioFutureZ img{
+        height: 980px;
+    }
+    .card-FTZ{
+        padding: 18px;
+        line-height: 35px;
+    }
+    .card-FTZ img{
+        height: 210px;
+    }
+
+    .conjuntoMarcas{
+        margin: 60px 0 60px 0;
+    }
+    .conjuntoMarcas img{
+        height: 74px;
+    }
+    #categorias img {
+        height: 530px;
+    }
+    /* FIM PÁGINA INICIAL */
+
+    /* FOOTER */
+    .grid-footer{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 850px);
+    }
+    #desenvolvedoresFoot p{
+        line-height: 25px;
+        font-size: 16px;
+    }
+    .tituloFoot{
+        line-height: 25px;
+        font-size: 16px;
+    }
+    .drtsFooter{
+        font-size: 16px;
+    }
+    /* FOOTER */
+    
+    /* PÁGINA NOVIDADES */
+    .grid-produtos-equi{
+        grid-template-columns: repeat(5, auto);
+        grid-gap: 10px;
+    }
+    
+    .novidade-img img{
+        height: 434px;
+    }
+    .precoFiltra select, option, p{
+        font-size: 14px;
+    }
+    .dispoFiltra, .categoFiltra label{
+        font-size: 16px;
+    }
+
+    /* FIM PÁGINA NOVIDADES */
+
+    /* FORMULARIO ATENDIMENTO */
+    .ilustracaoAtd img{
+        height: 620px;
+    }
+    .formularioAtd label{
+        font-size: 18px;
+    }
+    .formularioAtd input, textarea{
+        font-size: 15px;
+    }
+    .nomeSobre input{
+        min-width: 400px;
+        min-height: 30px;
+        padding: 6px;
+    }
+    .outrosForm select{
+        font-size: 15px;
+        min-width: 410px;
+        min-height: 30px;
+    }
+    .outrosForm input, textarea{
+        min-width: 400px;
+        min-height: 30px;
+        font-size: 15px;
+    }
+    .outrosForm option{
+        font-size: 15px;
+    }
+    input.submit{
+        font-size: 16px;
+        min-height: 45px;
+        min-width: 200px;
+    }
+    /* FIM FORMULARIO ATENDIMENTO */
+
+    /* PÁGINA TENIS */
+    .fotosAdcPrd img{
+        height: 124px;
+    }
+    .fotoPrd img{
+        height: 560px;
+    }
+    .descAnunPrd *{
+        line-height: 40px;
+    }
+    .titDescPrd{
+        font-size: 22px;
+    }
+    .prcPromoPrd{
+        font-size: 20px;
+    }
+    .prcPrd{
+        font-size: 28px;
+    }
+    .tmnhPrd p{
+        font-size: 18px;
+    }
+    .tmnhPrd label{
+        font-size: 18px;
+    }
+    .subTitPrd{
+        font-size: 18px;
+    }
+    .tmnhQtd p{
+        font-size: 18px;
+    }
+    .tmnhQtd input{
+        color: black;
+        font-size: 18px;
+        width: 55px;
+    }
+    .btnLinkPrd input{
+        min-width: 200px;
+        min-height: 50px;
+        font-size: 20px;
+    }
+    .btnLinkPrd a{
+        font-size: 20px;
+    }
+    .btnLinkPrd{
+        line-height: 70px;
+    }
+    /* FIM PÁGINA TENIS */
+}
+
+@media (MIN-width: 2560px) {
+    
+    /* MENU */
+    #acessibilidade{
+        padding: 15px 0 0 0;
+        font-size: 22px;
+    }
+    .conjuntoIcones img{
+        height: 32px;
+    }
+    .navGrid{
+        margin: 0 0 30px;
+        grid-template-columns: repeat(3, 650px);
+    }
+    #barraPesquisa input{
+        width: 460px;
+        height: 27px;
+        font-size: 16px;
+    }
+    .logo img{
+        height: 120px;
+    }
+    #menu ul li a {
+        border: 15px solid #a6e65a;
+        font-size: 22px;
+    }
+    #menu ul a:hover {
+        background-color:#ebebeb;
+        border: 15px solid #ebebeb;
+        color: #212124;
+    }
+    /* FIM MENU */
+
+    /* PÁGINA INICIAL */
+    .propaganda img {
+        height: 946px;
+    }
+    .tituloSec{
+        font-size: 32px;
+    }
+    .cardNov img{ 
+        height: 184px;
+    }
+    .card{
+        width: fit-content;
+        line-height: 35px;
+    }
+    .card img{
+        height: 380px;
+    }
+    .tituloCard{
+        font-size: 25px;
+    }
+    .frtGrtsCard{
+        font-size: 18px;
+    }
+    .precoAnterior, .descCard p{
+        font-size: 22px;
+    }
+    .corpoCard h3{
+        font-size: 30px;
+    }
+    .anuncioFutureZ img{
+        height: 1260px;
+    }
+    .card-FTZ{
+        padding: 18px;
+        line-height: 35px;
+    }
+    .card-FTZ img{
+        height: 360px;
+    }
+    .conjuntoMarcas{
+        margin: 80px 0 80px 0;
+    }
+    .conjuntoMarcas img{
+        height: 94px;
+    }
+    #categorias img {
+        height: 730px;
+    }
+    /* FIM PÁGINA INICIAL */
+
+    /* FOOTER */
+    .grid-footer{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1150px);
+    }
+    #desenvolvedoresFoot p{
+        line-height: 25px;
+        font-size: 20px;
+    }
+    /* FOOTER */
+    
+    /* PÁGINA NOVIDADES */
+    .novidade-img img{
+        height: 634px;
+    }
+    .precoFiltra select, option, p{
+        font-size: 26px;
+    }
+    .dispoFiltra, .categoFiltra label{
+        font-size: 26px;
+    }
+    input[type=checkbox]{
+        max-height: 200px;
+    }
+    /* FIM PÁGINA NOVIDADES */
+
+    /* FORMULARIO ATENDIMENTO */
+    .ilustracaoAtd img{
+        height: 965px;
+    }
+    .formularioAtd *{
+        line-height: 45px;
+    }
+    .formularioAtd label{
+        font-size: 22px;
+    }
+    .formularioAtd input, textarea{
+        font-size: 18px;
+    }
+    .nomeSobre input{
+        min-width: 600px;
+        min-height: 10px;
+        padding-left: 12px;
+    }
+    .outrosForm select{
+        font-size: 16px;
+        min-width: 620px;
+        min-height: 30px;
+    }
+    .outrosForm input, textarea{
+        min-width: 610px;
+        min-height: 10px;
+        font-size: 18px;
+    }
+    .outrosForm option{
+        font-size: 14px;
+    }
+    input.submit{
+        font-size: 24px;
+        min-height: 52px;
+        min-width: 230px;
+    }
+    /* FIM FORMULARIO ATENDIMENTO */
+
+    /* PÁGINA TENIS */
+    .fotosAdcPrd img{
+        height: 224px;
+    }
+    .fotoPrd img{
+        height: 860px;
+    }
+    .descAnunPrd *{
+        line-height: 55px;
+    }
+    .titDescPrd{
+        font-size: 35px;
+    }
+    .prcPromoPrd{
+        font-size: 26px;
+    }
+    .prcPrd{
+        font-size: 46px;
+    }
+    .tmnhPrd p{
+        font-size: 25px;
+    }
+    .tmnhPrd label{
+        font-size: 25px;
+    }
+    .subTitPrd{
+        font-size: 25px;
+    }
+    .tmnhQtd p{
+        font-size: 25px;
+    }
+    .tmnhQtd input{
+        font-size: 25px;
+        width: 55px;
+    }
+    .btnLinkPrd input{
+        min-width: 250px;
+        min-height: 60px;
+        font-size: 25px;
+    }
+    .btnLinkPrd a{
+        font-size: 25px;
+    }
+    .btnLinkPrd{
+        line-height: 70px;
+    }
+    /* FIM PÁGINA TENIS */
+}
+
+
+/* FIM RESPONSIVIDADE */
