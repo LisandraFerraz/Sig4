@@ -12,8 +12,22 @@
         <link rel = "icon" type ="imagem/favicon.ico" href="../static/imagem/Favicon.ico">
         <link rel="stylesheet" href="form.css">
         <title>Full Sports - O Melhor Dos Artigos Esportivos Para Você</title>
+        <script type="text/javascript">
+		function home() {
+			window.open("/");
+		}
+		function acessarTenis(){
+			window.open("/tenis");
+		}
+		function acessarEquipamentos(){
+			window.open("/equipamentos");
+		}
+		function acessarAcessibilidade(){
+			window.open("/acessibilidade");
+		}
+	</script>
     </head>
-
+	
     <body>
         <!-- cabeçalho -->
         <header id="topo">
@@ -34,7 +48,7 @@
 
                 <ul id="atalhos2">
                     <li>
-                        <a href="acessibilidade.html" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+                        <a th:href="@{/acessibilidade}"  title="Ir para pagina de acessabilidade">Acessibilidade</a>
                     </li>
 
                     <li>
@@ -64,7 +78,7 @@
                 
                 <div class="logo">
                     <!-- LOGO -->
-                    <a href="index.html"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+                    <a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
                 </div>
                 
                 <div>
@@ -99,12 +113,10 @@
 
             <nav id="menu">
                 <ul>
-                    <li class="active"><a href="#">Home</a></li>
 				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
 				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
-				<li><a href="#">Page 2</a></li>
-				<li><a href="#">Page 3</a></li>
+				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
                 </ul>
             </nav>
@@ -121,7 +133,7 @@
         <main id="conteudo"> 
             <!-- Banner -->
             <div class="propaganda">
-                <a href="feminino.html">
+                <a href="#">
                     <img src="imagem/banner1.png" alt="imagem propaganda das roupas femininas"/>
                 </a> 
             </div>
@@ -185,7 +197,7 @@
                     </div>
                    
                     <div class="card">
-                         <a href="/src/main/resources/templates/tenis.html" target="_blank" style="text-decoration: none; color: transparent;"><img src="imagem/produtos/btnchuteira-campo-puma-one-2.png" alt=""></a>
+                         <a th:href="@{/tenis}" target="_blank" style="text-decoration: none; color: transparent;"><img src="imagem/produtos/btnchuteira-campo-puma-one-2.png" alt=""></a>
                         <div class="corpoCard">
                             <p class="tituloCard">Chuteira Campo Puma One 5.3 Branco</p>
                             <p class="frtGrtsCard">Frete Grátis</p>
@@ -382,42 +394,41 @@
         </main>
         
         
-        <footer id="rodape"> 
-            <div class="grid-footer">
-                <div id="desenvolvedoresFoot">
-                   <p class="tituloFoot">Desenvolvido pelo Grupo 4 - Fatec Zona Leste</p> 
-                    <p>Renan Figueiredo</p>
-                     <p>Lisandra Ferraz</p>
-                     <p>João Victor</p>
-                     <p>Gabriel Gozzi<p>
-                    <p>Freddy Soares</p>
-                </div>
-            
-                <div id="selosFoot">
-                    <p class="tituloFoot">Site verificado por</p> 
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
-                    </a>
-                    
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS válido!" />
-                    </a>
-                </div>
-                
+       <footer id="rodape"> 
+        <div class="grid-footer">
+            <div id="desenvolvedoresFoot">
+                <p class="tituloFoot">Desenvolvido pelo Grupo 5  - Fatec Zona Leste</p> 
+                <p>Renan Figueiredo</p>
+                <p>Lisandra Ferraz</p>
+                <p>Freddy Soares</p>
+                <p>Gabriel Gozzi</p>
+                <p>João Victor</p>
             </div>
-            <p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
-        </footer> 
-
+        
+            <div id="selosFoot">
+                <p class="tituloFoot">Site verificado por</p> 
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
+                </a>
+                
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS válido!" />
+                </a>
+            </div>
+            
+        </div>
+        <p class="drtsFooter">Todos os direitos reservados &copy; 2021.</p>
+    </footer> 
     </body>
 </html>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 crossorigin="anonymous"></script>
-<script src="../static/js/fonte.js"></script>
-<script src="../static/js/contraste.js"></script>
+<script src="js/fonte.js"></script>
+<script src="js/contraste.js"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
 

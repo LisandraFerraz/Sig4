@@ -15,4 +15,20 @@ public class GUIMenuController {
 	public ModelAndView home() {
 		return new ModelAndView("paginaMenu");
 	}
+	@GetMapping("/tenis")
+	public ModelAndView acessarTenis() {
+		return new ModelAndView("tenis");
+	}
+	
+	@GetMapping("/equipamentos")
+	public ModelAndView acessarEquipamentos() {
+		return new ModelAndView("equipamentos");
+	}
+	@GetMapping("/acessibilidade")
+	public ModelAndView acessarAcessibilidade() {
+		return new ModelAndView("acessibilidade");
+	}
+
+
+
 }

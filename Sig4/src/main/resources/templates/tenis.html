@@ -14,10 +14,26 @@
         <link rel = "icon" type ="imagem/favicon.ico" href="imagem/Favicon.ico">
         <link rel="stylesheet" 	href="form.css">
         <title>Chuteira Campo Puma One 5.3 Branco - O Melhor Dos Artigos Esportivos Para Você</title>
+      <script type="text/javascript">
+		function home() {
+			window.open("/");
+		}
+		function acessarTenis(){
+			window.open("/tenis");
+		}
+		function acessarEquipamentos(){
+			window.open("/equipamentos");
+		}
+		function acessarAcessibilidade(){
+			window.open("/acessibilidade");
+		}
+	</script>
     </head>
-
+	
     <body>
-		 <div> id="acessibilidade">
+        <!-- cabeçalho -->
+        <header id="topo">
+            <div id="acessibilidade">
                 <ul id="atalhos">
                     <li>
                         <a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
@@ -34,7 +50,7 @@
 
                 <ul id="atalhos2">
                     <li>
-                        <a href="acessibilidade.html" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+                        <a th:href="@{/acessibilidade}"  title="Ir para pagina de acessabilidade">Acessibilidade</a>
                     </li>
 
                     <li>
@@ -54,7 +70,6 @@
                     </li>
                 </ul>
             </div>
-        <header id="topo">
             
             <div class="navGrid">
                 <!-- BARRA DE PESQUISA -->
@@ -65,7 +80,7 @@
                 
                 <div class="logo">
                     <!-- LOGO -->
-                    <a href="index.html"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+                    <a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
                 </div>
                 
                 <div>
@@ -100,19 +115,12 @@
 
             <nav id="menu">
                 <ul>
-                    <li><a href="equipamentos.html" target="_blank">Lançamentos</a></li>
-
-                    <li><a href="feminino.html">Feminino</a></li>
-
-                    <li><a href="masculino.html">Masculino</a></li>
-
-                    <li><a href="equipamentos.html">Equipamentos</a></li>
-
-                    <li><a href="suplementos.html">Suplementos</a></li>
-
-                    <li><a href="atendimento.html">Atendimento</a></li>
-
-                    <li><a href="cadastro.html" target="_blank">Cadastro</a></li>
+                    <li class="active"><a th:href="@{/}">Home</a></li>
+				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
+				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
+				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li><a th:href="@{/login?logout}">Logout</a></li>
                 </ul>
             </nav>
         </header>
@@ -197,33 +205,34 @@
             </div>
         </section>
 
-        <footer id="rodape"> 
-            <div class="grid-footer">
-                <div id="desenvolvedoresFoot">
-                    <p class="tituloFoot">Desenvolvido pelo Grupo 4 - Fatec Zona Leste</p> 
-                    <p>Renan Figueiredo</p>
-                     <p>Lisandra Ferraz</p>
-                     <p>João Victor</p>
-                     <p>Gabriel Gozzi<p>
-                    <p>Freddy Soares</p>
-                </div>
-            
-                <div id="selosFoot">
-                    <p class="tituloFoot">Site verificado por</p> 
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
-                    </a>
-                    
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS válido!" />
-                    </a>
-                </div>
-                
+       <footer id="rodape"> 
+        <div class="grid-footer">
+            <div id="desenvolvedoresFoot">
+                <p class="tituloFoot">Desenvolvido pelo Grupo 5  - Fatec Zona Leste</p> 
+                <p>Renan Figueiredo</p>
+                <p>Lisandra Ferraz</p>
+                <p>Freddy Soares</p>
+                <p>Gabriel Gozzi</p>
+                <p>João Victor</p>
             </div>
-            <p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
-        </footer> 
+        
+            <div id="selosFoot">
+                <p class="tituloFoot">Site verificado por</p> 
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
+                </a>
+                
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS válido!" />
+                </a>
+            </div>
+            
+        </div>
+        <p class="drtsFooter">Todos os direitos reservados &copy; 2021.</p>
+    </footer> 
     </body>
 </html> 
+<script src="https://code.jquery.com/jquery-3.6.0.js"
 integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 crossorigin="anonymous"></script>
 <script src="js/fonte.js"></script>
@@ -232,4 +241,5 @@ crossorigin="anonymous"></script>
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+
 
