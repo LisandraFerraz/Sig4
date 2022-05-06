@@ -483,6 +483,46 @@ header * {
     text-decoration: line-through;
 }
 
+.cadastro-cliente-grid{
+	justify-content: center;
+    margin: 40px 80px 40px 80px;
+	
+	
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 25px;
+    line-height: 40px;
+}
+
+.row-1-grid{
+	display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 25px;
+}
+
+.row-2-grid{
+	display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 25px;
+}
+
+.input-cad-cliente{
+	background-color: #f7f7f7;
+    display: block;
+    min-width: 630px;
+    min-height: 24px;
+    padding: 5px;
+}
+
+.input-cad-cliente{
+	border: 1px solid rgb(192, 192, 192);
+}
+
+***********************************
+
 .atendimento-grid{
     justify-content: center;
     margin: 40px 40px 40px 40px;
@@ -782,6 +822,38 @@ input.submit{
     outline: none;
 }
 
+.btt-cad-cliente-grid{
+	justify-content: center;
+    margin: 40px 80px 40px 80px;
+	
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 25px;
+    line-height: 40px;
+}
+
+input.btn-cad-cliente {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+
+    border: none;
+    background-color: #313131;
+    
+    color: rgb(243, 243, 243);
+    font-size: 14px;
+
+    min-width: 180px;
+    min-height: 44px;
+}
+
+input.btn-cad-cliente:hover{
+    text-decoration: none;
+    background-color: rgb(0, 0, 0);
+	transform:translate(0.3s);
+}
+*****************************************
 .btnLinkPrd{
     line-height: 50px;
     margin: 15px 0 ;
@@ -793,7 +865,7 @@ input.submit{
     margin-left: auto;
     display: block;
 
-    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+
     border: none;
     background-color: #313131;
 

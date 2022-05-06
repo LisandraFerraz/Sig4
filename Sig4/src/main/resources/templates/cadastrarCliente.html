@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-		
+<head>		
 	<title>Lançamentos - O Melhor Dos Artigos Esportivos Para Você</title>
 	<!--metadados-->
 	<meta charset="utf-8">
@@ -10,7 +10,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
-	<link rel="stylesheet" href="form.css">
 	<script type="text/javascript">
 		function home() {
 			window.open("/");
@@ -31,60 +30,99 @@
 </head>
 
 <body>
-	<!-- cabeçalho -->
-	<header id="topo">
-		<div id="acessibilidade">
-			<ul id="atalhos">
-				<li>
-					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
-				</li>
+        <!-- cabeçalho -->
+        <header id="topo">
+            <div id="acessibilidade">
+                <ul id="atalhos">
+                    <li>
+                        <a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
+                    </li>
 
-				<li>
-					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
-				</li>
+                    <li>
+                        <a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+                    </li>
 
-				<li>
-					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
-				</li>
-			</ul>
+                    <li>
+                        <a href="#rodape"accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
+                    </li>
+                </ul>
 
-			<ul id="atalhos2">
-				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
-				</li>
+                <ul id="atalhos2">
+                    <li>
+                        <a th:href="@{/acessibilidade}"  title="Ir para pagina de acessabilidade">Acessibilidade</a>
+                    </li>
 
-				<li>
-					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-				</li>
+                    <li>
+                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+                    </li>
 
-				<li>
-					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-				</li>
+                    <li >
+                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+                    </li>
 
-				<li>
-					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
-				</li>
+                    <li>
+                        <a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+                    </li>
 
-				<li>
-					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
-				</li>
-			</ul>
-		</div>
+                    <li>
+                        <a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="navGrid">
+                <!-- BARRA DE PESQUISA -->
+                <div id="barraPesquisa">
+                    <input class="Buscar" type="text" name="buscar" placeholder= "Buscar...">
+                    <!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+                </div>
+                
+                <div class="logo">
+                    <!-- LOGO -->
+                    <a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+                </div>
+                
+                <div>
+                    <!-- Icones de redes sociais -->
+                    <ul class="conjuntoIcones">
+                        <li>
+                            <a href="https://www.facebook.com">
+                                <img  src="imagem/facebook.png" alt="Facebook"/>
+                            </a> 
+                        </li>
+    
+                        <li>
+                            <a href="https://twitter.com">
+                                <img src="imagem/twitter.png" alt="Twitter"/>
+                            </a> 
+                        </li>
+        
+                        <li>
+                            <a href="https://www.instagram.com/">
+                                <img src="imagem/instagram.png" alt="Instagram"/>
+                            </a> 
+                        </li>
+        
+                        <li>
+                            <a href="https://www.whatsapp.com">
+                                <img src="imagem/whatsapp.png" alt="Whatsapp"/>
+                            </a> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-		
-
-		<nav id="menu">
-			<ul>
-				<li class="active"><a th:href="@{/}">Home</a></li>
+            <nav id="menu">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Home</a></li>
 				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
 				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
-			</ul>
-		</nav>
-	</header>
-
+                </ul>
+            </nav>
+        </header>
 	<!-- Vlibrs -->
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -99,68 +137,50 @@
 	<div class="container my-5">
 		<br />
 		<h3>Cadastrar cliente</h3>
-		<div class="cardCadastrarCliente">
-			<div class="card-body">
-				<div class="col-md-8">
+		<div class="cadastro-cliente-grid">
+			<div class="form-cadastro-cliente">
 					<form action="#" th:action="@{/sig/clientes}" th:object="${cliente}" method="post">
-						<div class="row">
-							<div class="form-group col-md-4">
+						<div class="row-1-grid">
 								<label for="cpf" class="col-form-label">CPF</label>
-								<input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="CPF">
+								<input type="text" th:field="*{cpf}" class="input-cad-cliente" id="cpf" placeholder="CPF">
 								<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="text-danger">
 								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
+								
 								<label for="nome" class="col-form-label">Nome</label>
-								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
+								<input type="text" th:field="*{nome}" class="input-cad-cliente" id="nome" placeholder="Nome">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
+						
 								<label for="dataNascimento" class="col-form-label">Data Nascimento</label>
-								<input type="text" th:field="*{dataNascimento}" class="form-control" id="dataNascimento"
+								<input type="text" th:field="*{dataNascimento}" class="input-cad-cliente" id="dataNascimento"
 									placeholder="Data Nascimento">
 								<span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"
 									class="text-danger">
 								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-2">
+								
 								<label for="dataNascimento" class="col-form-label">Sexo</label>
-								<input type="text" th:field="*{sexo}" class="form-control" id="sexo" placeholder="M/F">
+								<input type="text" th:field="*{sexo}" class="input-cad-cliente" id="sexo" placeholder="M/F">
 								<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="text-danger">
 								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
+						
 								<label for="cep" class="col-form-label">CEP</label>
-								<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="CEP">
+								<input type="text" th:field="*{cep}" class="input-cad-cliente" id="cep" placeholder="CEP">
 								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
+						
 								<label for="complemento" class="col-form-label">Complemento</label>
-								<input type="text" th:field="*{complemento}" class="form-control" id="complemento"
+								<input type="text" th:field="*{complemento}" class="input-cad-cliente" id="complemento"
 									placeholder="Complemento numero/apto">
 								<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
 									class="text-danger"></span>
-							</div>
 						</div>
-						<div class="form-group col-md-8">
-							<input type="submit" class="btn btn-primary" value="Cadastrar cliente">
-							<input type="button" class="btn btn-primary" value="Consultar cliente"
-								onclick="consulta();">
+						
+						<div class="btt-cad-cliente-grid">
+							<input type="submit" class="btn-cad-cliente" value="Cadastrar cliente">
+							<input type="button" class="btn-cad-cliente" value="Consultar cliente" onclick="consulta();">
 						</div>
+							
 					</form>
-				</div>
-			</div>
+			
 			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
 		
