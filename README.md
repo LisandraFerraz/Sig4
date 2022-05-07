@@ -22,6 +22,7 @@ visões existe os cenários que determinam a dinâmica e o comportamento da apli
 manipular uma operação de sistema. 
 - 3- Construção – mapeamento do projeto para o código, implementação iterativa dos elementos restantes de menor risco e preparação para implantação. 
 - 4 - Transição – beta testes e implantação 
+
 > A definição de "pronto" estabelece como a qualidade será atingida 
 | Fase | Definição de pronto estabelecida para cada fase - critério de aceitação | 
 | ------------ | ------------------------------------------------------------------------ | 
@@ -36,6 +37,7 @@ casos de teste. |
 inconsistências | 
 | Teste | Será considerada concluída quando 100% dos casos de teste prioritários (complexidade, funções mais utilizadas) rastreáveis para os requisitos obtiverem satisfatório 
 | 
+
 ##### Estudo de Caso - SIG de Vendas e Suprimentos 
 ##### Concepção - análise de requisitos 
 > Considere que uma organização está iniciando um projeto para implantar um Sistema Integrado de Gestão de Vendas e Suprimentos. 
