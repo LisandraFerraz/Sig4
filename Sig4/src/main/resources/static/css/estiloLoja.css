@@ -1,4 +1,6 @@
-*{
+  
+       
+       *{
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
@@ -893,9 +895,9 @@ input.btn-cad-cliente:hover{
 h3{
 	text-align: center;
 }
-.cardCadastrarCliente{
+.cadastro-cliente-grid{
 	background-color: rgb(186, 189, 182);
-	width: 76%;
+	width: 86%;
     height: auto;
     margin: 12px;
     margin-left: 10%;
@@ -903,7 +905,7 @@ h3{
      border-radius: 25px;
      text-align: center;
 }
-.row{
+.row-1-grid{
 	text-align: center;
 	border-radius: 20px;
 	width: 80%;
@@ -915,10 +917,20 @@ orm-group col-md-8{
     margin-right: 30%;
     margin-left: 40%;
 }
+.form-cadastro-cliente{
+	background-color: rgb(186, 189, 182);
+	width: 88%;
+    height: auto;
+    margin: 12px;
+    margin-left: 10%;
+     font-size: 16px;
+     border-radius: 25px;
+     text-align: center;
+}
 
 /*PaginaLogin*/
 
-form {
+.form {
  position: relative;
  z-index: 1;
  background: #FFFFFF;
@@ -1005,3 +1017,6 @@ form button {
 
 /* RESPONSIVIDADE */
 
+     
+            
+            

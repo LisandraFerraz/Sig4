@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>		
-	<title>Lançamentos - O Melhor Dos Artigos Esportivos Para Você</title>
+	<title>Cadastra Cliente</title>
 	<!--metadados-->
 	<meta charset="utf-8">
 	<meta name="description" content="Inicio">
-	<meta name="keywords" content="Iniciohtml, web">
+	<meta name="keywords" content="CadastrarCliente, web">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
@@ -134,18 +134,18 @@
 	
 <!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
 	<main id="conteudo"> 
-	<div class="container my-5">
 		<br />
 		<h3>Cadastrar cliente</h3>
-		<div class="cadastro-cliente-grid">
 			<div class="form-cadastro-cliente">
+			<br>
 					<form action="#" th:action="@{/sig/clientes}" th:object="${cliente}" method="post">
 						<div class="row-1-grid">
 								<label for="cpf" class="col-form-label">CPF</label>
 								<input type="text" th:field="*{cpf}" class="input-cad-cliente" id="cpf" placeholder="CPF">
 								<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="text-danger">
 								</span>
-								
+							
+								<div class="row-1-grid">
 								<label for="nome" class="col-form-label">Nome</label>
 								<input type="text" th:field="*{nome}" class="input-cad-cliente" id="nome" placeholder="Nome">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
@@ -175,7 +175,7 @@
 						</div>
 						
 						<div class="btt-cad-cliente-grid">
-							<input type="submit" class="btn-cad-cliente" value="Cadastrar cliente">
+							<input type="submit" class="btn-cad-cliente" value="Cadastrar cliente "> 
 							<input type="button" class="btn-cad-cliente" value="Consultar cliente" onclick="consulta();">
 						</div>
 							
@@ -183,6 +183,8 @@
 			
 			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
+
+		
 		
 		</main>
 		
@@ -227,6 +229,4 @@
 	new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
             
-            
-            
-            
+       

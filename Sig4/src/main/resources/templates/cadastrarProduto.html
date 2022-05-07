@@ -1,97 +1,248 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
+<html lang="pt-BR">
+<head>		
+	<title>Cadastra Produto</title>
+	<!--metadados-->
 	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Cadastrar Produto</title>
+	<meta name="description" content="Inicio">
+	<meta name="keywords" content="CadastrarCliente, web">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
+		function home() {
+			window.open("/");
+		}
+		function acessarTenis() {
+			window.open("/tenis");
+		}
+		function acessarEquipamentos() {
+			window.open("/equipamentos");
+		}
+		function acessarAcessibilidade() {
+			window.open("/acessibilidade");
+		}
 		function consulta() {
 			window.open("/sig/produtos");
 		}
+		
 	</script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 
 <body>
-	<header th:replace="fragments/header :: menuSuperior">
-		<div>header</div>
-	</header>
-	<div class="container my-5">
+        <!-- cabeÃ§alho -->
+        <header id="topo">
+            <div id="acessibilidade">
+                <ul id="atalhos">
+                    <li>
+                        <a href="#conteudo" accesskey="1" title="Ir diretamente para o conteÃšdo">Ir para o conteudo [1]</a>
+                    </li>
+
+                    <li>
+                        <a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+                    </li>
+
+                    <li>
+                        <a href="#rodape"accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
+                    </li>
+                </ul>
+
+                <ul id="atalhos2">
+                    <li>
+                        <a th:href="@{/acessibilidade}"  title="Ir para pagina de acessabilidade">Acessibilidade</a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+                    </li>
+
+                    <li >
+                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="navGrid">
+                <!-- BARRA DE PESQUISA -->
+                <div id="barraPesquisa">
+                    <input class="Buscar" type="text" name="buscar" placeholder= "Buscar...">
+                    <!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+                </div>
+                
+                <div class="logo">
+                    <!-- LOGO -->
+                    <a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+                </div>
+                
+                <div>
+                    <!-- Icones de redes sociais -->
+                    <ul class="conjuntoIcones">
+                        <li>
+                            <a href="https://www.facebook.com">
+                                <img  src="imagem/facebook.png" alt="Facebook"/>
+                            </a> 
+                        </li>
+    
+                        <li>
+                            <a href="https://twitter.com">
+                                <img src="imagem/twitter.png" alt="Twitter"/>
+                            </a> 
+                        </li>
+        
+                        <li>
+                            <a href="https://www.instagram.com/">
+                                <img src="imagem/instagram.png" alt="Instagram"/>
+                            </a> 
+                        </li>
+        
+                        <li>
+                            <a href="https://www.whatsapp.com">
+                                <img src="imagem/whatsapp.png" alt="Whatsapp"/>
+                            </a> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Home</a></li>
+				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
+				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
+				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li><a th:href="@{/login?logout}">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+	<!-- Vlibrs -->
+	<div vw class="enabled">
+		<div vw-access-button class="active"></div>
+		<div vw-plugin-wrapper>
+			<div class="vw-plugin-top-wrapper"></div>
+		</div>
+	</div>
+	
+	
+<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
+	<main id="conteudo"> 
 		<br />
 		<h3>Cadastrar Produto</h3>
-		<div class="card">
-			<div class="card-body">
-				<div class="col-md-8">
+			<div class="form-cadastro-cliente">
+			<br>
 					<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
-					<div class="row">
-							<div class="form-group col-md-8">
+				
+							<div class="row-1-grid">
 								<label for="nome" class="col-form-label">Nome</label>
 								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
-							</div>
-						</div>
-                                                         <div class="form-group col-md-8">
+							
+                                                         
 								<label for="tipo" class="col-form-label">Tipo do Produto</label>
 								<input type="text" th:field="*{tipo}" class="form-control" id="tipo"
 									placeholder="tipo">
 								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}"
 									class="text-danger">
 								</span>
-							</div>
+						
 
-                                                    <div class="form-group col-md-8">
 								<label for="cor" class="col-form-label">Cor do Produto</label>
 								<input type="text" th:field="*{cor}" class="form-control" id="cor"
 									placeholder="cor">
 								<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}"
 									class="text-danger">
 								</span>
-							</div>
+					
 
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="preco" class="col-form-label">Preço</label>
+				
+							
+								<label for="preco" class="col-form-label">PreÃ§o</label>
 								<input type="text" th:field="*{preco}" class="form-control" id="preco"
-									placeholder="Preço">
-							</div>
-						</div>
+									placeholder="PreÃ§o">
 						
-						<div class="form-group col-md-8">
+						
+					
 								<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
 								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
 									placeholder="qtdEstoque">
 								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}"
 									class="text-danger">
 								</span>
-							</div>
-                                                    <div class="row">
-							<div class="form-group col-md-8">
+						
+						
+						
 								<label for="cnpj" class="col-form-label">CNPJ</label>
 								<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" placeholder="CNPJ">
 								<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="text-danger">
 								</span>
-							</div>
-						</div>	
 						
-						<div class="form-group col-md-8">
-							<input type="submit" class="btn btn-primary" value="Cadastrar Produto">
-							<input type="button" class="btn btn-primary" value="Consultar Produto"
-								onclick="consulta();">
+						
 						</div>
+						
+						<div class="btt-cad-cliente-grid">
+							<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
+							<input type="button" class="btn-cad-cliente" value="Consultar Produto"
+								onclick="consulta();">
+						
+					
+						</div>
+							
 					</form>
-				</div>
-			</div>
+			
 			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
-		<footer th:replace="fragments/footer :: rodape">
-			<div>footer</div>
-		</footer>
+
+		
+		
+		</main>
+		
+		<footer id="rodape">
+		<div class="grid-footer">
+			<div id="desenvolvedoresFoot">
+				<p class="tituloFoot">Desenvolvido pelo Grupo 5 - Fatec Zona Leste</p>
+				<p>Renan Figueiredo</p>
+				<p>Lisandra Ferraz</p>
+				<p>Freddy Soares</p>
+				<p>Gabriel Gozzi</p>
+				<p>JoÃĢo Victor</p>
+			</div>
+
+			<div id="selosFoot">
+				<p class="tituloFoot">Site verificado por</p>
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS vÃĄlido!" />
+				</a>
+
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="CSS vÃĄlido!" />
+				</a>
+			</div>
+		</div>
+		<p class="drtsFooter">Todos os direitos reservados &copy; 2021.</p>
+	</footer>
+	
 </body>
 
 </html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+	
+<script src="js/fonte.js"></script>
+<script src="js/contraste.js"></script>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+	new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
