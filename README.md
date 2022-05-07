@@ -1,6 +1,6 @@
 
-Grupo 04
-| Integrantes |
+
+| Grupo 04 |
 | --- |
 | Lisandra Ferraz de Santana |
 | Gabriel Gozzi |
