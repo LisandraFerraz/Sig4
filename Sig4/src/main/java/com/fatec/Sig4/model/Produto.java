@@ -102,8 +102,6 @@ public class Produto {
 		this.dataCadastro = dataAtual.toString(fmt);
 	}
 
-
-
 	// equals e tostring omitidos. Cliado na aula de 05/04/2022
 
 }
