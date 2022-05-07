@@ -52,6 +52,9 @@ public class MantemProdutoI implements MantemProduto {
 			Produto produtoModificado = new Produto(produto.getNome(), produto.getPreco());
 			produtoModificado.setId(produto.getId());
 			produtoModificado.setQtdEstoque(produto.getQtdEstoque());
+			produtoModificado.setTipo(produto.getTipo());
+			produtoModificado.setCor(produto.getCor());
+			
 			produtoModificado.obtemDataAtual(new DateTime());
 			return Optional.ofNullable(repository.save(produtoModificado));
 		} else {

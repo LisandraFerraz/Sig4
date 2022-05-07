@@ -28,36 +28,41 @@
 			<div class="card-body">
 				<div class="col-md-8">
 					<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="cpf" class="col-form-label">Nome do Produto</label>
-								<input type="text" th:field="*{nome}" class="form-control" id="nome"
-									placeholder="Nome Produto">
+					<div class="row">
+							<div class="form-group col-md-8">
+								<label for="nome" class="col-form-label">Nome</label>
+								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
 							</div>
 						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="nome" class="col-form-label">Preço do Produto</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="nome"
-									placeholder="Preço Produto">
-								<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-danger">
-								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="dataNascimento" class="col-form-label">Data de Cadastro do Produto</label>
-								<input type="text" th:field="*{dataCadastro}" class="form-control" id="dataCadastro"
-									placeholder="Data Cadastro">
-								<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
+                                                         <div class="form-group col-md-8">
+								<label for="tipo" class="col-form-label">Tipo do Produto</label>
+								<input type="text" th:field="*{tipo}" class="form-control" id="tipo"
+									placeholder="tipo">
+								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}"
 									class="text-danger">
 								</span>
 							</div>
-						</div>
+
+                                                    <div class="form-group col-md-8">
+								<label for="cor" class="col-form-label">Cor do Produto</label>
+								<input type="text" th:field="*{cor}" class="form-control" id="cor"
+									placeholder="cor">
+								<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}"
+									class="text-danger">
+								</span>
+							</div>
+
 						<div class="row">
 							<div class="form-group col-md-8">
+								<label for="preco" class="col-form-label">Preço</label>
+								<input type="text" th:field="*{preco}" class="form-control" id="preco"
+									placeholder="Preço">
+							</div>
+						</div>
+						
+						<div class="form-group col-md-8">
 								<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
 								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
 									placeholder="qtdEstoque">
@@ -65,8 +70,15 @@
 									class="text-danger">
 								</span>
 							</div>
-							
-						</div>
+                                                    <div class="row">
+							<div class="form-group col-md-8">
+								<label for="cnpj" class="col-form-label">CNPJ</label>
+								<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" placeholder="CNPJ">
+								<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="text-danger">
+								</span>
+							</div>
+						</div>	
+						
 						<div class="form-group col-md-8">
 							<input type="submit" class="btn btn-primary" value="Cadastrar Produto">
 							<input type="button" class="btn btn-primary" value="Consultar Produto"
