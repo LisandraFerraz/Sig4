@@ -497,11 +497,42 @@ header * {
     line-height: 40px;
 }
 
+.form-cadastro-cliente{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 1px 1px 8px rgb(70, 70, 70, 0.2);
+	
+	padding: 2%;
+	width: 40%;
+    height: auto;
+    font-size: 12pt;
+    border-radius: 10px;
+}
+
 .row-1-grid{
 	display: grid;
     grid-template-columns: repeat(2, auto);
     grid-auto-rows: minmax(auto, auto);
-    grid-gap: 25px;
+    grid-gap: 5px;
+    
+	border-radius: 20px;
+	width: auto;
+	height: auto;
+	margin: 1px;  
+}
+
+.txt-form{
+	background-color: rgb(234, 234, 234);
+	border: 1px solid rgb(175, 175, 175);
+    color: rgb(58, 58, 58);
+}
+
+input.txt-form{
+	border-radius: 5px;
+	height: 23px;
 }
 
 .row-2-grid{
@@ -513,14 +544,17 @@ header * {
 
 .input-cad-cliente{
 	background-color: #f7f7f7;
+	border: 1px solid rgb(192, 192, 192);
+	
     display: block;
     min-width: 630px;
     min-height: 24px;
     padding: 5px;
 }
 
-.input-cad-cliente{
-	border: 1px solid rgb(192, 192, 192);
+.txt-aviso{
+	color: rgb(155, 36, 36);
+	font-size: 7pt;
 }
 
 ***********************************
@@ -825,29 +859,26 @@ input.submit{
 }
 
 .btt-cad-cliente-grid{
-	justify-content: center;
-    margin: 40px 80px 40px 80px;
-	
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-auto-rows: minmax(auto, auto);
-    grid-gap: 25px;
-    line-height: 40px;
+    grid-gap: 2px;
 }
 
 input.btn-cad-cliente {
-    margin-right: auto;
-    margin-left: auto;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
     display: block;
-
+	
     border: none;
     background-color: #313131;
     
     color: rgb(243, 243, 243);
     font-size: 14px;
 
-    min-width: 180px;
-    min-height: 44px;
+    width: 160px;
+    height: 44px;
 }
 
 input.btn-cad-cliente:hover{
@@ -905,28 +936,13 @@ h3{
      border-radius: 25px;
      text-align: center;
 }
-.row-1-grid{
-	text-align: center;
-	border-radius: 20px;
-	width: 80%;
-	height: auto;
-	margin:1px;
-}
+
 orm-group col-md-8{
 	display:flex;
     margin-right: 30%;
     margin-left: 40%;
 }
-.form-cadastro-cliente{
-	background-color: rgb(186, 189, 182);
-	width: 88%;
-    height: auto;
-    margin: 12px;
-    margin-left: 10%;
-     font-size: 16px;
-     border-radius: 25px;
-     text-align: center;
-}
+
 
 /*PaginaLogin*/
 

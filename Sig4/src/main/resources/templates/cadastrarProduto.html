@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>		
+
+<head>
 	<title>Cadastra Produto</title>
 	<!--metadados-->
 	<meta charset="utf-8">
@@ -26,104 +27,104 @@
 		function consulta() {
 			window.open("/sig/produtos");
 		}
-		
+
 	</script>
 </head>
 
 <body>
-        <!-- cabeÃ§alho -->
-        <header id="topo">
-            <div id="acessibilidade">
-                <ul id="atalhos">
-                    <li>
-                        <a href="#conteudo" accesskey="1" title="Ir diretamente para o conteÃšdo">Ir para o conteudo [1]</a>
-                    </li>
+	<!-- cabecalho -->
+	<header id="topo">
+		<div id="acessibilidade">
+			<ul id="atalhos">
+				<li>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteÃšdo">Ir para o conteudo [1]</a>
+				</li>
 
-                    <li>
-                        <a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
-                    </li>
+				<li>
+					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+				</li>
 
-                    <li>
-                        <a href="#rodape"accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
-                    </li>
-                </ul>
+				<li>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
+				</li>
+			</ul>
 
-                <ul id="atalhos2">
-                    <li>
-                        <a th:href="@{/acessibilidade}"  title="Ir para pagina de acessabilidade">Acessibilidade</a>
-                    </li>
+			<ul id="atalhos2">
+				<li>
+					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+				</li>
 
-                    <li>
-                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-                    </li>
+				<li>
+					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
 
-                    <li >
-                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-                    </li>
+				<li>
+					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+				</li>
 
-                    <li>
-                        <a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
-                    </li>
+				<li>
+					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+				</li>
 
-                    <li>
-                        <a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="navGrid">
-                <!-- BARRA DE PESQUISA -->
-                <div id="barraPesquisa">
-                    <input class="Buscar" type="text" name="buscar" placeholder= "Buscar...">
-                    <!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
-                </div>
-                
-                <div class="logo">
-                    <!-- LOGO -->
-                    <a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
-                </div>
-                
-                <div>
-                    <!-- Icones de redes sociais -->
-                    <ul class="conjuntoIcones">
-                        <li>
-                            <a href="https://www.facebook.com">
-                                <img  src="imagem/facebook.png" alt="Facebook"/>
-                            </a> 
-                        </li>
-    
-                        <li>
-                            <a href="https://twitter.com">
-                                <img src="imagem/twitter.png" alt="Twitter"/>
-                            </a> 
-                        </li>
-        
-                        <li>
-                            <a href="https://www.instagram.com/">
-                                <img src="imagem/instagram.png" alt="Instagram"/>
-                            </a> 
-                        </li>
-        
-                        <li>
-                            <a href="https://www.whatsapp.com">
-                                <img src="imagem/whatsapp.png" alt="Whatsapp"/>
-                            </a> 
-                        </li>
-                    </ul>
-                </div>
-            </div>
+				<li>
+					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+				</li>
+			</ul>
+		</div>
 
-            <nav id="menu">
-                <ul>
-                    <li class="active"><a th:href="@{/}">Home</a></li>
+		<div class="navGrid">
+			<!-- BARRA DE PESQUISA -->
+			<div id="barraPesquisa">
+				<input class="Buscar" type="text" name="buscar" placeholder="Buscar...">
+				<!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+			</div>
+
+			<div class="logo">
+				<!-- LOGO -->
+				<a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+			</div>
+
+			<div>
+				<!-- Icones de redes sociais -->
+				<ul class="conjuntoIcones">
+					<li>
+						<a href="https://www.facebook.com">
+							<img src="imagem/facebook.png" alt="Facebook" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://twitter.com">
+							<img src="imagem/twitter.png" alt="Twitter" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.instagram.com/">
+							<img src="imagem/instagram.png" alt="Instagram" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.whatsapp.com">
+							<img src="imagem/whatsapp.png" alt="Whatsapp" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li class="active"><a th:href="@{/}">Home</a></li>
 				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
 				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
-                </ul>
-            </nav>
-        </header>
+			</ul>
+		</nav>
+	</header>
 	<!-- Vlibrs -->
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -131,90 +132,87 @@
 			<div class="vw-plugin-top-wrapper"></div>
 		</div>
 	</div>
-	
-	
-<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
-	<main id="conteudo"> 
+
+
+	<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
+	<main id="conteudo">
 		<br />
 		<h3>Cadastrar Produto</h3>
-			<div class="form-cadastro-cliente">
+		<div class="form-cadastro-cliente">
 			<br>
-					<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
-				
-							<div class="row-1-grid">
-								<label for="nome" class="col-form-label">Nome</label>
-								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
-								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
-								</span>
-							
-                                                         
-								<label for="tipo" class="col-form-label">Tipo do Produto</label>
-								<input type="text" th:field="*{tipo}" class="form-control" id="tipo"
-									placeholder="tipo">
-								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}"
-									class="text-danger">
-								</span>
-						
+			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
 
-								<label for="cor" class="col-form-label">Cor do Produto</label>
-								<input type="text" th:field="*{cor}" class="form-control" id="cor"
-									placeholder="cor">
-								<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}"
-									class="text-danger">
-								</span>
-					
+				<div class="row-1-grid">
 
+					<label for="nome">Nome</label>
+					<div>
+						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{nome}" id="nome" class="txt-form" placeholder="Informe o nome do produto">
+					</div>
+
+
+					<label for="tipo">Tipo do Produto</label>
+					<div>
+						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{tipo}" id="tipo" class="txt-form" placeholder="Informe qual o tipo de produto">
+					</div>
+
+
+					<label for="cor">Cor do Produto</label>
+					<div>
+						<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{cor}" id="cor" class="txt-form" placeholder="Informe a cor do produto">
+					</div>
+
+
+					<label for="preco">Preço</label>
+					<div>
+						<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{preco}" id="preco" class="txt-form" placeholder="Informe o preço do produto">
+					</div>
+
+
+					<label for="qtdEstoque">Quantidade de produtos</label>
+					<div>
+						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{qtdEstoque}" id="qtdEstoque" class="txt-form" placeholder="Informe quantidade de produtos">
+					</div>
+
+
+					<label for="cnpj">CNPJ</label>
+					<div>
+						<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form" placeholder="Informe o CPNJ do fornecedor">
+					</div>
+
+				</div>
 				
-							
-								<label for="preco" class="col-form-label">PreÃ§o</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="preco"
-									placeholder="PreÃ§o">
-						
-						
-					
-								<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
-								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
-									placeholder="qtdEstoque">
-								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}"
-									class="text-danger">
-								</span>
-						
-						
-						
-								<label for="cnpj" class="col-form-label">CNPJ</label>
-								<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" placeholder="CNPJ">
-								<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="text-danger">
-								</span>
-						
-						
-						</div>
-						
-						<div class="btt-cad-cliente-grid">
-							<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
-							<input type="button" class="btn-cad-cliente" value="Consultar Produto"
-								onclick="consulta();">
-						
-					
-						</div>
-							
-					</form>
-			
-			<h6 th:text="${message}" class="text-danger"></h6>
+				<div class="btt-cad-cliente-grid">
+					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
+					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta();">
+				</div>
+
+			</form>
+
+			<h6 th:text="${message}" class="txt-aviso"></h6>
 		</div>
 
-		
-		
-		</main>
-		
-		<footer id="rodape">
+	</main>
+
+	<footer id="rodape">
 		<div class="grid-footer">
 			<div id="desenvolvedoresFoot">
 				<p class="tituloFoot">Desenvolvido pelo Grupo 5 - Fatec Zona Leste</p>
 				<p>Renan Figueiredo</p>
 				<p>Lisandra Ferraz</p>
-				<p>Freddy Soares</p>
 				<p>Gabriel Gozzi</p>
-				<p>JoÃĢo Victor</p>
+				<p>João Victor</p>
 			</div>
 
 			<div id="selosFoot">
@@ -230,16 +228,16 @@
 				</a>
 			</div>
 		</div>
-		<p class="drtsFooter">Todos os direitos reservados &copy; 2021.</p>
+		<p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
 	</footer>
-	
+
 </body>
 
 </html>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
-	
+
 <script src="js/fonte.js"></script>
 <script src="js/contraste.js"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>

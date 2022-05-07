@@ -6,6 +6,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title>Lista de clientes</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
@@ -15,56 +17,195 @@
 <meta name="viewport" content="width=device-width" />
 
 <body>
-	<header th:replace="fragments/header :: menuSuperior">
-		<div>header</div>
-	</header>
-	<div class="panel panel-default" style="margin: 10px">
-		<div class="panel-heading">
-			<h5 class="panel-title">Lista de clientes</h5>
-			<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
-			<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+	<!-- cabeçalho -->
+	<header id="topo">
+		<div id="acessibilidade">
+			<ul id="atalhos">
+				<li>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
+				</li>
+
+				<li>
+					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+				</li>
+
+				<li>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
+				</li>
+
+				<li>
+					<a href="/login?logout"><i
+							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
+				</li>
+
+				<li>
+					<a href="/">
+						<i class="fas fa-fast-backward"></i>
+						Voltar </a>
+				</li>
+			</ul>
+
+			<ul id="atalhos2">
+				<li>
+					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+				</li>
+
+				<li>
+					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
+
+				<li>
+					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+				</li>
+
+				<li>
+					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+				</li>
+
+				<li>
+					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+				</li>
+			</ul>
 		</div>
-		<div class="panel-body" th:switch="${clientes}">
-			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
-			<div th:case="*">
-				<table class="table">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>CPF</th>
-							<th>Nome</th>
-							<th>Dt. Nascimento</th>
-							<th>CEP</th>
-							<th>Endereço</th>
-							<th>Complemento</th>
-							<th>Dt. Cadastro</th>
 
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="cliente : ${clientes}">
-							<td th:text="${cliente.id}"></td>
-							<td th:text="${cliente.cpf}"></td>
-							<td th:text="${cliente.nome}"></td>
-							<td th:text="${cliente.dataNascimento}"></td>
-							<td th:text="${cliente.cep}"></td>
-							<td th:text="${cliente.endereco}"></td>
-							<td th:text="${cliente.complemento}"></td>
-							<td th:text="${cliente.dataCadastro}"></td>
+		<div class="navGrid">
+			<!-- BARRA DE PESQUISA -->
+			<div id="barraPesquisa">
+				<input class="Buscar" type="text" name="buscar" placeholder="Buscar...">
+				<!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+			</div>
 
-							<td>
-								<div class="btn-group pull-right">
-									<a class="btn btn-sm btn-primary"
-										th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">Editar</a>
-									<a class="delete btn btn-sm btn-danger"
-										th:href="@{/sig/clientes/id/{id}(id=${cliente.id})}">Excluir</a>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="logo">
+				<!-- LOGO -->
+				<a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+			</div>
+
+			<div>
+				<!-- Icones de redes sociais -->
+				<ul class="conjuntoIcones">
+					<li>
+						<a href="https://www.facebook.com">
+							<img src="imagem/facebook.png" alt="Facebook" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://twitter.com">
+							<img src="imagem/twitter.png" alt="Twitter" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.instagram.com/">
+							<img src="imagem/instagram.png" alt="Instagram" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.whatsapp.com">
+							<img src="imagem/whatsapp.png" alt="Whatsapp" />
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
+
+		<nav id="menu">
+			<ul>
+				<li class="active"><a th:href="@{/}">Home</a></li>
+				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
+				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
+				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li><a th:href="@{/login?logout}">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Vlibrs -->
+	<div vw class="enabled">
+		<div vw-access-button class="active"></div>
+		<div vw-plugin-wrapper>
+			<div class="vw-plugin-top-wrapper"></div>
+		</div>
+	</div>
+
+	<main id="conteudo">
+		<div class="panel panel-default" style="margin: 10px">
+			<div class="panel-heading">
+				<h5 class="panel-title">Lista de clientes</h5>
+				<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+				<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+			</div>
+			<div class="panel-body" th:switch="${clientes}">
+				<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+				<div th:case="*">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>CPF</th>
+								<th>Nome</th>
+								<th>Dt. Nascimento</th>
+								<th>CEP</th>
+								<th>Endereço</th>
+								<th>Complemento</th>
+								<th>Dt. Cadastro</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="cliente : ${clientes}">
+								<td th:text="${cliente.id}"></td>
+								<td th:text="${cliente.cpf}"></td>
+								<td th:text="${cliente.nome}"></td>
+								<td th:text="${cliente.dataNascimento}"></td>
+								<td th:text="${cliente.cep}"></td>
+								<td th:text="${cliente.endereco}"></td>
+								<td th:text="${cliente.complemento}"></td>
+								<td th:text="${cliente.dataCadastro}"></td>
+
+								<td>
+									<div class="btn-group pull-right">
+										<a class="btn btn-sm btn-primary"
+											th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">Editar</a>
+										<a class="delete btn btn-sm btn-danger"
+											th:href="@{/sig/clientes/id/{id}(id=${cliente.id})}">Excluir</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer id="rodape">
+		<div class="grid-footer">
+			<div id="desenvolvedoresFoot">
+				<p class="tituloFoot">Desenvolvido pelo Grupo 5 - Fatec Zona Leste</p>
+				<p>Renan Figueiredo</p>
+				<p>Lisandra Ferraz</p>
+				<p>Gabriel Gozzi</p>
+				<p>João Victor</p>
+			</div>
+
+			<div id="selosFoot">
+				<p class="tituloFoot">Site verificado por</p>
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
+				</a>
+
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="CSS válido!" />
+				</a>
+			</div>
+		</div>
+		<p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
+	</footer>
+
 </body>
 
 </html>

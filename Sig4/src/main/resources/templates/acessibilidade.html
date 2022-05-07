@@ -1,212 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
+
+<head>
 	<title>Acessibilidade</title>
 	<!--metadados-->
 	<meta charset="utf-8">
 	<meta name="description" content="Acessibilidade">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-     <link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-        <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
-        <link rel = "icon" type ="imagem/favicon.ico" href="imagem/Favicon.ico">
-        <link rel="stylesheet" href="form.css">
-		<link rel="stylesheet" 	href="form.css">
-	      <script type="text/javascript">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
+	<link rel="stylesheet" href="form.css">
+	<link rel="stylesheet" href="form.css">
+	<script type="text/javascript">
 		function home() {
 			window.open("/");
 		}
-		function acessarTenis(){
+		function acessarTenis() {
 			window.open("/tenis");
 		}
-		function acessarEquipamentos(){
+		function acessarEquipamentos() {
 			window.open("/equipamentos");
 		}
-		function acessarAcessibilidade(){
+		function acessarAcessibilidade() {
 			window.open("/acessibilidade");
 		}
 	</script>
-    </head>
-	
-    <body>
-        <!-- cabeçalho -->
-        <header id="topo">
-            <div id="acessibilidade">
-                <ul id="atalhos">
-                    <li>
-                        <a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
-                    </li>
+</head>
 
-                    <li>
-                        <a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
-                    </li>
+<body>
+	<!-- cabeçalho -->
+	<header id="topo">
+		<div id="acessibilidade">
+			<ul id="atalhos">
+				<li>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
+				</li>
 
-                    <li>
-                        <a href="#rodape"accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
-                    </li>
-                </ul>
+				<li>
+					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+				</li>
 
-                <ul id="atalhos2">
-                    <li>
-                        <a th:href="@{/acessibilidade}"  title="Ir para pagina de acessabilidade">Acessibilidade</a>
-                    </li>
+				<li>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
+				</li>
+			</ul>
 
-                    <li>
-                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-                    </li>
+			<ul id="atalhos2">
+				<li>
+					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+				</li>
 
-                    <li >
-                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-                    </li>
+				<li>
+					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
 
-                    <li>
-                        <a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
-                    </li>
+				<li>
+					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+				</li>
 
-                    <li>
-                        <a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="navGrid">
-                <!-- BARRA DE PESQUISA -->
-                <div id="barraPesquisa">
-                    <input class="Buscar" type="text" name="buscar" placeholder= "Buscar...">
-                    <!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
-                </div>
-                
-                <div class="logo">
-                    <!-- LOGO -->
-                    <a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
-                </div>
-                
-                <div>
-                    <!-- Icones de redes sociais -->
-                    <ul class="conjuntoIcones">
-                        <li>
-                            <a href="https://www.facebook.com">
-                                <img  src="imagem/facebook.png" alt="Facebook"/>
-                            </a> 
-                        </li>
-    
-                        <li>
-                            <a href="https://twitter.com">
-                                <img src="imagem/twitter.png" alt="Twitter"/>
-                            </a> 
-                        </li>
-        
-                        <li>
-                            <a href="https://www.instagram.com/">
-                                <img src="imagem/instagram.png" alt="Instagram"/>
-                            </a> 
-                        </li>
-        
-                        <li>
-                            <a href="https://www.whatsapp.com">
-                                <img src="imagem/whatsapp.png" alt="Whatsapp"/>
-                            </a> 
-                        </li>
-                    </ul>
-                </div>
-            </div>
+				<li>
+					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+				</li>
 
-            <nav id="menu">
-                <ul>
-                    <li class="active"><a th:href="@{/}">Home</a></li>
+				<li>
+					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="navGrid">
+			<!-- BARRA DE PESQUISA -->
+			<div id="barraPesquisa">
+				<input class="Buscar" type="text" name="buscar" placeholder="Buscar...">
+				<!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+			</div>
+
+			<div class="logo">
+				<!-- LOGO -->
+				<a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+			</div>
+
+			<div>
+				<!-- Icones de redes sociais -->
+				<ul class="conjuntoIcones">
+					<li>
+						<a href="https://www.facebook.com">
+							<img src="imagem/facebook.png" alt="Facebook" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://twitter.com">
+							<img src="imagem/twitter.png" alt="Twitter" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.instagram.com/">
+							<img src="imagem/instagram.png" alt="Instagram" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.whatsapp.com">
+							<img src="imagem/whatsapp.png" alt="Whatsapp" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li class="active"><a th:href="@{/}">Home</a></li>
 				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
 				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
-                </ul>
-            </nav>
-        </header>
+			</ul>
+		</nav>
+	</header>
 
 
 
 
-		<main id="conteudo" >
+	<main id="conteudo">
 
-            <div class="txtAcess">
-                <h1>ACESSIBILIDADE</h1>
-                
-                <p>Este site foi desenvolvido para que pessoas com deficiência visual, baixa visão, daltonismo, deficiência auditiva e mobilidade reduzida possam navegar por meio de recursos como alto contraste, aumento de fonte, teclas de atalho, tradução para a Língua Brasileira de Sinais e navegação por teclado.</p>
-        
-                <p>Para aumentar a fonte, é só clicar no símbolo de A+ em nossa barra de acessibilidade. Caso queira voltar ao tamanho de fonte original, é só clicar em A-.</p>
-        
-                <p>Se for necessário, você também pode usar o zoom nativo do seu navegador, pressionando as teclas “Ctrl” e “+” para aumentar todo o site e “Ctrl” e “-“ para diminuir. Para voltar ao padrão, pressione “Ctrl” e “0”.</p>
-        
-                <p>Este site tem melhor acessibilidade quando acessado nas versões mais atualizadas do seu navegador web. Utilize sempre a versão mais recente de seu software.</p>
-        
-                <h2>Teclas de atalho por navegadores</h2>
-                <p>Internet Explorer e Google Chrome:</p>
-        
-                <p>“Alt” + “1” - ir para o conteúdo</p>
-                <p>“Alt” + “2” - ir para o menu</p>
-                <p>“Alt” + “3” - ir para o rodapé</p>
-                <p>Firefox:</p>
-        
-                <p>“Alt” + “Shift” + “número”</p>
-                <p>Opera:</p>
-        
-                <p>“Shift” + “Escape” + “número”</p>
-                <p>Safari e OmniWeb:</p>
-        
-                <p>“Ctrl” + “número”</p>
-                <h2>Navegação por tabulação</h2>
-                <p>Use a tecla Tab para navegar por elementos que recebem ação do usuário no site, tais como links, botões, campos de formulário e outros na ordem em que eles são apresentados na página, e Shift + Tab para retornar. Use as setas direcionais para acessar as informações textuais.</p>
-        
-                <h2>Sugestões de programas disponíveis para pessoas com deficiência</h2>
-                <p>- Nitrous Voice Flux: controla o computador por voz. Gratuito;</p>
-                <p>- NVDA: software livre para ler tela – vários idiomas (Windows);</p>
-                <p>- YeoSoft Text: leitor de tela em inglês e português;</p>
-                <p>- Jaws for Windows: leitor de tela – vários idiomas;</p>
-                <p>- Virtual Vision: leitor de telas em português do Brasil;</p>
-                <p>- DOSVOX: sistema para deficientes visuais (Windows ou Linux).</p>
-                <p>- Talckback: leitor de tela disponível em smartphones Android.</p>
-                <p>Observação: leia no manual do leitor de telas sobre a melhor forma de navegação em páginas web.</p><br>
-                
-                <h2>LIBRAS - Língua Brasileira de Sinais</h2>
-                <p>Este site é acessível em LIBRAS através do <a href="http://www.vlibras.gov.br/" target="_blank">VLibras</a>.</p>
-                <p>-Do lado direito de cada página do site existe o ícone de um Widget informando que o site é acessível em LIBRAS.</p>
-                <p>-Para traduzir, basta clicar sobre o ícone e selecionar o texto que deseja traduzir.</p>
-            </div>
-        </main>
-            </section>
+		<div class="txtAcess">
+			<h1>ACESSIBILIDADE</h1>
 
-        <footer id="rodape"> 
-            <div class="grid-footer">
-                <div id="desenvolvedoresFoot">
-                    <p class="tituloFoot">Desenvolvido pelo Grupo 5  - Fatec Zona Leste</p> 
-                    <p>Renan Figueiredo</p>
-                    <p>Paula Carina</p>
-                    <p>Lisandra Ferraz</p>
-                    <p>Freddy Soares</p>
-                    <p>Raphael Ferraiolo</p>
-                </div>
-            
-                <div id="selosFoot">
-                    <p class="tituloFoot">Site verificado por</p> 
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
-                    </a>
-                    
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS válido!" />
-                    </a>
-                </div>
-                
-            </div>
-            <p class="drtsFooter">Todos os direitos reservados &copy; 2021.</p>
-        </footer> 
-    </body>
+			<p>Este site foi desenvolvido para que pessoas com deficiência visual, baixa visão, daltonismo, deficiência
+				auditiva e mobilidade reduzida possam navegar por meio de recursos como alto contraste, aumento de
+				fonte, teclas de atalho, tradução para a Língua Brasileira de Sinais e navegação por teclado.</p>
+
+			<p>Para aumentar a fonte, é só clicar no símbolo de A+ em nossa barra de acessibilidade. Caso queira voltar
+				ao tamanho de fonte original, é só clicar em A-.</p>
+
+			<p>Se for necessário, você também pode usar o zoom nativo do seu navegador, pressionando as teclas “Ctrl” e
+				“+” para aumentar todo o site e “Ctrl” e “-“ para diminuir. Para voltar ao padrão, pressione “Ctrl” e
+				“0”.</p>
+
+			<p>Este site tem melhor acessibilidade quando acessado nas versões mais atualizadas do seu navegador web.
+				Utilize sempre a versão mais recente de seu software.</p>
+
+			<h2>Teclas de atalho por navegadores</h2>
+			<p>Internet Explorer e Google Chrome:</p>
+
+			<p>“Alt” + “1” - ir para o conteúdo</p>
+			<p>“Alt” + “2” - ir para o menu</p>
+			<p>“Alt” + “3” - ir para o rodapé</p>
+			<p>Firefox:</p>
+
+			<p>“Alt” + “Shift” + “número”</p>
+			<p>Opera:</p>
+
+			<p>“Shift” + “Escape” + “número”</p>
+			<p>Safari e OmniWeb:</p>
+
+			<p>“Ctrl” + “número”</p>
+			<h2>Navegação por tabulação</h2>
+			<p>Use a tecla Tab para navegar por elementos que recebem ação do usuário no site, tais como links, botões,
+				campos de formulário e outros na ordem em que eles são apresentados na página, e Shift + Tab para
+				retornar. Use as setas direcionais para acessar as informações textuais.</p>
+
+			<h2>Sugestões de programas disponíveis para pessoas com deficiência</h2>
+			<p>- Nitrous Voice Flux: controla o computador por voz. Gratuito;</p>
+			<p>- NVDA: software livre para ler tela – vários idiomas (Windows);</p>
+			<p>- YeoSoft Text: leitor de tela em inglês e português;</p>
+			<p>- Jaws for Windows: leitor de tela – vários idiomas;</p>
+			<p>- Virtual Vision: leitor de telas em português do Brasil;</p>
+			<p>- DOSVOX: sistema para deficientes visuais (Windows ou Linux).</p>
+			<p>- Talckback: leitor de tela disponível em smartphones Android.</p>
+			<p>Observação: leia no manual do leitor de telas sobre a melhor forma de navegação em páginas web.</p><br>
+
+			<h2>LIBRAS - Língua Brasileira de Sinais</h2>
+			<p>Este site é acessível em LIBRAS através do <a href="http://www.vlibras.gov.br/"
+					target="_blank">VLibras</a>.</p>
+			<p>-Do lado direito de cada página do site existe o ícone de um Widget informando que o site é acessível em
+				LIBRAS.</p>
+			<p>-Para traduzir, basta clicar sobre o ícone e selecionar o texto que deseja traduzir.</p>
+		</div>
+	</main>
+	</section>
+
+	<footer id="rodape">
+		<div class="grid-footer">
+			<div id="desenvolvedoresFoot">
+				<p class="tituloFoot">Desenvolvido pelo Grupo 5 - Fatec Zona Leste</p>
+				<p>Renan Figueiredo</p>
+				<p>Lisandra Ferraz</p>
+				<p>Gabriel Gozzi</p>
+				<p>João Victor</p>
+			</div>
+
+			<div id="selosFoot">
+				<p class="tituloFoot">Site verificado por</p>
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
+				</a>
+
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="CSS válido!" />
+				</a>
+			</div>
+
+		</div>
+		<p class="drtsFooter">Todos os direitos reservados &copy; 2021.</p>
+	</footer>
+</body>
+
 </html>
-<script src="https://code.jquery.com/jquery-3.6.0.js"
-integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
 <script src="js/fonte.js"></script>
 <script src="js/contraste.js"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
+	new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
