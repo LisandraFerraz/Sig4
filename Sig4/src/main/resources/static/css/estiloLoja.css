@@ -18,7 +18,6 @@ body::-webkit-scrollbar {
     max-width: auto;
     max-height: 50px;
 }
-  
 body::-webkit-scrollbar-track {
     background: #fbfbfb;
     border-radius: 20px;
