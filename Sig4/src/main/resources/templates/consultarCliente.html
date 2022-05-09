@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width" />
 	<title>Lista de clientes</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-     <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
 		function home() {
@@ -27,14 +27,14 @@
 		}
 
 	</script>
-	
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 
 
 <body>
-		<!-- cabecalho -->
+	<!-- cabecalho -->
 	<header id="topo">
 		<div id="acessibilidade">
 			<ul id="atalhos">
@@ -56,13 +56,13 @@
 					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
-			 		 <li>
-                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-                    </li>
+				<li>
+					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
 
-                    <li >
-                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-                    </li>
+				<li>
+					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+				</li>
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
@@ -144,7 +144,7 @@
 			<div class="panel-body" th:switch="${clientes}">
 				<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
 				<div th:case="*">
-					<table class="table">
+					<table class="table-exibe">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -170,11 +170,13 @@
 								<td th:text="${cliente.dataCadastro}"></td>
 
 								<td>
-									<div class="btn-group pull-right">
+									<div class="btn-exibe-group">
 										<a class="btn btn-sm btn-primary"
-											th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">Editar</a>
+											th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">
+											<button class="btn-exibe"> Editar </button></a>
 										<a class="delete btn btn-sm btn-danger"
-											th:href="@{/sig/clientes/id/{id}(id=${cliente.id})}">Excluir</a>
+											th:href="@{/sig/clientes/id/{id}(id=${cliente.id})}">
+											<button class="btn-exibe">Excluir</button></a>
 									</div>
 								</td>
 							</tr>
@@ -224,4 +226,3 @@
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
-
