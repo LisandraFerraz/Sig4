@@ -9,7 +9,8 @@
 	<meta name="keywords" content="CadastrarCliente, web">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+     <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
 		function home() {
@@ -82,7 +83,7 @@
 
 			<div class="logo">
 				<!-- LOGO -->
-				<a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+				<a th:href="@{/}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
 			</div>
 
 			<div>
@@ -90,25 +91,25 @@
 				<ul class="conjuntoIcones">
 					<li>
 						<a href="https://www.facebook.com">
-							<img src="imagem/facebook.png" alt="Facebook" />
+							<img src="../imagem/facebook.png" alt="Facebook" />
 						</a>
 					</li>
 
 					<li>
 						<a href="https://twitter.com">
-							<img src="imagem/twitter.png" alt="Twitter" />
+							<img src="../imagem/twitter.png" alt="Twitter" />
 						</a>
 					</li>
 
 					<li>
 						<a href="https://www.instagram.com/">
-							<img src="imagem/instagram.png" alt="Instagram" />
+							<img src="../imagem/instagram.png" alt="Instagram" />
 						</a>
 					</li>
 
 					<li>
 						<a href="https://www.whatsapp.com">
-							<img src="imagem/whatsapp.png" alt="Whatsapp" />
+							<img src="../imagem/whatsapp.png" alt="Whatsapp" />
 						</a>
 					</li>
 				</ul>
@@ -230,12 +231,13 @@
 
 </html>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-	crossorigin="anonymous"></script>
-
-<script src="js/fonte.js"></script>
-<script src="js/contraste.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<script src="../js/fonte.js"></script>
+<script src="../static/js/contraste.js"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
-	new window.VLibras.Widget('https://vlibras.gov.br/app');
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+
