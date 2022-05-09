@@ -5,24 +5,40 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Lista de Produtos</title>
+	<title>Lista de clientes</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+     <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script type="text/javascript">
+		function home() {
+			window.open("/");
+		}
+		function acessarTenis() {
+			window.open("/tenis");
+		}
+		function acessarEquipamentos() {
+			window.open("/equipamentos");
+		}
+		function acessarAcessibilidade() {
+			window.open("/acessibilidade");
+		}
+		function consulta() {
+			window.open("/sig/produtos");
+		}
+
+	</script>
+	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
 
 <body>
-	<!-- cabeçalho -->
+		<!-- cabecalho -->
 	<header id="topo">
 		<div id="acessibilidade">
 			<ul id="atalhos">
 				<li>
-					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteÃšdo">Ir para o conteudo [1]</a>
 				</li>
 
 				<li>
@@ -30,17 +46,7 @@
 				</li>
 
 				<li>
-					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
-				</li>
-
-				<li>
-					<a href="/login?logout">
-					<i class="fas fa-sign-out-alt icons-navbar"></i> Sair</a>
-				</li>
-
-				<li>
-					<a href="/">
-						<i class="fas fa-fast-backward"></i> Voltar </a>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
 				</li>
 			</ul>
 
@@ -49,13 +55,13 @@
 					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
-				<li>
-					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-				</li>
+			 		 <li>
+                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+                    </li>
 
-				<li>
-					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-				</li>
+                    <li >
+                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+                    </li>
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
@@ -76,7 +82,7 @@
 
 			<div class="logo">
 				<!-- LOGO -->
-				<a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+				<a th:href="@{/}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
 			</div>
 
 			<div>
@@ -84,25 +90,25 @@
 				<ul class="conjuntoIcones">
 					<li>
 						<a href="https://www.facebook.com">
-							<img src="imagem/facebook.png" alt="Facebook" />
+							<img src="../imagem/facebook.png" alt="Facebook" />
 						</a>
 					</li>
 
 					<li>
 						<a href="https://twitter.com">
-							<img src="imagem/twitter.png" alt="Twitter" />
+							<img src="../imagem/twitter.png" alt="Twitter" />
 						</a>
 					</li>
 
 					<li>
 						<a href="https://www.instagram.com/">
-							<img src="imagem/instagram.png" alt="Instagram" />
+							<img src="../imagem/instagram.png" alt="Instagram" />
 						</a>
 					</li>
 
 					<li>
 						<a href="https://www.whatsapp.com">
-							<img src="imagem/whatsapp.png" alt="Whatsapp" />
+							<img src="../imagem/whatsapp.png" alt="Whatsapp" />
 						</a>
 					</li>
 				</ul>
@@ -113,13 +119,13 @@
 			<ul>
 				<li class="active"><a th:href="@{/}">Home</a></li>
 				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
-				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
+	
 	<!-- Vlibrs -->
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -209,3 +215,15 @@
 </body>
 
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<script src="../js/fonte.js"> </script>
+<script src="../js/contraste.js"> </script>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+	new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+
