@@ -162,6 +162,13 @@
 						<input type="text" th:field="*{dataNascimento}" class="txt-form" id="dataNascimento"
 							placeholder="Data Nascimento">
 					</div>
+					
+					<label for="dataNascimento" class="col-form-label">Sexo</label>
+					<div>
+						<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{sexo}" class="txt-form" id="sexo" placeholder="M/F">
+					</div>
 
 
 					<label for="cep" class="col-form-label">CEP</label>

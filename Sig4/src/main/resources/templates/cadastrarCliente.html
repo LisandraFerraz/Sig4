@@ -190,6 +190,12 @@
 						<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="txt-aviso"></span>
 						<input type="text" th:field="*{cep}" class="txt-form" id="cep" placeholder="CEP">
 					</div>
+					
+					<label for="endereco" class="col-form-label">Endereço</label>
+					<div>
+						<span th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}" class="txt-aviso"></span>
+						<input type="text" th:field="*{endereco}" class="txt-form" id="endereco" placeholder="Endereço">
+					</div>
 
 					<label for="complemento" class="col-form-label">Complemento</label>
 					<div>
