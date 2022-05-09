@@ -6,6 +6,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title>Lista de clientes</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
 	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
@@ -48,6 +50,17 @@
 
 				<li>
 					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
+				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/login?logout"><i
+							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
+				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/">
+						<i class="fas fa-fast-backward"></i>
+						Voltar </a>
 				</li>
 			</ul>
 
@@ -135,56 +148,51 @@
 	</div>
 
 	<main id="conteudo">
-		<div class="panel panel-default" style="margin: 10px">
-			<div class="panel-heading">
-				<h5 class="panel-title">Lista de clientes</h5>
-				<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
-				<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
-			</div>
-			<div class="panel-body" th:switch="${clientes}">
-				<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
-				<div th:case="*">
-					<table class="table-exibe">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>CPF</th>
-								<th>Nome</th>
-								<th>Dt. Nascimento</th>
-								<th>CEP</th>
-								<th>Endereço</th>
-								<th>Complemento</th>
-								<th>Dt. Cadastro</th>
+		<br />
+		<h3 class="exibe-titulo"> Lista de clientes </h3>
+		<div class="panel-body" th:switch="${clientes}">
+			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+			<br />
+			<div th:case="*">
+				<table class="table-exibe">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>CPF</th>
+							<th>Nome</th>
+							<th>Dt. Nascimento</th>
+							<th>CEP</th>
+							<th>Endereço</th>
+							<th>Complemento</th>
+							<th>Dt. Cadastro</th>
 
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="cliente : ${clientes}">
-								<td th:text="${cliente.id}"></td>
-								<td th:text="${cliente.cpf}"></td>
-								<td th:text="${cliente.nome}"></td>
-								<td th:text="${cliente.dataNascimento}"></td>
-								<td th:text="${cliente.cep}"></td>
-								<td th:text="${cliente.endereco}"></td>
-								<td th:text="${cliente.complemento}"></td>
-								<td th:text="${cliente.dataCadastro}"></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cliente : ${clientes}">
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.cpf}"></td>
+							<td th:text="${cliente.nome}"></td>
+							<td th:text="${cliente.dataNascimento}"></td>
+							<td th:text="${cliente.cep}"></td>
+							<td th:text="${cliente.endereco}"></td>
+							<td th:text="${cliente.complemento}"></td>
+							<td th:text="${cliente.dataCadastro}"></td>
 
-								<td>
-									<div class="btn-exibe-group">
-										<a class="btn btn-sm btn-primary"
-											th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">
-											<button class="btn-exibe"> Editar </button></a>
-										<a class="delete btn btn-sm btn-danger"
-											th:href="@{/sig/clientes/id/{id}(id=${cliente.id})}">
-											<button class="btn-exibe">Excluir</button></a>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+							<td>
+								<div class="btn-exibe-group">
+									<a th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">
+										<button class="btn-exibe"> Editar </button></a>
+									<a th:href="@{/sig/clientes/id/{id}(id=${cliente.id})}">
+										<button class="btn-exibe">Excluir</button></a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
+
 	</main>
 
 	<footer id="rodape">

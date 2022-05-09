@@ -888,6 +888,12 @@ input.btn-cad-cliente:hover{
 }
 
 .btn-exibe-group{
+	display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 2px;
+    
+	justify-content: center;
     margin-left: auto;
     margin-right: auto;
 	padding: 5px;
@@ -953,22 +959,28 @@ input.btn-cad-cliente:hover{
 	border-color: rgb(174, 174, 174);
 	margin-right: auto;
 	margin-left: auto;
-	width: 70%;
-	border-collapse: collapse;
+	width: 80%;
 	box-shadow: 1px 1px 8px rgb(70, 70, 70, 0.2);
+	border-collapse: separate;
+	border-spacing: 5px 0;
 	
 	line-height: 35px;
 }
 
-.table-exibe thead, tbody, th, tr, td{
+.table-exibe td{
 	border-style: none;
-	border: 2px solid rgb(229, 229, 229);
+	border-top: 2px solid rgb(167, 230, 89, 0.5);
+}
+
+.table-exibe th, td{
+	padding: 5px;
+	border-radius: 3px;
 }
 
 .table-exibe th {
 	font-size: 13pt;
-	color: rgb(46, 46, 46);
-	background-color: rgb(237, 248, 231);
+	color: rgb(232, 232, 232);
+	background-color: #4c4f54;
 }
 
 .table-exibe td {

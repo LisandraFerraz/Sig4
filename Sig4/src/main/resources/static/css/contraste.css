@@ -778,6 +778,10 @@ input.submit:hover{
 }
 /* FIM Visualização de produto */
 
+.exibe-titulo{
+	color: rgb(239, 239, 239);
+}
+
 @media (min-width: 1366px) {
     
     /* MENU */
@@ -1592,5 +1596,5 @@ input.submit:hover{
         line-height: 70px;
     }
     /* FIM PÁGINA TENIS */
-    
+ }
  

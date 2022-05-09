@@ -9,8 +9,10 @@
 	<meta name="keywords" content="CadastrarCliente, web">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-     <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
 		function home() {
@@ -48,6 +50,17 @@
 				<li>
 					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
 				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/login?logout"><i
+							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
+				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/">
+						<i class="fas fa-fast-backward"></i>
+						Voltar </a>
+				</li>
 			</ul>
 
 			<ul id="atalhos2">
@@ -55,13 +68,13 @@
 					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
-			 		 <li>
-                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-                    </li>
+				<li>
+					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
 
-                    <li >
-                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-                    </li>
+				<li>
+					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+				</li>
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
@@ -137,7 +150,7 @@
 	<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
 	<main id="conteudo">
 		<br />
-		<h3>Cadastrar Produto</h3>
+		<h3 class="exibe-titulo">Cadastrar Produto</h3>
 		<div class="form-cadastro-cliente">
 			<br>
 			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
@@ -148,7 +161,8 @@
 					<div>
 						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{nome}" id="nome" class="txt-form" placeholder="Informe o nome do produto">
+						<input type="text" th:field="*{nome}" id="nome" class="txt-form"
+							placeholder="Informe o nome do produto">
 					</div>
 
 
@@ -156,7 +170,8 @@
 					<div>
 						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{tipo}" id="tipo" class="txt-form" placeholder="Informe qual o tipo de produto">
+						<input type="text" th:field="*{tipo}" id="tipo" class="txt-form"
+							placeholder="Informe qual o tipo de produto">
 					</div>
 
 
@@ -164,7 +179,8 @@
 					<div>
 						<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{cor}" id="cor" class="txt-form" placeholder="Informe a cor do produto">
+						<input type="text" th:field="*{cor}" id="cor" class="txt-form"
+							placeholder="Informe a cor do produto">
 					</div>
 
 
@@ -172,15 +188,25 @@
 					<div>
 						<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{preco}" id="preco" class="txt-form" placeholder="Informe o preço do produto">
+						<input type="text" th:field="*{preco}" id="preco" class="txt-form"
+							placeholder="Informe o preço do produto">
 					</div>
 
+					<label for="data">Data de Cadastro do Produto</label>
+					<div>
+						<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
+							class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{dataCadastro}" id="preco" class="txt-form"
+							placeholder="Informe a data de cadastro">
+					</div>
 
 					<label for="qtdEstoque">Quantidade de produtos</label>
 					<div>
 						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{qtdEstoque}" id="qtdEstoque" class="txt-form" placeholder="Informe quantidade de produtos">
+						<input type="text" th:field="*{qtdEstoque}" id="qtdEstoque" class="txt-form"
+							placeholder="Informe quantidade de produtos">
 					</div>
 
 
@@ -188,11 +214,12 @@
 					<div>
 						<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form" placeholder="Informe o CPNJ do fornecedor">
+						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form"
+							placeholder="Informe o CPNJ do fornecedor">
 					</div>
 
 				</div>
-				
+
 				<div class="btt-cad-cliente-grid">
 					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
 					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta();">

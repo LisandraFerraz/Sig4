@@ -132,7 +132,7 @@
 	</div>
 
 	<main id="conteudo">
-
+			<br />
 		<h3>Atualizar Produto</h3>
 		<div class="form-cadastro-cliente">
 			<br />
@@ -184,6 +184,13 @@
 						</span>
 						<input type="text" th:field="*{qtdEstoque}" class="txt-form" id="qtdEstoque"
 							placeholder="qtdEstoque">
+					</div>
+					
+					<label for="cnpj">CNPJ</label>
+					<div>
+						<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form" placeholder="Informe o CPNJ do fornecedor">
 					</div>
 
 				</div>

@@ -6,8 +6,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title>Lista de clientes</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-     <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
 		function home() {
@@ -27,13 +29,13 @@
 		}
 
 	</script>
-	
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 
 <body>
-		<!-- cabecalho -->
+	<!-- cabecalho -->
 	<header id="topo">
 		<div id="acessibilidade">
 			<ul id="atalhos">
@@ -48,20 +50,30 @@
 				<li>
 					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
 				</li>
-			</ul>
+
+				<li>
+					<a class="nav-link textos-nav" href="/login?logout"><i
+							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
+				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/">
+						<i class="fas fa-fast-backward"></i>
+						Voltar </a>
+				</li>			</ul>
 
 			<ul id="atalhos2">
 				<li>
 					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
-			 		 <li>
-                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-                    </li>
+				<li>
+					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
 
-                    <li >
-                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-                    </li>
+				<li>
+					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+				</li>
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
@@ -125,7 +137,7 @@
 			</ul>
 		</nav>
 	</header>
-	
+
 	<!-- Vlibrs -->
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -135,52 +147,48 @@
 	</div>
 
 	<main id="conteudo">
-		<div class="panel panel-default" style="margin: 10px">
-			<div class="panel-heading">
-				<h5 class="panel-title">Lista de Produtos</h5>
-				<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
-				<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
-			</div>
-			<div class="panel-body" th:switch="${produtos}">
-				<h5 th:case="null">Não existem produtos cadastrados ainda!</h5>
-				<div th:case="*">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>CNPJ</th>
-								<th>Nome</th>
-								<th>Tipo</th>
-								<th>Cor</th>
-								<th>Preço</th>
-								<th>Dt.Cadastro</th>
-								<th>Qtd.Estoque</th>
+		<br />
+		<h3 class="exibe-titulo">Lista de Produtos</h3>
+		<div class="panel-body" th:switch="${produtos}">
+			<h5 th:case="null">Não existem produtos cadastrados ainda!</h5>
+			<br />
+			<div th:case="*">
+				<table class="table-exibe">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>CNPJ</th>
+							<th>Nome</th>
+							<th>Tipo</th>
+							<th>Cor</th>
+							<th>Preço</th>
+							<th>Dt.Cadastro</th>
+							<th>Qtd.Estoque</th>
 
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="produto : ${produtos}">
-								<td th:text="${produto.id}"></td>
-								<td th:text="${produto.cnpj}"></td>
-								<td th:text="${produto.nome}"></td>
-								<td th:text="${produto.tipo}"></td>
-								<td th:text="${produto.cor}"></td>
-								<td th:text="${produto.preco}"></td>
-								<td th:text="${produto.dataCadastro}"></td>
-								<td th:text="${produto.qtdEstoque}"></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="produto : ${produtos}">
+							<td th:text="${produto.id}"></td>
+							<td th:text="${produto.cnpj}"></td>
+							<td th:text="${produto.nome}"></td>
+							<td th:text="${produto.tipo}"></td>
+							<td th:text="${produto.cor}"></td>
+							<td th:text="${produto.preco}"></td>
+							<td th:text="${produto.dataCadastro}"></td>
+							<td th:text="${produto.qtdEstoque}"></td>
 
-								<td>
-									<div class="btn-group pull-right">
-										<a class="btn btn-sm btn-primary"
-											th:href="@{/sig/produtos/{id}(id=${produto.id})}">Editar</a>
-										<a class="delete btn btn-sm btn-danger"
-											th:href="@{/sig/produtos/id/{id}(id=${produto.id})}">Excluir</a>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+							<td>
+								<div class="btn-exibe-group">
+									<a th:href="@{/sig/produtos/{id}(id=${produto.id})}">
+										<button class="btn-exibe">Editar</button></a>
+									<a th:href="@{/sig/produtos/id/{id}(id=${produto.id})}">
+										<button class="btn-exibe">Excluir</button></a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</main>
@@ -225,5 +233,3 @@
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
-
-
