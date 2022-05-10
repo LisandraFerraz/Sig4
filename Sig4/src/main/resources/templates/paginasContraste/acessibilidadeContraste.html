@@ -13,17 +13,17 @@
 	<link rel="stylesheet" href="form.css">
 	<link rel="stylesheet" href="form.css">
 	<script type="text/javascript">
-		function home() {
-			window.open("/");
+		function homeContraste() {
+			window.openContraste("/Contraste");
 		}
-		function acessarTenis() {
-			window.open("/tenis");
+		function acessarTenisContraste() {
+			window.open("/tenisContraste");
 		}
-		function acessarEquipamentos() {
-			window.open("/equipamentos");
+		function acessarEquipamentosContraste() {
+			window.open("/equipamentosContraste");
 		}
-		function acessarAcessibilidade() {
-			window.open("/acessibilidade");
+		function acessarAcessibilidadeContraste() {
+			window.open("/acessibilidadeContraste");
 		}
 	</script>
 </head>
@@ -48,15 +48,13 @@
 
 			<ul id="atalhos2">
 				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+					<a th:href="@{/acessibilidadeContraste}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
-				<li>
-					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-				</li>
+				
 
 				<li>
-					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/acessibilidade}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -78,7 +76,7 @@
 
 			<div class="logo">
 				<!-- LOGO -->
-				<a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+				<a th:href="@{/Contraste}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
 			</div>
 
 			<div>
@@ -216,6 +214,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 <script src="js/fonte.js"></script>
+<script src="js/contraste.js"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');

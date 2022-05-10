@@ -9,22 +9,25 @@
 	<meta name="keywords" content="Iniciohtml, web">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-        <!--<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />-->
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />-->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<link rel="stylesheet" href="form.css">
 	<script type="text/javascript">
-		function home() {
-			window.open("/");
+		function homeContraste() {
+			window.open("/Contraste");
 		}
-		function acessarTenis() {
-			window.open("/tenis");
+		function acessarTenisContraste(){
+			window.open("/tenisContraste");
+		}
+		function acessarEquipamentosContraste(){
+			window.open("/equipamentosContraste");
+		}
+		function acessarAcessibilidadeContraste(){
+			window.open("/acessibilidadeContraste");
 		}
 		function acessarEquipamentos() {
 			window.open("/equipamentos");
-		}
-		function acessarAcessibilidade() {
-			window.open("/acessibilidade");
 		}
 	</script>
 </head>
@@ -49,15 +52,11 @@
 
 			<ul id="atalhos2">
 				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+					<a th:href="@{/acessibilidadeContraste}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
 				<li>
-					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-				</li>
-
-				<li>
-					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+					<a th: href="@{sig/equipamentos}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>

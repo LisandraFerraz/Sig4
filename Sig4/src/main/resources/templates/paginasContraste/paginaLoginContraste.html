@@ -8,15 +8,11 @@
 	<meta name="description" content="Login">
         
      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-     <link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{../css/contraste.css}" />
      <script>
-		function autenticacaoContraste() {
-			window.open("/sig/loginContraste");
+		function autenticacao() {
+			window.open("/sig/login");
 		}     
-		
-		function acessarAcessibilidade() {
-			window.open("/acessibilidade");
-		}
      </script>
     </head>
 
@@ -43,11 +39,12 @@
                         <a th:href="@{/acessibilidade}"  title="Ir para pagina de acessabilidade">Acessibilidade</a>
                     </li>
 
-                    <li>
-                        <a th:href="@{/loginContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+                   
+
+                    <li >
+                        <a th:href="@{/sig/login}" title="sem Contraste" id="modoClaro">Modo Claro</a>
                     </li>
 
-                  
                     <li>
                         <a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
                     </li>
@@ -70,7 +67,7 @@
 	
 	<!--================================================================================================-->
 	<br>
-	<form th:action="@{/login}" method="post">
+	<form th:action="@{/loginContraste}" method="post">
 		<div class="login-page">
 			<div class="form">
 

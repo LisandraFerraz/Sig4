@@ -15,22 +15,22 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
-		function home() {
-			window.open("/");
+		function homeContraste() {
+			window.open("/Contraste");
 		}
-		function acessarTenis() {
-			window.open("/tenis");
+		function acessarTenisContraste() {
+			window.open("/tenisContraste");
 		}
-		function acessarEquipamentos() {
-			window.open("/equipamentos");
+		function acessarEquipamentosContraste() {
+			window.open("/equipamentosContraste");
 		}
-		function acessarAcessibilidade() {
-			window.open("/acessibilidade");
+		function acessarAcessibilidadeContraste() {
+			window.open("/acessibilidadeContraste");
 		}
-		function consultaClientes() {
+		function consultaClientesContraste() {
 			window.open("/sig/clientesContraste");
 		}
-		function consulta() {
+		function consultaContraste() {
 			window.open("/sig/cliente");
 		}
 
@@ -69,7 +69,7 @@
 
 			<ul id="atalhos2">
 				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+					<a th:href="@{/acessibilidadeContraste}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
 				<li>
@@ -95,7 +95,7 @@
 
 			<div class="logo">
 				<!-- LOGO -->
-				<a th:href="@{/}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
+				<a th:href="@{/Contraste}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
 			</div>
 
 			<div>
@@ -130,9 +130,9 @@
 
 		<nav id="menu">
 			<ul>
-				<li class="active"><a th:href="@{/}">Home</a></li>
-				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
-				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li class="active"><a th:href="@{/Contraste}">Home</a></li>
+				<li> <a th:href="@{/sig/produtoContraste}">Produtos</a></li>
+				<li><a th:href="@{/equipamentosContraste}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>
 		</nav>
