@@ -34,6 +34,12 @@ public class GUIClienteController {
 		mv.addObject("cliente", cliente);
 		return mv;
 	}
+	@GetMapping("/clienteContraste")
+	public ModelAndView retornaFormDeCadastroDeContraste(Cliente cliente) {
+		ModelAndView mv = new ModelAndView("cadastrarClienteContraste");
+		mv.addObject("cliente", cliente);
+		return mv;
+	}
 
 	@GetMapping("/clientes/{cpf}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarCliente(@PathVariable("cpf") String cpf) {
