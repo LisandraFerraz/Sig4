@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="description" content="Acessibilidade">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />-->
 	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<link rel="stylesheet" href="form.css">
@@ -24,6 +24,9 @@
 		}
 		function acessarAcessibilidadeContraste() {
 			window.open("/acessibilidadeContraste");
+		}
+		function acessarAcessibilidadeContraste() {
+			window.open("/acessibilidade");
 		}
 	</script>
 </head>
@@ -111,10 +114,10 @@
 
 		<nav id="menu">
 			<ul>
-				<li class="active"><a th:href="@{/}">Home</a></li>
-				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
-				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
-				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li class="active"><a th:href="@{/Contraste}">Home</a></li>
+				<li> <a th:href="@{/sig/clienteContraste}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/produtoContraste}">Produtos</a></li>
+				<li><a th:href="@{/equipamentosContraste}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>
 		</nav>

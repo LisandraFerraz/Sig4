@@ -8,7 +8,7 @@
 	<meta name="description" content="Acessibilidade">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />-->
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<link rel="stylesheet" href="form.css">
 	<link rel="stylesheet" href="form.css">
@@ -24,6 +24,9 @@
 		}
 		function acessarAcessibilidade() {
 			window.open("/acessibilidade");
+		}
+		function acessarAcessibilidade() {
+			window.open("/acessibilidadeContraste");
 		}
 	</script>
 </head>
@@ -52,12 +55,10 @@
 				</li>
 
 				<li>
-					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/acessibilidadeContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
-				<li>
-					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-				</li>
+				
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
