@@ -29,6 +29,16 @@ public class GUIProdutoController {
 		modelAndView.addObject("produtos", servico.consultaTodos());
 		return modelAndView;
 	}
+	
+	//Contraste
+	@GetMapping("/produtosContraste")
+	public ModelAndView retornaFormDeConsultaTodosProdutosContraste() {
+		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarProdutoContraste");
+		modelAndView.addObject("produtosContraste", servico.consultaTodos());
+		return modelAndView;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
 
 	@GetMapping("/produto")
 	public ModelAndView retornaFormDeCadastroDe(Produto produto) {
@@ -36,6 +46,16 @@ public class GUIProdutoController {
 		mv.addObject("produto", produto);
 		return mv;
 	}
+	
+	//Contraste
+	@GetMapping("/produtoContraste")
+	public ModelAndView retornaFormDeCadastroDeContraste(Produto produto) {
+		ModelAndView mv = new ModelAndView("paginasContraste/cadastrarProdutoContraste");
+		mv.addObject("produtoContraste", produto);
+		return mv;
+	}
+	
+	////////////////////////////////////////////////////////////////////////////////
 
 	@GetMapping("/produtos/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarProduto(@PathVariable("id") Long id) {
@@ -43,7 +63,19 @@ public class GUIProdutoController {
 		modelAndView.addObject("produto", servico.consultaPorId(id).get()); // retorna um objeto do tipo cliente
 		return modelAndView; // addObject adiciona objetos para view
 	}
+	
+	//Contraste
+	@GetMapping("/produtosContraste/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
+	public ModelAndView retornaFormParaEditarProdutoContraste(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("paginasContraste/atualizarProdutoContraste");
+		modelAndView.addObject("produtoContraste", servico.consultaPorId(id).get()); // retorna um objeto do tipo cliente
+		return modelAndView; // addObject adiciona objetos para view
+	}
 
+	
+	////////////////////////////////////////////////////////////////////////////////
+
+	
 	@GetMapping("/produtos/id/{id}")
 	public ModelAndView excluirNoFormDeConsultaProduto(@PathVariable("id") Long id) {
 		servico.delete(id);
@@ -52,7 +84,18 @@ public class GUIProdutoController {
 		modelAndView.addObject("produtos", servico.consultaTodos());
 		return modelAndView;
 	}
+	
+	//Contraste
+	@GetMapping("/produtosContraste/id/{id}")
+	public ModelAndView excluirNoFormDeConsultaProdutoContraste(@PathVariable("id") Long id) {
+		servico.delete(id);
+		logger.info(">>>>>> 1. servico de exclusao chamado para o id => " + id);
+		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarProdutoContraste");
+		modelAndView.addObject("produtosContraste", servico.consultaTodos());
+		return modelAndView;
+	}
 
+	////////////////////////////////////////////////////////////////////////////////
 	@PostMapping("/produtos")
 	public ModelAndView save(@Valid Produto produto, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
@@ -70,6 +113,26 @@ public class GUIProdutoController {
 		}
 		return modelAndView;
 	}
+	
+	//Contraste
+	@PostMapping("/produtosContraste")
+	public ModelAndView saveContraste(@Valid Produto produto, BindingResult result) {
+		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarProdutoContraste");
+		if (result.hasErrors()) {
+			modelAndView.setViewName("paginasContraste/cadastrarProdutoContraste");
+		} else {
+			if (servico.save(produto).isPresent()) {
+				logger.info(">>>>>> controller chamou adastrar e consulta todos");
+				modelAndView.addObject("produtosContraste", servico.consultaTodos());
+			} else {
+				logger.info(">>>>>> controller cadastrar com dados invalidos");
+				modelAndView.setViewName("paginasContraste/cadastrarProdutoContraste");
+				modelAndView.addObject("message", "Dados invalidos");
+			}
+		}
+		return modelAndView;
+	}
+	////////////////////////////////////////////////////////////////////////////////
 
 	@PostMapping("/produtos/id/{id}")
 	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result) {
@@ -82,6 +145,22 @@ public class GUIProdutoController {
 		} else {
 			servico.altera(produto);
 			modelAndView.addObject("produtos", servico.consultaTodos());
+		}
+		return modelAndView;
+	}
+	
+	//Contraste
+	@PostMapping("/produtosContraste/id/{id}")
+	public ModelAndView atualizaProdutoContraste(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result) {
+		ModelAndView modelAndView = new ModelAndView("paginasContrasteconsultarProdutoContraste");
+		logger.info(">>>>>> servico para atualizacao de dados chamado para o id => " + id);
+		if (result.hasErrors()) {
+			logger.info(">>>>>> servico para atualizacao de dados com erro => " + result.getFieldError().toString());
+			produto.setId(id);
+			return new ModelAndView("paginasContraste/atualizarProdutoContraste");
+		} else {
+			servico.altera(produto);
+			modelAndView.addObject("produtosContraste", servico.consultaTodos());
 		}
 		return modelAndView;
 	}

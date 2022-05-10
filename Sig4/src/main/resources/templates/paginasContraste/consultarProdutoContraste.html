@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Cadastrar Produto</title>
-	<!--metadados-->
-	<meta charset="utf-8">
-	<meta name="description" content="Inicio">
-	<meta name="keywords" content="CadastrarCliente, web">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Lista de clientes</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />-->
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />-->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" /> 
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
 		function home() {
@@ -27,14 +24,17 @@
 		function acessarAcessibilidade() {
 			window.open("/acessibilidade");
 		}
+		function consultaContraste() {
+			window.open("/sig/produtosContraste");
+		}
 		function consulta() {
 			window.open("/sig/produtos");
 		}
-		function consultaContraste() {
-			window.open("/sig/produtoContraste");
-		}
 
 	</script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 
 <body>
@@ -63,16 +63,16 @@
 					<a class="nav-link textos-nav" href="/">
 						<i class="fas fa-fast-backward"></i>
 						Voltar </a>
-				</li>
-			</ul>
+				</li>			</ul>
 
 			<ul id="atalhos2">
 				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+					<a th:href="@{/acessibilidadeContraste}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
+
 				<li>
-					<a th:href="@{/sig/produtoContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/sig/produtos}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -129,13 +129,15 @@
 
 		<nav id="menu">
 			<ul>
-				<li class="active"><a th:href="@{/}">Home</a></li>
-				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
-				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li class="active"><a th:href="@{/Contraste}">Home</a></li>
+				<li> <a th:href="@{/sig/clienteContraste}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/produtoContraste}">Produtos</a></li>
+				<li><a th:href="@{/equipamentosContraste}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
+
 	<!-- Vlibrs -->
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -144,90 +146,51 @@
 		</div>
 	</div>
 
-
-	<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
 	<main id="conteudo">
 		<br />
-		<h3 class="exibe-titulo">Cadastrar Produto</h3>
-		<div class="form-cadastro-cliente">
-			<br>
-			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
+		<h3 class="exibe-titulo">Lista de Produtos</h3>
+		<div class="panel-body" th:switch="${produtosContraste}">
+			<h5 th:case="null">Não existem produtos cadastrados ainda!</h5>
+			<br />
+			<div th:case="*">
+				<table class="table-exibe">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>CNPJ</th>
+							<th>Nome</th>
+							<th>Tipo</th>
+							<th>Cor</th>
+							<th>Preço</th>
+							<th>Dt.Cadastro</th>
+							<th>Qtd.Estoque</th>
 
-				<div class="row-1-grid">
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="produtoContraste : ${produtosContraste}">
+							<td th:text="${produtoContraste.id}"></td>
+							<td th:text="${produtoContraste.cnpj}"></td>
+							<td th:text="${produtoContraste.nome}"></td>
+							<td th:text="${produtoContraste.tipo}"></td>
+							<td th:text="${produtoContraste.cor}"></td>
+							<td th:text="${produtoContraste.preco}"></td>
+							<td th:text="${produtoContraste.dataCadastro}"></td>
+							<td th:text="${produtoContraste.qtdEstoque}"></td>
 
-					<label for="nome">Nome</label>
-					<div>
-						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{nome}" id="nome" class="txt-form"
-							placeholder="Informe o nome do produto">
-					</div>
-
-
-					<label for="tipo">Tipo do Produto</label>
-					<div>
-						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}" class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{tipo}" id="tipo" class="txt-form"
-							placeholder="Informe qual o tipo de produto">
-					</div>
-
-
-					<label for="cor">Cor do Produto</label>
-					<div>
-						<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}" class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{cor}" id="cor" class="txt-form"
-							placeholder="Informe a cor do produto">
-					</div>
-
-
-					<label for="preco">Preço</label>
-					<div>
-						<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{preco}" id="preco" class="txt-form"
-							placeholder="Informe o preço do produto">
-					</div>
-
-					<label for="data">Data de Cadastro do Produto</label>
-					<div>
-						<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
-							class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{dataCadastro}" id="preco" class="txt-form"
-							placeholder="Informe a data de cadastro">
-					</div>
-
-					<label for="qtdEstoque">Quantidade de produtos</label>
-					<div>
-						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{qtdEstoque}" id="qtdEstoque" class="txt-form"
-							placeholder="Informe quantidade de produtos">
-					</div>
-
-
-					<label for="cnpj">CNPJ</label>
-					<div>
-						<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form"
-							placeholder="Informe o CPNJ do fornecedor">
-					</div>
-
-				</div>
-
-				<div class="btt-cad-cliente-grid">
-					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
-					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consultaContraste()">
-				</div>
-
-			</form>
-
-			<h6 th:text="${message}" class="txt-aviso"></h6>
+							<td>
+								<div class="btn-exibe-group">
+									<a th:href="@{/sig/produtosContraste/{id}(id=${produto.id})}">
+										<button class="btn-exibe">Editar</button></a>
+									<a th:href="@{/sig/produtosContraste/id/{id}(id=${produto.id})}">
+										<button class="btn-exibe">Excluir</button></a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-
 	</main>
 
 	<footer id="rodape">
@@ -244,12 +207,12 @@
 				<p class="tituloFoot">Site verificado por</p>
 				<a href="http://jigsaw.w3.org/css-validator/check/referer">
 					<img style="border:0;width:88px;height:31px"
-						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS vÃĄlido!" />
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
 				</a>
 
 				<a href="http://jigsaw.w3.org/css-validator/check/referer">
 					<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
-						alt="CSS vÃĄlido!" />
+						alt="CSS válido!" />
 				</a>
 			</div>
 		</div>
@@ -259,12 +222,11 @@
 </body>
 
 </html>
-
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 
 <script src="../js/fonte.js"> </script>
-<!--<script src="../js/contraste.js"> </script> -->
+<!--<script src="../js/contraste.js"> </script>-->
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>

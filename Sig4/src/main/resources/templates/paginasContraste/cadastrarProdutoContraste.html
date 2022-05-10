@@ -11,28 +11,30 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />-->
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />-->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
 		function home() {
-			window.open("/");
+			window.open("/Contraste");
 		}
 		function acessarTenis() {
-			window.open("/tenis");
+			window.open("/tenisContraste");
 		}
 		function acessarEquipamentos() {
-			window.open("/equipamentos");
+			window.open("/equipamentosContraste");
 		}
 		function acessarAcessibilidade() {
-			window.open("/acessibilidade");
+			window.open("/acessibilidadeContraste");
 		}
 		function consulta() {
-			window.open("/sig/produtos");
+			window.open("/sig/produtosContraste");
+			
 		}
-		function consultaContraste() {
-			window.open("/sig/produtoContraste");
+		function consultaProduto(){
+			window.open("/sig/produto");
 		}
+		
 
 	</script>
 </head>
@@ -68,11 +70,12 @@
 
 			<ul id="atalhos2">
 				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+					<a th:href="@{/acessibilidadeContraste}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
+
 				<li>
-					<a th:href="@{/sig/produtoContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/sig/produto}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -129,9 +132,9 @@
 
 		<nav id="menu">
 			<ul>
-				<li class="active"><a th:href="@{/}">Home</a></li>
-				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
-				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li class="active"><a th:href="@{/Contraste}">Home</a></li>
+				<li> <a th:href="@{/sig/clienteContraste}"> Clientes </a> </li>
+				<li><a th:href="@{/equipamentosContraste}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>
 		</nav>
@@ -151,7 +154,7 @@
 		<h3 class="exibe-titulo">Cadastrar Produto</h3>
 		<div class="form-cadastro-cliente">
 			<br>
-			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
+			<form action="#" th:action="@{/sig/produtosContraste}" th:object="${produtoContraste}" method="post">
 
 				<div class="row-1-grid">
 
@@ -220,7 +223,7 @@
 
 				<div class="btt-cad-cliente-grid">
 					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
-					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consultaContraste()">
+					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta();">
 				</div>
 
 			</form>

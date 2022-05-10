@@ -26,6 +26,7 @@
 		}
 		function consulta() {
 			window.open("/sig/produtos");
+			window.open("/sig/produtosContraste");
 		}
 
 	</script>
@@ -68,12 +69,9 @@
 				</li>
 
 				<li>
-					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/sig/produtosContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
-				<li>
-					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-				</li>
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
