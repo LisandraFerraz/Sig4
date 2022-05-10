@@ -9,7 +9,11 @@
         
      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
      <link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-     <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+     <script>
+		function consulta() {
+			window.open("/sig/loginContraste");
+		}     
+     </script>
     </head>
 
 <body>
@@ -36,7 +40,7 @@
                     </li>
 
                     <li>
-                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+                        <a th:href="@{/sig/loginContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
                     </li>
 
                     <li >
@@ -117,7 +121,6 @@
 integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 crossorigin="anonymous"></script>
 <script src="js/fonte.js"></script>
-<script src="js/contraste.js"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');

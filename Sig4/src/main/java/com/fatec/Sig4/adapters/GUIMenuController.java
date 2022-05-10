@@ -10,6 +10,11 @@ public class GUIMenuController {
 	public ModelAndView autenticacao() {
 		return new ModelAndView("paginaLogin");
 	}
+	
+	@GetMapping("/loginContraste")
+	public ModelAndView autenticacaoContraste() {
+		return new ModelAndView("paginaLoginContraste");
+	}
 
 	@GetMapping("/")
 	public ModelAndView home() {
