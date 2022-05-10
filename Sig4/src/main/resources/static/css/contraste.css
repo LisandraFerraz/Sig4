@@ -782,7 +782,101 @@ input.submit:hover{
 	color: rgb(239, 239, 239);
 }
 
+/* TABELA DE CADASTRO CLIENTE/PRODUTO */
 
+.col-form-label{
+	color: rgb(244, 244, 244);
+}
+
+div.form-cadastro-cliente{
+	background-color: rgb(145, 145, 145, 0.4);
+}
+
+.btt-cad-cliente-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 2px;
+}
+
+input.btn-cad-cliente {
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+    display: block;
+	
+    border: none;
+    background-color: rgb(193, 193, 193);
+    
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+
+    width: 160px;
+    height: 44px;
+}
+
+input.btn-cad-cliente:hover{
+    text-decoration: none;
+    background-color: rgb(168, 168, 168);
+    color: rgb(239, 239, 239);
+	transform:translate(0.3s);
+}
+
+.txt-form{
+	background-color: rgb(234, 234, 234);
+	border: 1px solid rgb(175, 175, 175);
+    color: rgb(58, 58, 58);
+}
+
+input.txt-form{
+	border-radius: 5px;
+	height: 23px;
+}
+
+
+/* BOTOES PAGINA CONSULTA CLIENTE/PRODUTO */
+
+.btn-exibe-group{
+	display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 2px;
+    
+	justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+	padding: 5px;
+}
+
+.btn-exibe{
+	border: none;
+	border-radius: 5px;
+    background-color: #313131;
+    
+    color: rgb(243, 243, 243);
+    font-size: 14px;
+
+    width: 70px;
+    height: 35px;
+}
+
+.btn-exibe:hover{
+	text-decoration: none;
+    background-color: rgb(0, 0, 0);
+	transform:translate(0.3s);
+}
+
+.row-1-grid{
+	display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 5px;
+    
+	border-radius: 20px;
+	width: auto;
+	height: auto;
+	margin: 1px;  
+}
     
     /* MENU */
     #acessibilidade{
