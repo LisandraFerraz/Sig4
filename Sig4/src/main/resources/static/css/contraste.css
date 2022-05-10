@@ -987,8 +987,7 @@ input.submit:hover{
     }
     /* FIM PÁGINA TENIS */
     
-    
-    /* PAGINAS DE CONSULTA */
+/* PAGINAS DE CONSULTA */
 
 .table-exibe{
 	border-color: rgb(174, 174, 174);
@@ -1038,13 +1037,25 @@ h3{
      text-align: center;
 }
 
-orm-group col-md-8{
+.form-group col-md-8{
 	display:flex;
     margin-right: 30%;
     margin-left: 40%;
 }
 
-
+.form-cadastro-cliente {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 8px rgb(70 70 70 / 20%);
+    padding: 2%;
+    width: 40%;
+    height: auto;
+    font-size: 12pt;
+    border-radius: 10px;
+   }
 /*PaginaLogin*/
 
 .form {
@@ -1131,3 +1142,5 @@ form button {
 .container .info span .fa {
  color: #EF3B3A;
 }
+
+
