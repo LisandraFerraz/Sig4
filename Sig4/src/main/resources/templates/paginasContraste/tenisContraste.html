@@ -21,7 +21,7 @@
 		function acessarTenisContraste(){
 			window.open("/tenisContraste");
 		}
-		function acessarTenis(){
+		function acessarTenis() {
 			window.open("/tenis");
 		}
 		function acessarEquipamentosContraste(){
@@ -59,7 +59,7 @@
                  
 
                     <li >
-                        <a href="@{/tenis}" title="sem Contraste" id="modoClaro">Modo Claro</a>
+                        <a th:href="@{/tenis}" title="sem Contraste" id="modoClaro">Modo Claro</a>
                     </li>
 
                     <li>
@@ -116,7 +116,7 @@
 
             <nav id="menu">
                 <ul>
-                    <li class="active"><a th:href="@{/}">Home</a></li>
+                    <li class="active"><a th:href="@{/Contraste}">Home</a></li>
 				<li> <a th:href="@{/sig/clienteContraste}"> Clientes </a> </li>
 				<li> <a th:href="@{/sig/produtoContraste}">Produtos</a></li>
 				<li><a th:href="@{/equipamentosContraste}">Equipamentos</a></li>

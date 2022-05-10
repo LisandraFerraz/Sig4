@@ -23,6 +23,9 @@
 		function acessarEquipamentos() {
 			window.open("/equipamentos");
 		}
+		function acessarEquipamentos() {
+			window.open("/equipamentosContraste");
+		}
 		function acessarAcessibilidade() {
 			window.open("/acessibilidade");
 		}
@@ -46,6 +49,7 @@
 					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
 				</li>
 			</ul>
+			
 
 			<ul id="atalhos2">
 				<li>
@@ -53,12 +57,10 @@
 				</li>
 
 				<li>
-					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/equipamentosContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
-				<li>
-					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-				</li>
+				
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
@@ -111,7 +113,7 @@
 				</ul>
 			</div>
 		</div>
-
+ 
 		<nav id="menu">
 			<ul>
 				<li class="active"><a th:href="@{/}">Home</a></li>
