@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>Lista de clientes</title>
+	<title>Cadastra Cliente</title>
+	<!--metadados-->
+	<meta charset="utf-8">
+	<meta name="description" content="Inicio">
+	<meta name="keywords" content="CadastrarCliente, web">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-	 <link rel="stylesheet" type="text/css" th:href="@{../css/estiloLoja.css}" />
-      <!--  <link rel="stylesheet" type="text/css" th:href="@{../css/contraste.css}" />-->
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" /> -->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
 		function home() {
@@ -26,31 +27,24 @@
 		function acessarAcessibilidade() {
 			window.open("/acessibilidade");
 		}
-		function consulta() {
-			window.open("/sig/produtos");
-		}
-		
-		
-		
-		function consulta() {
+		function consultaClientes() {
 			window.open("/sig/clientesContraste");
+		}
+		function consulta() {
+			window.open("/sig/cliente");
 		}
 
 
 	</script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 
-
 <body>
-	<!-- cabecalho -->
+	<!-- cabeçalho -->
 	<header id="topo">
 		<div id="acessibilidade">
 			<ul id="atalhos">
 				<li>
-					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteÃšdo">Ir para o conteudo [1]</a>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
 				</li>
 
 				<li>
@@ -58,7 +52,7 @@
 				</li>
 
 				<li>
-					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
 				</li>
 
 				<li>
@@ -79,11 +73,11 @@
 				</li>
 
 				<li>
-					<a th:href="@{/sig/clientesContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li>
-					<a  href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
+					<a  th:href="@{/sig/cliente}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -141,7 +135,6 @@
 		<nav id="menu">
 			<ul>
 				<li class="active"><a th:href="@{/}">Home</a></li>
-				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
@@ -158,51 +151,74 @@
 
 	<main id="conteudo">
 		<br />
-		<h3 class="exibe-titulo"> Lista de clientes </h3>
-		<div class="panel-body" th:switch="${clientes}">
-			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+		<h3 class="exibe-titulo">Cadastrar cliente</h3>
+		<div class="form-cadastro-cliente">
 			<br />
-			<div th:case="*">
-				<table class="table-exibe">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>CPF</th>
-							<th>Nome</th>
-							<th>Dt. Nascimento</th>
-							<th>Sexo</th>
-							<th>CEP</th>
-							<th>Endereço</th>
-							<th>Complemento</th>
-							<th>Dt. Cadastro</th>
+			<form action="#" th:action="@{/sig/clientesContraste}" th:object="${cliente}" method="post">
+				<div class="row-1-grid">
 
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="cliente : ${clientes}">
-							<td th:text="${cliente.id}"></td>
-							<td th:text="${cliente.cpf}"></td>
-							<td th:text="${cliente.nome}"></td>
-							<td th:text="${cliente.dataNascimento}"></td>
-							<td th:text="${cliente.sexo}"></td>
-							<td th:text="${cliente.cep}"></td>
-							<td th:text="${cliente.endereco}"></td>
-							<td th:text="${cliente.complemento}"></td>
-							<td th:text="${cliente.dataCadastro}"></td>
+					<label for="cpf" class="col-form-label">CPF</label>
+					<div>
+						<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{cpf}" class="txt-form" id="cpf" placeholder="CPF">
+					</div>
 
-							<td>
-								<div class="btn-exibe-group">
-									<a th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">
-										<button class="btn-exibe"> Editar </button></a>
-									<a th:href="@{/sig/clientes/id/{id}(id=${cliente.id})}">
-										<button class="btn-exibe">Excluir</button></a>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+					<label for="nome" class="col-form-label">Nome</label>
+					<div>
+						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{nome}" class="txt-form" id="nome" placeholder="Nome">
+					</div>
+
+					<label for="dataNascimento" class="col-form-label">Data Nascimento</label>
+					<div>
+						<span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"
+							class="txt-aviso"></span>
+						<input type="text" th:field="*{dataNascimento}" class="txt-form" id="dataNascimento"
+							placeholder="Data Nascimento">
+
+					</div>
+
+					<label for="dataNascimento" class="col-form-label">Sexo</label>
+					<div>
+						<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{sexo}" class="txt-form" id="sexo" placeholder="M/F">
+					</div>
+
+					<label for="cep" class="col-form-label">CEP</label>
+					<div>
+						<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="txt-aviso"></span>
+						<input type="text" th:field="*{cep}" class="txt-form" id="cep" placeholder="CEP">
+					</div>
+					
+					<label for="endereco" class="col-form-label">Endereço</label>
+					<div>
+						<span th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}" class="txt-aviso"></span>
+						<input type="text" th:field="*{endereco}" class="txt-form" id="endereco" placeholder="Endereço">
+					</div>
+
+					<label for="complemento" class="col-form-label">Complemento</label>
+					<div>
+						<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
+							class="text-danger"></span>
+						<input type="text" th:field="*{complemento}" class="txt-form" id="complemento"
+							placeholder="Complemento numero/apto">
+					</div>
+				</div>
+
+				<div class="btt-cad-cliente-grid">
+					<input type="submit" class="btn-cad-cliente" value="Cadastrar cliente ">
+					<input type="button" class="btn-cad-cliente" value="Consultar cliente" onclick="consultaClientes();">
+				</div>
+
+			</form>
+
+			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
+
+
 
 	</main>
 
@@ -235,13 +251,11 @@
 </body>
 
 </html>
+
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
-
-<script src="../js/fonte.js"> </script>
-<script src="../static/js/contraste.js"> </script>
-...
-
+<script src="../js/fonte.js"></script>
+<!--<script src="../static/js/contraste.js"></script> -->
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');
