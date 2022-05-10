@@ -31,7 +31,7 @@ public class GUIClienteController {
 	@GetMapping("/clientesContraste")
 	public ModelAndView retornaFormDeConsultaTodosClientesContraste() {
 		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarClienteContraste");
-		modelAndView.addObject("clientes", servico.consultaTodos());
+		modelAndView.addObject("clientesContraste", servico.consultaTodos());
 		return modelAndView;
 	}
 	//contraste

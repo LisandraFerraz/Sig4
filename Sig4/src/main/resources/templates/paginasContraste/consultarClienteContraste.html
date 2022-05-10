@@ -160,7 +160,7 @@
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo"> Lista de clientes </h3>
-		<div class="panel-body" th:switch="${clientes}">
+		<div class="panel-body" th:switch="${clientesContraste}">
 			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
 			<br />
 			<div th:case="*">
@@ -180,22 +180,22 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="cliente : ${clientes}">
-							<td th:text="${cliente.id}"></td>
-							<td th:text="${cliente.cpf}"></td>
-							<td th:text="${cliente.nome}"></td>
-							<td th:text="${cliente.dataNascimento}"></td>
-							<td th:text="${cliente.sexo}"></td>
-							<td th:text="${cliente.cep}"></td>
-							<td th:text="${cliente.endereco}"></td>
-							<td th:text="${cliente.complemento}"></td>
-							<td th:text="${cliente.dataCadastro}"></td>
+						<tr th:each="clienteContraste : ${clientesContraste}">
+							<td th:text="${clienteContraste.id}"></td>
+							<td th:text="${clienteContraste.cpf}"></td>
+							<td th:text="${clienteContraste.nome}"></td>
+							<td th:text="${clienteContraste.dataNascimento}"></td>
+							<td th:text="${clienteContraste.sexo}"></td>
+							<td th:text="${clienteContraste.cep}"></td>
+							<td th:text="${clienteContraste.endereco}"></td>
+							<td th:text="${clienteContraste.complemento}"></td>
+							<td th:text="${clienteContraste.dataCadastro}"></td>
 
 							<td>
 								<div class="btn-exibe-group">
-									<a th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">
+									<a th:href="@{/sig/clientesContraste/{cpf}(cpf=${clienteContraste.cpf})}">
 										<button class="btn-exibe"> Editar </button></a>
-									<a th:href="@{/sig/clientes/id/{id}(id=${cliente.id})}">
+									<a th:href="@{/sig/clientesContraste/id/{id}(id=${clienteContraste.id})}">
 										<button class="btn-exibe">Excluir</button></a>
 								</div>
 							</td>
