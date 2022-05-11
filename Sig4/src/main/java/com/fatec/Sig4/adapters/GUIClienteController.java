@@ -46,7 +46,7 @@ public class GUIClienteController {
 	@GetMapping("/clienteContraste")
 	public ModelAndView retornaFormDeCadastroDeContraste(Cliente cliente) {
 		ModelAndView mv = new ModelAndView("paginasContraste/cadastrarClienteContraste");
-		mv.addObject("cliente", cliente);
+		mv.addObject("clienteContraste", cliente);
 		return mv;
 	}
 
@@ -111,7 +111,7 @@ public class GUIClienteController {
 		} else {
 			if (servico.save(cliente).isPresent()) {
 				logger.info(">>>>>> controller chamou adastrar e consulta todos");
-				modelAndView.addObject("paginasContraste/clientesContraste", servico.consultaTodos());
+				modelAndView.addObject("clientesContraste", servico.consultaTodos());
 			} else {
 				logger.info(">>>>>> controller cadastrar com dados invalidos");
 				modelAndView.setViewName("paginasContraste/cadastrarClienteContraste");

@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
-		function homeContraste() {
+		function home() {
 			window.open("/Contraste");
 		}
 		function acessarTenisContraste() {
@@ -27,7 +27,7 @@
 		function acessarAcessibilidadeContraste() {
 			window.open("/acessibilidadeContraste");
 		}
-		function consultaClientesContraste() {
+		function consulta() {
 			window.open("/sig/clientesContraste");
 		}
 		function consultaContraste() {
@@ -206,7 +206,7 @@
 
 				<div class="btt-cad-cliente-grid">
 					<input type="submit" class="btn-cad-cliente" value="Cadastrar cliente ">
-					<input type="button" class="btn-cad-cliente" value="Consultar cliente" onclick="consultaClientesContraste();">
+					<input type="button" class="btn-cad-cliente" value="Consultar cliente" onclick="consulta();">
 				</div>
 
 			</form>
