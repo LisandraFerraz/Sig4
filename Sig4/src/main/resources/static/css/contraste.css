@@ -333,7 +333,7 @@ header * {
 }
 
 .propaganda img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     /* height: 470px; */
 }
@@ -785,11 +785,11 @@ input.submit:hover{
 /* TABELA DE CADASTRO CLIENTE/PRODUTO */
 
 .col-form-label{
-	color: rgb(244, 244, 244);
+	color: rgb(228, 228, 228);
 }
 
 div.form-cadastro-cliente{
-	background-color: rgb(145, 145, 145, 0.4);
+	background-color: #212124;
 }
 
 .btt-cad-cliente-grid{
@@ -806,9 +806,10 @@ input.btn-cad-cliente {
     display: block;
 	
     border: none;
-    background-color: rgb(193, 193, 193);
+    background-color: rgb(48, 48, 54);
+	box-shadow: 1px 1px 3px rgb(196, 196, 196, 0.2);
     
-    color: rgb(0, 0, 0);
+    color: rgb(206, 206, 206);
     font-size: 14px;
 
     width: 160px;
@@ -817,16 +818,24 @@ input.btn-cad-cliente {
 
 input.btn-cad-cliente:hover{
     text-decoration: none;
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(69, 69, 78);
     color: rgb(239, 239, 239);
 	transform:translate(0.3s);
 }
 
-.txt-form{
-	background-color: rgb(234, 234, 234);
-	border: 1px solid rgb(175, 175, 175);
-    color: rgb(58, 58, 58);
+input[type=text].txt-form:focus{
+	border: solid 1.2px rgb(166, 230, 90);
 }
+
+.txt-form{
+	background-color: rgb(234, 234, 234, 0.5);
+    color: rgb(0, 0, 0);
+}
+
+.txt-form::placeholder{
+    color: rgb(192, 192, 192);
+}
+
 
 input.txt-form{
 	border-radius: 5px;
