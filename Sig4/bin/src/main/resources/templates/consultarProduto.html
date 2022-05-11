@@ -5,29 +5,153 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Lista de Produtos</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Lista de clientes</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" /> -->
+	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
+	<script type="text/javascript">
+		function home() {
+			window.open("/");
+		}
+		function acessarTenis() {
+			window.open("/tenis");
+		}
+		function acessarEquipamentos() {
+			window.open("/equipamentos");
+		}
+		function acessarAcessibilidade() {
+			window.open("/acessibilidade");
+		}
+		function consulta() {
+			window.open("/sig/produtos");
+			window.open("/sig/produtosContraste");
+		}
+
+	</script>
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
 
 <body>
-	<header th:replace="fragments/header :: menuSuperior">
-		<div>header</div>
-	</header>
-	<div class="panel panel-default" style="margin: 10px">
-		<div class="panel-heading">
-			<h5 class="panel-title">Lista de Produtos</h5>
-			<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
-			<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+	<!-- cabecalho -->
+	<header id="topo">
+		<div id="acessibilidade">
+			<ul id="atalhos">
+				<li>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteÃšdo">Ir para o conteudo [1]</a>
+				</li>
+
+				<li>
+					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+				</li>
+
+				<li>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
+				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/login?logout"><i
+							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
+				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/">
+						<i class="fas fa-fast-backward"></i>
+						Voltar </a>
+				</li>			</ul>
+
+			<ul id="atalhos2">
+				<li>
+					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+				</li>
+
+				<li>
+					<a th:href="@{/sig/produtosContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
+
+
+				<li>
+					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+				</li>
+
+				<li>
+					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+				</li>
+			</ul>
 		</div>
+
+		<div class="navGrid">
+			<!-- BARRA DE PESQUISA -->
+			<div id="barraPesquisa">
+				<input class="Buscar" type="text" name="buscar" placeholder="Buscar...">
+				<!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+			</div>
+
+			<div class="logo">
+				<!-- LOGO -->
+				<a th:href="@{/}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
+			</div>
+
+			<div>
+				<!-- Icones de redes sociais -->
+				<ul class="conjuntoIcones">
+					<li>
+						<a href="https://www.facebook.com">
+							<img src="../imagem/facebook.png" alt="Facebook" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://twitter.com">
+							<img src="../imagem/twitter.png" alt="Twitter" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.instagram.com/">
+							<img src="../imagem/instagram.png" alt="Instagram" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.whatsapp.com">
+							<img src="../imagem/whatsapp.png" alt="Whatsapp" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li class="active"><a th:href="@{/}">Home</a></li>
+				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
+				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li><a th:href="@{/login?logout}">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Vlibrs -->
+	<div vw class="enabled">
+		<div vw-access-button class="active"></div>
+		<div vw-plugin-wrapper>
+			<div class="vw-plugin-top-wrapper"></div>
+		</div>
+	</div>
+
+	<main id="conteudo">
+		<br />
+		<h3 class="exibe-titulo">Lista de Produtos</h3>
 		<div class="panel-body" th:switch="${produtos}">
 			<h5 th:case="null">Não existem produtos cadastrados ainda!</h5>
+			<br />
 			<div th:case="*">
-				<table class="table">
+				<table class="table-exibe">
 					<thead>
 						<tr>
 							<th>ID</th>
@@ -53,11 +177,11 @@
 							<td th:text="${produto.qtdEstoque}"></td>
 
 							<td>
-								<div class="btn-group pull-right">
-									<a class="btn btn-sm btn-primary"
-										th:href="@{/sig/produtos/{id}(id=${produto.id})}">Editar</a>
-									<a class="delete btn btn-sm btn-danger"
-										th:href="@{/sig/produtos/id/{id}(id=${produto.id})}">Excluir</a>
+								<div class="btn-exibe-group">
+									<a th:href="@{/sig/produtos/{id}(id=${produto.id})}">
+										<button class="btn-exibe">Editar</button></a>
+									<a th:href="@{/sig/produtos/id/{id}(id=${produto.id})}">
+										<button class="btn-exibe">Excluir</button></a>
 								</div>
 							</td>
 						</tr>
@@ -65,6 +189,44 @@
 				</table>
 			</div>
 		</div>
+	</main>
+
+	<footer id="rodape">
+		<div class="grid-footer">
+			<div id="desenvolvedoresFoot">
+				<p class="tituloFoot">Desenvolvido pelo Grupo 5 - Fatec Zona Leste</p>
+				<p>Renan Figueiredo</p>
+				<p>Lisandra Ferraz</p>
+				<p>Gabriel Gozzi</p>
+				<p>João Victor</p>
+			</div>
+
+			<div id="selosFoot">
+				<p class="tituloFoot">Site verificado por</p>
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
+				</a>
+
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="CSS válido!" />
+				</a>
+			</div>
+		</div>
+		<p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
+	</footer>
+
 </body>
 
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<script src="../js/fonte.js"> </script>
+<!--<script src="../js/contraste.js"> </script>-->
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+	new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>

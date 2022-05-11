@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<title>Lançamentos - O Melhor Dos Artigos Esportivos Para Você</title>
+	<!--metadados-->
+	<meta charset="utf-8">
+	<meta name="description" content="Inicio">
+	<meta name="keywords" content="Iniciohtml, web">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />-->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
+	<link rel="stylesheet" href="form.css">
+	<script type="text/javascript">
+		function home() {
+			window.open("/Contraste");
+		}
+		function acessarTenis() {
+			window.open("/tenisContraste");
+		}
+		function acessarEquipamentos() {
+			window.open("/equipamentosContraste");
+		}
+		function acessarEquipamentos() {
+			window.open("/equipamentosContraste");
+		}
+		function acessarAcessibilidade() {
+			window.open("/acessibilidadeContraste");
+		}
+	</script>
+</head>
+
+<body>
+	<!-- cabeçalho -->
+	<header id="topo">
+		<div id="acessibilidade">
+			<ul id="atalhos">
+				<li>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
+				</li>
+
+				<li>
+					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+				</li>
+
+				<li>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
+				</li>
+			</ul>
+
+			<ul id="atalhos2">
+				<li>
+					<a th:href="@{/acessibilidadeContraste}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+				</li>
+
+				<li>
+					<a th:href="@{/equipamentos}" title="Sem Contraste" id="modoClaro">Sem Contraste</a>
+				</li>
+
+
+				<li>
+					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+				</li>
+
+				<li>
+					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="navGrid">
+			<!-- BARRA DE PESQUISA -->
+			<div id="barraPesquisa">
+				<input class="Buscar" type="text" name="buscar" placeholder="Buscar...">
+				<!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+			</div>
+
+			<div class="logo">
+				<!-- LOGO -->
+				<a th:href="@{/Contraste}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
+			</div>
+
+			<div>
+				<!-- Icones de redes sociais -->
+				<ul class="conjuntoIcones">
+					<li>
+						<a href="https://www.facebook.com">
+							<img src="imagem/facebook.png" alt="Facebook" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://twitter.com">
+							<img src="imagem/twitter.png" alt="Twitter" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.instagram.com/">
+							<img src="imagem/instagram.png" alt="Instagram" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.whatsapp.com">
+							<img src="imagem/whatsapp.png" alt="Whatsapp" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li class="active"><a th:href="@{/Contraste}">Home</a></li>
+				<li> <a th:href="@{/sig/clienteContraste}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/produtoContraste}">Produtos</a></li>
+				<li><a th:href="@{/login?logout}">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Vlibrs -->
+	<div vw class="enabled">
+		<div vw-access-button class="active"></div>
+		<div vw-plugin-wrapper>
+			<div class="vw-plugin-top-wrapper"></div>
+		</div>
+	</div>
+
+
+	<main>
+		<section>
+			<div class="grid-equipamentos">
+				<div class="novidade-img">
+					<img src="imagem/novidade-wheel.png" alt="">
+					<div class="filtragem-novi">
+						<form action="">
+							<div class="precoFiltra">
+								<p>Preço</p>
+								<select name="filtrarPreco" id="">
+									<option value="relevancia">Mais Relevante</option>
+									<option value="precoBaixo">Preço mais barato</option>
+									<option value="precoAlto">Preço mais caro</option>
+								</select>
+							</div>
+
+							<div class="dispoFiltra">
+								<p>Disponibilidade</p>
+								<input type="radio" name="checkDisp" id=""> Sim
+								<input type="radio" name="checkDisp" id=""> Não
+							</div>
+
+							<div class="colorPick">
+								<p>Cor</p>
+								<a href="">
+									<div class="pink"> </div>
+								</a>
+								<a href="">
+									<div class="blue"></div>
+								</a>
+								<a href="">
+									<div class="green"></div>
+								</a>
+								<a href="">
+									<div class="red"></div>
+								</a>
+								<a href="">
+									<div class="purple"></div>
+								</a>
+								<a href="">
+									<div class="yellow"></div>
+								</a>
+								<a href="">
+									<div class="white"></div>
+								</a>
+								<a href="">
+									<div class="black"></div>
+								</a>
+								<a href="">
+									<div class="gray"></div>
+								</a>
+							</div>
+
+							<div class="categoFiltra">
+								<p>Categoria</p>
+
+								<ul>
+									<li>
+										<div>
+											<input type="checkbox" name="Academia" id="">
+										</div>
+										<label for="">Academia</label>
+									</li>
+
+									<li>
+										<div>
+											<input type="checkbox" name="Ginástica" id="">
+										</div>
+										<label for="">Ginástica</label>
+									</li>
+
+									<li>
+										<div>
+											<input type="checkbox" name="Corrida" id="">
+										</div>
+										<label for="">Corrida</label>
+									</li>
+								</ul>
+
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div>
+					<div class="grid-produtos-equi">
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<a th:href="@{/tenisContraste}" style="text-decoration: none; color: transparent;"><img
+										src="imagem/chuteira-puma1.jpg" alt=""></a>
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Chuteira Puma One 5.4 F</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<p class="precoAnterior">R$ 232,30</p>
+								<h3>R$ 202,30</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 16,85</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/jaqueta-hering1.jpg" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Jaqueta Hering Básica Feminina</p>
+								<p class="precoAnterior">R$ 169,30</p>
+								<h3>R$ 139,99</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 11,66</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/produtos/chuteira-society-future-z.png" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Chuteira Future Z 3.1 Society</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<p class="precoAnterior">R$ 449,90</p>
+								<h3>R$ 429,90</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 35,82</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/produtos/chuteira-futsal-kids-future-4.1-z.png" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Chuteira Future Z 4.1 V Furtsal Kids</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<p class="precoAnterior">R$ 279,90</p>
+								<h3>R$ 259,30</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 21,60</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/meia-gonew.jpg" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Meia Gonel Sem Cano Pacote <br>c/3 Pares</p>
+								<p class="precoAnterior">R$ 13,50</p>
+								<h3>R$ 9,90</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 2x de R$ 4,95</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/produtos/chuteira-campo-future-z.png" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Chuteira Future Z 1.1 Campo</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<p class="precoAnterior">R$ 1.199.90</p>
+								<h3>R$ 1.090,90</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 90,90</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/jaqueta-zafina.jpg" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Jaqueta Zafina Sport Masculina</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<h3>R$ 174,90</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 14,57</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/tenis-adidas.jpg" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Tênis Adidas Coreracer Masculino</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<p class="precoAnterior">R$ 249,99</p>
+								<h3>R$ 169,99</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 5x de R$ 14,16</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/produtos/chuteira-campo-future-3.1-z.png" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Chuteira Future Z 3.1 Campo</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<p class="precoAnterior">R$ 447,90</p>
+								<h3>R$ 419,90</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 34,99</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/produtos/chuteira-campo-future-4.1-z.png" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Chuteira Future Z 4.4 Campo</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<h3>R$ 359,90</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 29,99</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/calca-esportiva1.jpg" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Calça Zafina Sport Masculina</p>
+								<p class="precoAnterior">R$ 54,90</p>
+								<h3>R$ 45,90</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 5x de R$ 9,18</p>
+							</div>
+						</div>
+
+						<div class="card-FTZ">
+							<div class="imgTenisFTZ">
+								<img src="imagem/produtos/chuteira-futsal-future-z.png" alt="">
+							</div>
+							<div class="corpoCard">
+								<p class="tituloCard">Chuteira Future Z 4.1 Futsal</p>
+								<p class="frtGrtsCard">Frete Grátis</p>
+								<!-- <p class="precoAnterior">R$ 169,30</p> -->
+								<h3>R$ 329,90</h3>
+							</div>
+							<div class="descCard">
+								<p class="">em até 12x de R$ 27,49</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer id="rodape">
+		<div class="grid-footer">
+			<div id="desenvolvedoresFoot">
+				<p class="tituloFoot">Desenvolvido pelo Grupo 5 - Fatec Zona Leste</p>
+				<p>Renan Figueiredo</p>
+				<p>Lisandra Ferraz</p>
+				<p>Gabriel Gozzi</p>
+				<p>João Victor</p>
+			</div>
+
+			<div id="selosFoot">
+				<p class="tituloFoot">Site verificado por</p>
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
+				</a>
+
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="CSS válido!" />
+				</a>
+			</div>
+
+		</div>
+		<p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
+	</footer>
+</body>
+
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+<script src="js/fonte.js"></script>
+<script src="js/contraste.js"></script>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+	new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>

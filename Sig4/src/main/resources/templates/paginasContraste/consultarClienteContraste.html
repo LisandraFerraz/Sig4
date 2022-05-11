@@ -157,8 +157,7 @@
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo"> Lista de clientes </h3>
-		<div class="panel-body" th:switch="${clientesContraste}">
-			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+		<div class="panel-body" th:switch="${clientes}">
 			<br />
 			<div th:case="*">
 				<table class="table-exibe">

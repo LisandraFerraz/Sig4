@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>		
+
+<head>
 	<title>Cadastra Cliente</title>
 	<!--metadados-->
 	<meta charset="utf-8">
@@ -8,7 +9,10 @@
 	<meta name="keywords" content="CadastrarCliente, web">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
+	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" /> -->
 	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
 	<script type="text/javascript">
 		function home() {
@@ -23,106 +27,116 @@
 		function acessarAcessibilidade() {
 			window.open("/acessibilidade");
 		}
-		function consulta() {
+		function consultaClientes() {
 			window.open("/sig/clientes");
 		}
+		function consulta() {
+			window.open("/sig/clienteContraste");
+		}
+		
+
 	</script>
 </head>
 
 <body>
-        <!-- cabeçalho -->
-        <header id="topo">
-            <div id="acessibilidade">
-                <ul id="atalhos">
-                    <li>
-                        <a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
-                    </li>
+	<!-- cabeçalho -->
+	<header id="topo">
+		<div id="acessibilidade">
+			<ul id="atalhos">
+				<li>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
+				</li>
 
-                    <li>
-                        <a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
-                    </li>
+				<li>
+					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+				</li>
 
-                    <li>
-                        <a href="#rodape"accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
-                    </li>
-                </ul>
+				<li>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
+				</li>
 
-                <ul id="atalhos2">
-                    <li>
-                        <a th:href="@{/acessibilidade}"  title="Ir para pagina de acessabilidade">Acessibilidade</a>
-                    </li>
+				<li>
+					<a class="nav-link textos-nav" href="/login?logout"><i
+							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
+				</li>
 
-                    <li>
-                        <a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-                    </li>
+				<li>
+					<a class="nav-link textos-nav" href="/">
+						<i class="fas fa-fast-backward"></i>
+						Voltar </a>
+				</li>
+			</ul>
 
-                    <li >
-                        <a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-                    </li>
+			<ul id="atalhos2">
+				<li>
+					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+				</li>
 
-                    <li>
-                        <a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
-                    </li>
+				<li>
+					<a th:href="@{/sig/clienteContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
 
-                    <li>
-                        <a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="navGrid">
-                <!-- BARRA DE PESQUISA -->
-                <div id="barraPesquisa">
-                    <input class="Buscar" type="text" name="buscar" placeholder= "Buscar...">
-                    <!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
-                </div>
-                
-                <div class="logo">
-                    <!-- LOGO -->
-                    <a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
-                </div>
-                
-                <div>
-                    <!-- Icones de redes sociais -->
-                    <ul class="conjuntoIcones">
-                        <li>
-                            <a href="https://www.facebook.com">
-                                <img  src="imagem/facebook.png" alt="Facebook"/>
-                            </a> 
-                        </li>
-    
-                        <li>
-                            <a href="https://twitter.com">
-                                <img src="imagem/twitter.png" alt="Twitter"/>
-                            </a> 
-                        </li>
-        
-                        <li>
-                            <a href="https://www.instagram.com/">
-                                <img src="imagem/instagram.png" alt="Instagram"/>
-                            </a> 
-                        </li>
-        
-                        <li>
-                            <a href="https://www.whatsapp.com">
-                                <img src="imagem/whatsapp.png" alt="Whatsapp"/>
-                            </a> 
-                        </li>
-                    </ul>
-                </div>
-            </div>
+				<li>
+					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+				</li>
 
-            <nav id="menu">
-                <ul>
-                    <li class="active"><a th:href="@{/}">Home</a></li>
-				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
-				<li> <a th:href="@{/sig/fornecedores}"> Fornecedores </a> </li>
+				<li>
+					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="navGrid">
+			<!-- BARRA DE PESQUISA -->
+			<div id="barraPesquisa">
+				<input class="Buscar" type="text" name="buscar" placeholder="Buscar...">
+				<!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+			</div>
+
+			<div class="logo">
+				<!-- LOGO -->
+				<a th:href="@{/}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
+			</div>
+
+			<div>
+				<!-- Icones de redes sociais -->
+				<ul class="conjuntoIcones">
+					<li>
+						<a href="https://www.facebook.com">
+							<img src="../imagem/facebook.png" alt="Facebook" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://twitter.com">
+							<img src="../imagem/twitter.png" alt="Twitter" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.instagram.com/">
+							<img src="../imagem/instagram.png" alt="Instagram" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.whatsapp.com">
+							<img src="../imagem/whatsapp.png" alt="Whatsapp" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li class="active"><a th:href="@{/}">Home</a></li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
-                </ul>
-            </nav>
-        </header>
+			</ul>
+		</nav>
+	</header>
 	<!-- Vlibrs -->
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -130,71 +144,86 @@
 			<div class="vw-plugin-top-wrapper"></div>
 		</div>
 	</div>
-	
-	
-<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
-	<main id="conteudo"> 
+
+	<main id="conteudo">
 		<br />
-		<h3>Cadastrar cliente</h3>
-			<div class="form-cadastro-cliente">
-			<br>
-					<form action="#" th:action="@{/sig/clientes}" th:object="${cliente}" method="post">
-						<div class="row-1-grid">
-								<label for="cpf" class="col-form-label">CPF</label>
-								<input type="text" th:field="*{cpf}" class="input-cad-cliente" id="cpf" placeholder="CPF">
-								<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="text-danger">
-								</span>
-							
-								<div class="row-1-grid">
-								<label for="nome" class="col-form-label">Nome</label>
-								<input type="text" th:field="*{nome}" class="input-cad-cliente" id="nome" placeholder="Nome">
-								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
-								</span>
-						
-								<label for="dataNascimento" class="col-form-label">Data Nascimento</label>
-								<input type="text" th:field="*{dataNascimento}" class="input-cad-cliente" id="dataNascimento"
-									placeholder="Data Nascimento">
-								<span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"
-									class="text-danger">
-								</span>
-								
-								<label for="dataNascimento" class="col-form-label">Sexo</label>
-								<input type="text" th:field="*{sexo}" class="input-cad-cliente" id="sexo" placeholder="M/F">
-								<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="text-danger">
-								</span>
-						
-								<label for="cep" class="col-form-label">CEP</label>
-								<input type="text" th:field="*{cep}" class="input-cad-cliente" id="cep" placeholder="CEP">
-								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
-						
-								<label for="complemento" class="col-form-label">Complemento</label>
-								<input type="text" th:field="*{complemento}" class="input-cad-cliente" id="complemento"
-									placeholder="Complemento numero/apto">
-								<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
-									class="text-danger"></span>
-						</div>
-						
-						<div class="btt-cad-cliente-grid">
-							<input type="submit" class="btn-cad-cliente" value="Cadastrar cliente "> 
-							<input type="button" class="btn-cad-cliente" value="Consultar cliente" onclick="consulta();">
-						</div>
-							
-					</form>
-			
+		<h3 class="exibe-titulo">Cadastrar cliente</h3>
+		<div class="form-cadastro-cliente">
+			<br />
+			<form action="#" th:action="@{/sig/clientes}" th:object="${cliente}" method="post">
+				<div class="row-1-grid">
+
+					<label for="cpf" class="col-form-label">CPF</label>
+					<div>
+						<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{cpf}" class="txt-form" id="cpf" placeholder="CPF">
+					</div>
+
+					<label for="nome" class="col-form-label">Nome</label>
+					<div>
+						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{nome}" class="txt-form" id="nome" placeholder="Nome">
+					</div>
+
+					<label for="dataNascimento" class="col-form-label">Data Nascimento</label>
+					<div>
+						<span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"
+							class="txt-aviso"></span>
+						<input type="text" th:field="*{dataNascimento}" class="txt-form" id="dataNascimento"
+							placeholder="Data Nascimento">
+
+					</div>
+
+					<label for="dataNascimento" class="col-form-label">Sexo</label>
+					<div>
+						<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{sexo}" class="txt-form" id="sexo" placeholder="M/F">
+					</div>
+
+					<label for="cep" class="col-form-label">CEP</label>
+					<div>
+						<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="txt-aviso"></span>
+						<input type="text" th:field="*{cep}" class="txt-form" id="cep" placeholder="CEP">
+					</div>
+					
+					<label for="endereco" class="col-form-label">Endereço</label>
+					<div>
+						<span th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}" class="txt-aviso"></span>
+						<input type="text" th:field="*{endereco}" class="txt-form" id="endereco" placeholder="Endereço">
+					</div>
+
+					<label for="complemento" class="col-form-label">Complemento</label>
+					<div>
+						<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
+							class="text-danger"></span>
+						<input type="text" th:field="*{complemento}" class="txt-form" id="complemento"
+							placeholder="Complemento numero/apto">
+					</div>
+				</div>
+
+				<div class="btt-cad-cliente-grid">
+					<input type="submit" class="btn-cad-cliente" value="Cadastrar cliente ">
+					<input type="button" class="btn-cad-cliente" value="Consultar cliente" onclick="consultaClientes();">
+				</div>
+
+			</form>
+
 			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
 
-		
-		
-		</main>
-		
-		<footer id="rodape">
+
+
+	</main>
+
+	<footer id="rodape">
 		<div class="grid-footer">
 			<div id="desenvolvedoresFoot">
 				<p class="tituloFoot">Desenvolvido pelo Grupo 5 - Fatec Zona Leste</p>
 				<p>Renan Figueiredo</p>
 				<p>Lisandra Ferraz</p>
-				<p>Freddy Soares</p>
 				<p>Gabriel Gozzi</p>
 				<p>João Victor</p>
 			</div>
@@ -212,21 +241,18 @@
 				</a>
 			</div>
 		</div>
-		<p class="drtsFooter">Todos os direitos reservados &copy; 2021.</p>
+		<p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
 	</footer>
-	
+
 </body>
 
 </html>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
-	
-<script src="js/fonte.js"></script>
-<script src="js/contraste.js"></script>
+<script src="../js/fonte.js"></script>
+<!--<script src="../static/js/contraste.js"></script> -->
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
-            
-       

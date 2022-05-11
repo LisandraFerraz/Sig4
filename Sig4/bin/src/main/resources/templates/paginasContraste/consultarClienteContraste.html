@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Lista de clientes</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" th:href="@{../css/contraste.css}" />
+	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
+	<script type="text/javascript">
+		function home() {
+			window.open("/");
+		}
+		function acessarTenis() {
+			window.open("/tenis");
+		}
+		function acessarEquipamentos() {
+			window.open("/equipamentos");
+		}
+		function acessarAcessibilidade() {
+			window.open("/acessibilidade");
+		}
+		function consulta() {
+			window.open("/sig/produtos");
+		}
+		
+		
+		
+		function consulta() {
+			window.open("/sig/clientesContraste");
+		}
+
+
+	</script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+
+<body>
+	<!-- cabecalho -->
+	<header id="topo">
+		<div id="acessibilidade">
+			<ul id="atalhos">
+				<li>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteÃšdo">Ir para o conteudo [1]</a>
+				</li>
+
+				<li>
+					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
+				</li>
+
+				<li>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
+				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/login?logout"><i
+							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
+				</li>
+
+				<li>
+					<a class="nav-link textos-nav" href="/">
+						<i class="fas fa-fast-backward"></i>
+						Voltar </a>
+				</li>
+			</ul>
+
+			<ul id="atalhos2">
+				<li>
+					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+				</li>
+
+			
+
+				<li>
+					<a  th:href="@{/sig/clientes}" title="sem Contraste" id="modoClaro">Modo Claro</a>
+					
+				</li>
+
+				<li>
+					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
+				</li>
+
+				<li>
+					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="navGrid">
+			<!-- BARRA DE PESQUISA -->
+			<div id="barraPesquisa">
+				<input class="Buscar" type="text" name="buscar" placeholder="Buscar...">
+				<!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+			</div>
+
+			<div class="logo">
+				<!-- LOGO -->
+				<a th:href="@{/}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
+			</div>
+
+			<div>
+				<!-- Icones de redes sociais -->
+				<ul class="conjuntoIcones">
+					<li>
+						<a href="https://www.facebook.com">
+							<img src="../imagem/facebook.png" alt="Facebook" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://twitter.com">
+							<img src="../imagem/twitter.png" alt="Twitter" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.instagram.com/">
+							<img src="../imagem/instagram.png" alt="Instagram" />
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.whatsapp.com">
+							<img src="../imagem/whatsapp.png" alt="Whatsapp" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li class="active"><a th:href="@{/}">Home</a></li>
+				<li> <a th:href="@{/sig/clienteContraste}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
+				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li><a th:href="@{/login?logout}">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Vlibrs -->
+	<div vw class="enabled">
+		<div vw-access-button class="active"></div>
+		<div vw-plugin-wrapper>
+			<div class="vw-plugin-top-wrapper"></div>
+		</div>
+	</div>
+
+	<main id="conteudo">
+		<br />
+		<h3 class="exibe-titulo"> Lista de clientes </h3>
+		<div class="panel-body" th:switch="${clientesContraste}">
+			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+			<br />
+			<div th:case="*">
+				<table class="table-exibe">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>CPF</th>
+							<th>Nome</th>
+							<th>Dt. Nascimento</th>
+							<th>Sexo</th>
+							<th>CEP</th>
+							<th>Endereço</th>
+							<th>Complemento</th>
+							<th>Dt. Cadastro</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="clienteContraste : ${clientesContraste}">
+							<td th:text="${clienteContraste.id}"></td>
+							<td th:text="${clienteContraste.cpf}"></td>
+							<td th:text="${clienteContraste.nome}"></td>
+							<td th:text="${clienteContraste.dataNascimento}"></td>
+							<td th:text="${clienteContraste.sexo}"></td>
+							<td th:text="${clienteContraste.cep}"></td>
+							<td th:text="${clienteContraste.endereco}"></td>
+							<td th:text="${clienteContraste.complemento}"></td>
+							<td th:text="${clienteContraste.dataCadastro}"></td>
+
+							<td>
+								<div class="btn-exibe-group">
+									<a th:href="@{/sig/clientesContraste/{cpf}(cpf=${clienteContraste.cpf})}">
+										<button class="btn-exibe"> Editar </button></a>
+									<a th:href="@{/sig/clientesContraste/id/{id}(id=${clienteContraste.id})}">
+										<button class="btn-exibe">Excluir</button></a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</main>
+
+	<footer id="rodape">
+		<div class="grid-footer">
+			<div id="desenvolvedoresFoot">
+				<p class="tituloFoot">Desenvolvido pelo Grupo 5 - Fatec Zona Leste</p>
+				<p>Renan Figueiredo</p>
+				<p>Lisandra Ferraz</p>
+				<p>Gabriel Gozzi</p>
+				<p>João Victor</p>
+			</div>
+
+			<div id="selosFoot">
+				<p class="tituloFoot">Site verificado por</p>
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
+				</a>
+
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="CSS válido!" />
+				</a>
+			</div>
+		</div>
+		<p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
+	</footer>
+
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<script src="../js/fonte.js"> </script>
+<script src="../static/js/contraste.js"> </script>
+...
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+	new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
