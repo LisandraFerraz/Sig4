@@ -61,7 +61,7 @@ public class GUIClienteController {
 	@GetMapping("/clientesContraste/{cpf}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarClienteContraste(@PathVariable("cpf") String cpf) {
 		ModelAndView modelAndView = new ModelAndView("paginasContraste/atualizarClienteContraste");
-		modelAndView.addObject("clienteContraste", servico.consultaPorCpf(cpf).get()); // retorna um objeto do tipo cliente
+		modelAndView.addObject("cliente", servico.consultaPorCpf(cpf).get()); // retorna um objeto do tipo cliente
 		return modelAndView; // addObject adiciona objetos para view
 	}
 	
@@ -147,7 +147,7 @@ public class GUIClienteController {
 			return new ModelAndView("paginasContraste/atualizarClienteContraste");
 		} else {
 			servico.altera(cliente);
-			modelAndView.addObject("clientesContraste", servico.consultaTodos());
+			modelAndView.addObject("clientes", servico.consultaTodos());
 		}
 		return modelAndView;
 	}
