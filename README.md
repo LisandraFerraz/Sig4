@@ -5,7 +5,6 @@
 | Lisandra Ferraz de Santana |
 | Gabriel Gozzi |
 | Renan Figueiredo |
-| João Victor |
 
 ##### Processo de Desenvolvimento de Software - PDS
 > O PDS segue uma abordagem interativa incremental. Cada atividade da interação tem uma definição de pronto estabelecida com objetivo de controlar a qualidade. 
