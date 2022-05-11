@@ -1134,7 +1134,8 @@ span.txt-aviso{
 /*---------------------------------*/
 .table-exibe td {
 	font-size: 12pt;
-	background-color: rgb(234, 234, 234);
+	color: rgb(232, 232, 232);
+	background-color: rgb(124, 130, 137);
 }
 
 /* CadastraCliente*/
