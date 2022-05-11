@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -718,8 +720,13 @@ input.submit:hover{
     font-size: 26px;
     color: #7aaa2e;
 }
+
 .subTitPrd{
     font-size: 17px;
+}
+
+.tmnhPrd label{
+	color: rgb(243, 243, 243); 
 }
 
 .tmnhPrd p{
@@ -840,6 +847,11 @@ input[type=text].txt-form:focus{
 input.txt-form{
 	border-radius: 5px;
 	height: 23px;
+}
+
+span.txt-aviso{
+	color: rgb(243, 243, 243);
+	font-size: 7pt;
 }
 
 
@@ -1119,10 +1131,10 @@ input.txt-form{
 	color: rgb(232, 232, 232);
 	background-color: #4c4f54;
 }
-
+/*---------------------------------*/
 .table-exibe td {
 	font-size: 12pt;
-	background-color: rgb(254, 254, 250);
+	background-color: rgb(234, 234, 234);
 }
 
 /* CadastraCliente*/
