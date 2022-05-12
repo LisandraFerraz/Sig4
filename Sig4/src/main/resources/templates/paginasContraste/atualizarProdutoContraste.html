@@ -1,49 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Cadastrar Produto</title>
-	<!--metadados-->
 	<meta charset="utf-8">
-	<meta name="description" content="Inicio">
-	<meta name="keywords" content="CadastrarCliente, web">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />-->
-	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Atualizar Produto</title>
 	<script type="text/javascript">
-		function home() {
-			window.open("/");
-		}
-		function acessarTenis() {
-			window.open("/tenis");
-		}
-		function acessarEquipamentos() {
-			window.open("/equipamentos");
-		}
-		function acessarAcessibilidade() {
-			window.open("/acessibilidade");
-		}
 		function consulta() {
 			window.open("/sig/produtos");
 		}
-		function consultaContraste() {
-			window.open("/sig/produtoContraste");
-		}
-
 	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
-
 <body>
-	<!-- cabecalho -->
+
+	<!-- cabeçalho -->
 	<header id="topo">
 		<div id="acessibilidade">
 			<ul id="atalhos">
 				<li>
-					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteÃšdo">Ir para o conteudo [1]</a>
+					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
 				</li>
 
 				<li>
@@ -51,7 +31,7 @@
 				</li>
 
 				<li>
-					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
+					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
 				</li>
 				
 				<!--
@@ -66,7 +46,6 @@
 						Voltar </a>
 				</li>
 				-->
-				
 			</ul>
 
 			<ul id="atalhos2">
@@ -74,10 +53,7 @@
 					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
-				<li>
-					<a th:href="@{/sig/produtoContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-				</li>
-
+				
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
 				</li>
@@ -132,9 +108,10 @@
 
 		<nav id="menu">
 			<ul>
-				<li class="active"><a th:href="@{/}">Home</a></li>
-				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
-				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li class="active"><a th:href="@{/Contraste}">Home</a></li>
+				<li> <a th:href="@{/sig/clienteContraste}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/produtoContraste}">Produtos</a></li>
+				<li><a th:href="@{/equipamentosContraste}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>
 		</nav>
@@ -147,69 +124,60 @@
 		</div>
 	</div>
 
-
-	<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
 	<main id="conteudo">
 		<br />
-		<h3 class="exibe-titulo">Cadastrar Produto</h3>
+		<h3>Atualizar Produto</h3>
 		<div class="form-cadastro-cliente">
+			<br />
 			<br>
-			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
-
+			<form action="#" th:action="@{/sig/produtosContraste/id/{id} (id=${produto.id}) }" th:object="${produto}"
+				method="post">
 				<div class="row-1-grid">
 
-					<label for="nome">Nome</label>
+					<label for="cnpj" class="col-form-label">Nome do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{nome}" id="nome" class="txt-form"
-							placeholder="Informe o nome do produto">
+						<input type="text" th:field="*{nome}" class="txt-form" id="nome" placeholder="Nome Produto">
 					</div>
 
-
-					<label for="tipo">Tipo do Produto</label>
+					<label for="tipo" class="col-form-label">Tipo do Produto</label>
 					<div>
-						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}" class="txt-aviso">
+						<span th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{tipo}" id="tipo" class="txt-form"
-							placeholder="Informe qual o tipo de produto">
+						<input type="text" th:field="*{tipo}" class="txt-form" id="nome" placeholder="Tipo do Produto">
 					</div>
 
-
-					<label for="cor">Cor do Produto</label>
+					<label for="cor" class="col-form-label">Cor do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{cor}" id="cor" class="txt-form"
-							placeholder="Informe a cor do produto">
+						<input type="text" th:field="*{cor}" class="txt-form" id="nome" placeholder="Cor do Produto">
 					</div>
 
-
-					<label for="preco">Preço</label>
+					<label for="nome" class="col-form-label">Preço do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{preco}" id="preco" class="txt-form"
-							placeholder="Informe o preço do produto">
+						<input type="text" th:field="*{preco}" class="txt-form" id="nome" placeholder="Preço Produto">
 					</div>
 
-					<label for="data">Data de Cadastro do Produto</label>
+					<label for="dataNascimento" class="col-form-label">Data de Cadastro do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
 							class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{dataCadastro}" id="preco" class="txt-form"
-							placeholder="Informe a data de cadastro">
+						<input type="text" th:field="*{dataCadastro}" class="txt-form" id="dataCadastro"
+							placeholder="Data Cadastro">
 					</div>
 
-					<label for="qtdEstoque">Quantidade de produtos</label>
+					<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
 					<div>
 						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{qtdEstoque}" id="qtdEstoque" class="txt-form"
-							placeholder="Informe quantidade de produtos">
+						<input type="text" th:field="*{qtdEstoque}" class="txt-form" id="qtdEstoque"
+							placeholder="qtdEstoque">
 					</div>
-
 
 					<label for="cnpj">CNPJ</label>
 					<div>
@@ -220,19 +188,15 @@
 					</div>
 
 				</div>
-
 				<div class="btt-cad-cliente-grid">
-					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
-					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta()">
+					<input type="submit" class="btn-cad-cliente" value="Atualizar Produto">
+					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta();">
 				</div>
-
 			</form>
-
-			<h6 th:text="${message}" class="txt-aviso"></h6>
 		</div>
+		<h6 th:text="${message}" class="txt-aviso"></h6>
 
 	</main>
-
 	<footer id="rodape">
 		<div class="grid-footer">
 			<div id="desenvolvedoresFoot">
@@ -246,27 +210,27 @@
 				<p class="tituloFoot">Site verificado por</p>
 				<a href="http://jigsaw.w3.org/css-validator/check/referer">
 					<img style="border:0;width:88px;height:31px"
-						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS vÃĄlido!" />
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS válido!" />
 				</a>
 
 				<a href="http://jigsaw.w3.org/css-validator/check/referer">
 					<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
-						alt="CSS vÃĄlido!" />
+						alt="CSS válido!" />
 				</a>
 			</div>
 		</div>
 		<p class="drtsFooter">Todos os direitos reservados &copy; 2022.</p>
 	</footer>
 
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+	<script src="js/fonte.js"></script>
+	<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+	<script>
+		new window.VLibras.Widget('https://vlibras.gov.br/app');
+	</script>
 </body>
 
 </html>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-	crossorigin="anonymous"></script>
-
-<script src="../js/fonte.js"> </script>
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-	new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>

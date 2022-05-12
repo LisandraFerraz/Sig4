@@ -53,7 +53,7 @@
 				<li>
 					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
 				</li>
-
+				<!--
 				<li>
 					<a class="nav-link textos-nav" href="/login?logout"><i
 							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
@@ -63,7 +63,11 @@
 					<a class="nav-link textos-nav" href="/">
 						<i class="fas fa-fast-backward"></i>
 						Voltar </a>
-				</li>			</ul>
+				</li>
+				-->	
+					
+					
+					</ul>
 
 			<ul id="atalhos2">
 				<li>
@@ -149,7 +153,7 @@
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo">Lista de Produtos</h3>
-		<div class="panel-body" th:switch="${produtosContraste}">
+		<div class="panel-body" th:switch="${produtos}">
 			<h5 th:case="null">Não existem produtos cadastrados ainda!</h5>
 			<br />
 			<div th:case="*">
