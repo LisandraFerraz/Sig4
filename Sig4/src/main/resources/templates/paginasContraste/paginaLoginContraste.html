@@ -8,7 +8,8 @@
 	<meta name="description" content="Login">
         
      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" th:href="@{../css/contraste.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+    <link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
      <script>
 		function autenticacao() {
 			window.open("/sig/login");
@@ -67,7 +68,7 @@
 	
 	<!--================================================================================================-->
 	<br>
-	<form th:action="@{/loginContraste}" method="post">
+	<form th:action="@{/login}" method="post">
 		<div class="login-page">
 			<div class="form">
 
