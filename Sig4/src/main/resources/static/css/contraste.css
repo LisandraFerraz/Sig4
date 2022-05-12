@@ -430,6 +430,7 @@ header * {
 .corpoCard h3{
     color: #ac9393;
     font-size: 19px;
+    text-align: left;
 }
 
 .frtGrtsCard{

@@ -65,7 +65,7 @@ public class GUIProdutoController {
 	}	
 	//Contraste
 	@GetMapping("/produtosContraste/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
-	public ModelAndView retornaFormParaEditarProdutoContraste(@PathVariable("nome") Long id) {
+	public ModelAndView retornaFormParaEditarProdutoContraste(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("paginasContraste/atualizarProdutoContraste");
 		modelAndView.addObject("produto", servico.consultaPorId(id).get()); // retorna um objeto do tipo cliente
 		return modelAndView; // addObject adiciona objetos para view
@@ -151,7 +151,7 @@ public class GUIProdutoController {
 	//Contraste
 	@PostMapping("/produtosContraste/id/{id}")
 	public ModelAndView atualizaProdutoContraste(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result) {
-		ModelAndView modelAndView = new ModelAndView("paginasContrasteconsultarProdutoContraste");
+		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarProdutoContraste");
 		logger.info(">>>>>> servico para atualizacao de dados chamado para o id => " + id);
 		if (result.hasErrors()) {
 			logger.info(">>>>>> servico para atualizacao de dados com erro => " + result.getFieldError().toString());

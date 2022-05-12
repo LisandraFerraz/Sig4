@@ -483,6 +483,10 @@ header * {
     text-decoration: line-through;
 }
 
+h3.precoAtual{
+	text-align: left;
+}
+
 .cadastro-cliente-grid{
 	justify-content: center;
     margin: 40px 80px 40px 80px;
