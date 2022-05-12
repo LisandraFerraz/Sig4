@@ -11,7 +11,7 @@
         <!--<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />-->
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script src="js/visualização-produto.js"></script>
-        <link rel = "icon" type ="imagem/favicon.ico" href="imagem/Favicon.ico">
+        <link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
         <link rel="stylesheet" 	href="form.css">
         <title>Chuteira Campo Puma One 5.3 Branco - O Melhor Dos Artigos Esportivos Para Você</title>
       <script type="text/javascript">
@@ -73,47 +73,47 @@
                 </ul>
             </div>
             
-            <div class="navGrid">
-                <!-- BARRA DE PESQUISA -->
-                <div id="barraPesquisa">
-                    <input class="Buscar" type="text" name="buscar" placeholder= "Buscar...">
-                    <!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
-                </div>
-                
-                <div class="logo">
-                    <!-- LOGO -->
-                    <a th:href="@{/}"><img src="imagem/fullSportLogo.png" alt="Logo da loja"></a>
-                </div>
-                
-                <div>
-                    <!-- Icones de redes sociais -->
-                    <ul class="conjuntoIcones">
-                        <li>
-                            <a href="https://www.facebook.com">
-                                <img  src="imagem/facebook.png" alt="Facebook"/>
-                            </a> 
-                        </li>
-    
-                        <li>
-                            <a href="https://twitter.com">
-                                <img src="imagem/twitter.png" alt="Twitter"/>
-                            </a> 
-                        </li>
-        
-                        <li>
-                            <a href="https://www.instagram.com/">
-                                <img src="imagem/instagram.png" alt="Instagram"/>
-                            </a> 
-                        </li>
-        
-                        <li>
-                            <a href="https://www.whatsapp.com">
-                                <img src="imagem/whatsapp.png" alt="Whatsapp"/>
-                            </a> 
-                        </li>
-                    </ul>
-                </div>
-            </div>
+           <div class="navGrid">
+			<!-- BARRA DE PESQUISA -->
+			<div id="barraPesquisa">
+				<input class="Buscar" type="text" name="buscar" placeholder="Buscar...">
+				<!-- <img src="imagem/lupa-arredondada.png" alt="Pesquisar">  -->
+			</div>
+
+			<div class="logo">
+				<!-- LOGO -->
+				<a th:href="@{/}"><img th:src="@{/imagem/fullSportLogo.png}" alt="Logo da loja"></a>
+			</div>
+
+			<div>
+				<!-- Icones de redes sociais -->
+				<ul class="conjuntoIcones">
+					<li>
+						<a th:href="@{https://www.facebook.com}">
+							<img th:src="@{/imagem/facebook.png}" alt="Facebook" />
+						</a>
+					</li>
+
+					<li>
+						<a th:href="@{https://twitter.com}">
+							<img th:src="@{/imagem/twitter.png}" alt="Twitter" />
+						</a>
+					</li>
+
+					<li>
+						<a th:href="@{https://www.instagram.com/}">
+							<img th:src="@{/imagem/instagram.png}" alt="Instagram" />
+						</a>
+					</li>
+
+					<li>
+						<a th:href="@{https://www.whatsapp.com}">
+							<img th:src="@{/imagem/whatsapp.png}" alt="Whatsapp" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 
             <nav id="menu">
                 <ul>
@@ -213,7 +213,6 @@
                 <p>Renan Figueiredo</p>
                 <p>Lisandra Ferraz</p>
                 <p>Gabriel Gozzi</p>
-                <p>João Victor</p>
             </div>
         
             <div id="selosFoot">
@@ -236,7 +235,6 @@
 integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 crossorigin="anonymous"></script>
 <script src="js/fonte.js"></script>
-<script src="js/contraste.js"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');

@@ -10,8 +10,8 @@
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-       <link rel="stylesheet" type="text/css" th:href="@{../css/contraste.css}" />
-	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
+       <link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
+	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
 	<script type="text/javascript">
 		function home() {
 			window.open("/");
@@ -25,16 +25,14 @@
 		function acessarAcessibilidade() {
 			window.open("/acessibilidade");
 		}
+		function consultaContraste() {
+			window.open("/sig/clientesContraste")
+		}
 		function consulta() {
 			window.open("/sig/produtos");
 		}
 		
 		
-		
-		function consulta() {
-			window.open("/sig/clientesContraste");
-		}
-
 
 	</script>
 
@@ -59,7 +57,7 @@
 				<li>
 					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
 				</li>
-
+				<!--
 				<li>
 					<a class="nav-link textos-nav" href="/login?logout"><i
 							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
@@ -70,6 +68,8 @@
 						<i class="fas fa-fast-backward"></i>
 						Voltar </a>
 				</li>
+				-->
+				
 			</ul>
 
 			<ul id="atalhos2">
@@ -103,33 +103,33 @@
 
 			<div class="logo">
 				<!-- LOGO -->
-				<a th:href="@{/}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
+				<a th:href="@{/}"><img th:src="@{/imagem/fullSportLogo.png}" alt="Logo da loja"></a>
 			</div>
 
 			<div>
 				<!-- Icones de redes sociais -->
 				<ul class="conjuntoIcones">
 					<li>
-						<a href="https://www.facebook.com">
-							<img src="../imagem/facebook.png" alt="Facebook" />
+						<a th:href="@{https://www.facebook.com}">
+							<img th:src="@{/imagem/facebook.png}" alt="Facebook" />
 						</a>
 					</li>
 
 					<li>
-						<a href="https://twitter.com">
-							<img src="../imagem/twitter.png" alt="Twitter" />
+						<a th:href="@{https://twitter.com}">
+							<img th:src="@{/imagem/twitter.png}" alt="Twitter" />
 						</a>
 					</li>
 
 					<li>
-						<a href="https://www.instagram.com/">
-							<img src="../imagem/instagram.png" alt="Instagram" />
+						<a th:href="@{https://www.instagram.com/}">
+							<img th:src="@{/imagem/instagram.png}" alt="Instagram" />
 						</a>
 					</li>
 
 					<li>
-						<a href="https://www.whatsapp.com">
-							<img src="../imagem/whatsapp.png" alt="Whatsapp" />
+						<a th:href="@{https://www.whatsapp.com}">
+							<img th:src="@{/imagem/whatsapp.png}" alt="Whatsapp" />
 						</a>
 					</li>
 				</ul>
@@ -138,10 +138,10 @@
 
 		<nav id="menu">
 			<ul>
-				<li class="active"><a th:href="@{/}">Home</a></li>
+				<li class="active"><a th:href="@{/Contraste}">Home</a></li>
 				<li> <a th:href="@{/sig/clienteContraste}"> Clientes </a> </li>
-				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
-				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
+				<li> <a th:href="@{/sig/produtoContraste}">Produtos</a></li>
+				<li><a th:href="@{/equipamentosContraste}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>
 		</nav>
@@ -157,8 +157,7 @@
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo"> Lista de clientes </h3>
-		<div class="panel-body" th:switch="${clientesContraste}">
-			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+		<div class="panel-body" th:switch="${clientes}">
 			<br />
 			<div th:case="*">
 				<table class="table-exibe">
@@ -211,7 +210,6 @@
 				<p>Renan Figueiredo</p>
 				<p>Lisandra Ferraz</p>
 				<p>Gabriel Gozzi</p>
-				<p>João Victor</p>
 			</div>
 
 			<div id="selosFoot">
@@ -237,9 +235,6 @@
 	crossorigin="anonymous"></script>
 
 <script src="../js/fonte.js"> </script>
-<script src="../static/js/contraste.js"> </script>
-...
-
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');

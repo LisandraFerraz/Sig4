@@ -13,7 +13,7 @@
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />-->
 	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
-	<link rel="icon" type="imagem/favicon.ico" href="imagem/Favicon.ico">
+	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
 	<script type="text/javascript">
 		function home() {
 			window.open("/Contraste");
@@ -55,7 +55,7 @@
 				<li>
 					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapÃĐ">Ir para o rodape [3]</a>
 				</li>
-
+			<!--
 				<li>
 					<a class="nav-link textos-nav" href="/login?logout"><i
 							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a>
@@ -66,6 +66,8 @@
 						<i class="fas fa-fast-backward"></i>
 						Voltar </a>
 				</li>
+				-->
+				
 			</ul>
 
 			<ul id="atalhos2">
@@ -97,33 +99,33 @@
 
 			<div class="logo">
 				<!-- LOGO -->
-				<a th:href="@{/}"><img src="../imagem/fullSportLogo.png" alt="Logo da loja"></a>
+				<a th:href="@{/}"><img th:src="@{/imagem/fullSportLogo.png}" alt="Logo da loja"></a>
 			</div>
 
 			<div>
 				<!-- Icones de redes sociais -->
 				<ul class="conjuntoIcones">
 					<li>
-						<a href="https://www.facebook.com">
-							<img src="../imagem/facebook.png" alt="Facebook" />
+						<a th:href="@{https://www.facebook.com}">
+							<img th:src="@{/imagem/facebook.png}" alt="Facebook" />
 						</a>
 					</li>
 
 					<li>
-						<a href="https://twitter.com">
-							<img src="../imagem/twitter.png" alt="Twitter" />
+						<a th:href="@{https://twitter.com}">
+							<img th:src="@{/imagem/twitter.png}" alt="Twitter" />
 						</a>
 					</li>
 
 					<li>
-						<a href="https://www.instagram.com/">
-							<img src="../imagem/instagram.png" alt="Instagram" />
+						<a th:href="@{https://www.instagram.com/}">
+							<img th:src="@{/imagem/instagram.png}" alt="Instagram" />
 						</a>
 					</li>
 
 					<li>
-						<a href="https://www.whatsapp.com">
-							<img src="../imagem/whatsapp.png" alt="Whatsapp" />
+						<a th:href="@{https://www.whatsapp.com}">
+							<img th:src="@{/imagem/whatsapp.png}" alt="Whatsapp" />
 						</a>
 					</li>
 				</ul>
@@ -154,11 +156,11 @@
 		<h3 class="exibe-titulo">Cadastrar Produto</h3>
 		<div class="form-cadastro-cliente">
 			<br>
-			<form action="#" th:action="@{/sig/produtosContraste}" th:object="${produtoContraste}" method="post">
+			<form action="#" th:action="@{/sig/produtosContraste}" th:object="${produto}" method="post">
 
 				<div class="row-1-grid">
 
-					<label for="nome">Nome</label>
+					<label for="nome" class="col-form-label">Nome</label>
 					<div>
 						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
 						</span>
@@ -167,7 +169,7 @@
 					</div>
 
 
-					<label for="tipo">Tipo do Produto</label>
+					<label for="tipo" class="col-form-label">Tipo do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}" class="txt-aviso">
 						</span>
@@ -176,7 +178,7 @@
 					</div>
 
 
-					<label for="cor">Cor do Produto</label>
+					<label for="cor" class="col-form-label">Cor do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}" class="txt-aviso">
 						</span>
@@ -185,7 +187,7 @@
 					</div>
 
 
-					<label for="preco">Preço</label>
+					<label for="preco" class="col-form-label">Preço</label>
 					<div>
 						<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="txt-aviso">
 						</span>
@@ -193,7 +195,7 @@
 							placeholder="Informe o preço do produto">
 					</div>
 
-					<label for="data">Data de Cadastro do Produto</label>
+					<label for="data" class="col-form-label">Data de Cadastro do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
 							class="txt-aviso">
@@ -202,7 +204,7 @@
 							placeholder="Informe a data de cadastro">
 					</div>
 
-					<label for="qtdEstoque">Quantidade de produtos</label>
+					<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
 					<div>
 						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
 						</span>
@@ -211,7 +213,7 @@
 					</div>
 
 
-					<label for="cnpj">CNPJ</label>
+					<label for="cnpj" class="col-form-label">CNPJ</label>
 					<div>
 						<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="txt-aviso">
 						</span>
@@ -240,7 +242,6 @@
 				<p>Renan Figueiredo</p>
 				<p>Lisandra Ferraz</p>
 				<p>Gabriel Gozzi</p>
-				<p>João Victor</p>
 			</div>
 
 			<div id="selosFoot">
@@ -267,7 +268,6 @@
 	crossorigin="anonymous"></script>
 
 <script src="../js/fonte.js"> </script>
-<!--<script src="../js/contraste.js"> </script> -->
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>

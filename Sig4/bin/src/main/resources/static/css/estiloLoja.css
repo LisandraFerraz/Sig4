@@ -1,6 +1,5 @@
-  
-       
-       *{
+     
+*{
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
@@ -531,7 +530,7 @@ header * {
 
 input.txt-form{
 	border-radius: 5px;
-	height: 23px;
+	height: 25px;
 }
 
 .row-2-grid{
@@ -551,7 +550,7 @@ input.txt-form{
     padding: 5px;
 }
 
-.txt-aviso{
+span.txt-aviso{
 	color: rgb(155, 36, 36);
 	font-size: 7pt;
 }
@@ -972,7 +971,7 @@ input.btn-cad-cliente:hover{
 }
 
 .table-exibe th, td{
-	padding: 5px;
+	padding: 4px;
 	border-radius: 3px;
 }
 
