@@ -147,7 +147,7 @@ public class GUIClienteController {
 			return new ModelAndView("paginasContraste/atualizarClienteContraste");
 		} else {
 			servico.altera(cliente);
-			modelAndView.addObject("clientes", servico.consultaTodos());
+			modelAndView.addObject("clientesContraste", servico.consultaTodos());
 		}
 		return modelAndView;
 	}

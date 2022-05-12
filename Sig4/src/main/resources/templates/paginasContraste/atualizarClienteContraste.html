@@ -9,7 +9,9 @@
 		function consulta() {
 			window.open("/sig/clientesContraste");
 		}
-		
+		function consultaContraste() {
+			window.open("/sig/cliente");
+		}
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" />
@@ -124,7 +126,7 @@
 
 	<main id="conteudo">
 	<br />
-		<h3>Atualizar Cliente</h3>
+		<h3 class="exibe-titulo">Atualizar Cliente</h3>
 		<div class="form-cadastro-cliente">
 			<br>
 			<form action="#" th:action="@{/sig/clientesContraste/id/{id} (id=${cliente.id}) }" th:object="${cliente}"
@@ -229,7 +231,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
-<script th:src="@{js/fonte.js}"></script>
+
+<script src="js/fonte.js"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');

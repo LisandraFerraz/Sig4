@@ -62,13 +62,12 @@ public class GUIProdutoController {
 		ModelAndView modelAndView = new ModelAndView("atualizarProduto");
 		modelAndView.addObject("produto", servico.consultaPorId(id).get()); // retorna um objeto do tipo cliente
 		return modelAndView; // addObject adiciona objetos para view
-	}
-	
+	}	
 	//Contraste
 	@GetMapping("/produtosContraste/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
-	public ModelAndView retornaFormParaEditarProdutoContraste(@PathVariable("id") Long id) {
+	public ModelAndView retornaFormParaEditarProdutoContraste(@PathVariable("nome") Long id) {
 		ModelAndView modelAndView = new ModelAndView("paginasContraste/atualizarProdutoContraste");
-		modelAndView.addObject("produtoContraste", servico.consultaPorId(id).get()); // retorna um objeto do tipo cliente
+		modelAndView.addObject("produto", servico.consultaPorId(id).get()); // retorna um objeto do tipo cliente
 		return modelAndView; // addObject adiciona objetos para view
 	}
 
