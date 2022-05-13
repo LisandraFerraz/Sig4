@@ -55,7 +55,15 @@ public class GUIMenuController {
 	public ModelAndView acessarAcessibilidadeContraste() {
 		return new ModelAndView("paginasContraste/acessibilidadeContraste");
 	}
+//////////////////////////////////////////////////////////////////////////////////
+	@GetMapping("/carrinhoDeCompra")
+	public ModelAndView acessarCarrinho() {
+		return new ModelAndView("carrinhoDeCompra");
+	}
 	
-	
-
+	//Contraste
+	@GetMapping("/carrinhoDeCompraContraste")
+	public ModelAndView acessarCarrinhoContraste() {
+		return new ModelAndView("paginasContraste/carrinhoDeCompraContraste");
+	}
 }
