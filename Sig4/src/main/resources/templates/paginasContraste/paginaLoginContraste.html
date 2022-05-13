@@ -12,7 +12,7 @@
     <link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
      <script>
 		function autenticacao() {
-			window.open("/sig/login");
+			window.open("/login");
 		}     
      </script>
     </head>
@@ -43,7 +43,7 @@
                    
 
                     <li >
-                        <a th:href="@{/sig/login}" title="sem Contraste" id="modoClaro">Modo Claro</a>
+                        <a th:href="@{/login}" title="sem Contraste" id="modoClaro">Modo Claro</a>
                     </li>
 
                     <li>
@@ -68,7 +68,7 @@
 	
 	<!--================================================================================================-->
 	<br>
-	<form th:action="@{/login}" method="post">
+	<form th:action="@{/loginContraste}" method="post">
 		<div class="login-page">
 			<div class="form">
 

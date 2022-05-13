@@ -9,7 +9,7 @@
 		function consulta() {
 			window.open("/sig/produtosContraste");
 		}
-		function consultaContraste(){
+		function consultaContraste() {
 			window.open("/sig/produto")
 		}
 	</script>
@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
+
 <body>
 
 	<!-- cabeçalho -->
@@ -36,7 +37,7 @@
 				<li>
 					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
 				</li>
-				
+
 				<!--
 				<li>
 					<a class="nav-link textos-nav" href="/login?logout"><i
@@ -56,7 +57,7 @@
 					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
 				</li>
 
-				
+
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
 				</li>
@@ -228,8 +229,7 @@
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-	<script src="js/fonte.js"></script>
+	<script th:src="@{/js/fonte.js}"></script>
 	<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 	<script>
 		new window.VLibras.Widget('https://vlibras.gov.br/app');
