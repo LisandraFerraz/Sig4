@@ -901,6 +901,10 @@ span.txt-aviso{
 	height: auto;
 	margin: 1px;  
 }
+
+.row-1-grid label{
+    color: rgb(243, 243, 243);
+}
     
     /* MENU */
     #acessibilidade{
