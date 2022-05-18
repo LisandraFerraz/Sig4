@@ -52,16 +52,16 @@
 			</ul>
 
 			<ul id="atalhos2">
-				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
-				</li>
-
+			<li>
+				<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+			</li>
+				
 				<li>
 					<a th:href="@{/scv/pedido}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li >
-					<a th:href="@{/scv//pedido}" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/scv/pedido}" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -139,27 +139,31 @@
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo">Cadastrar Pedido</h3>
-		<div class="form-cadastro-pedido">
+		<div class="form-cadastro-cliente">
 			<br>
 			<form action="#" th:action="@{/scv/pedidos}" th:object="${umPedido}" method="post"> 
 				<div class="row">
 					 <div class="form-group col-md-4"> 
 						 <label for="cpf" class="col-form-label">CPF</label> 
-						  <input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="cpf">  
-						  <span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="text-danger"> </span> 
+						  <input type="text" th:field="*{cpf}" class="txt-form" id="cpf" placeholder="cpf">  
+						  <span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="txt-aviso"> </span> 
 						</div> 
 					</div> 
 					<div class="row"> <div class="form-group col-md-8">     
 						<label for="produtoId" class="col-form-label">Código Produto</label>     
-						 <input type="text" th:field="*{produtoId}" class="form-control" id="produtoId" placeholder="Código Produto">      
-						  <span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}" class="text-danger"> </span> 
-						</div> </div> <div class="row"> <div class="form-group col-md-8">
-							 <label for="quantidade" class="col-form-label">Quantidade</label>  
-							 <input type="text" th:field="*{quantidade}" class="form-control" id="quantidade" placeholder="Quantidade">
-							  <span th:if="${#fields.hasErrors('quantidade')}"th:errors="*{quantidade}" class="text-danger"></span> 
-							</div> <div class="form-group col-md-20">       
-								<input type="submit" class="btn btn-primary" value="Cadastrar Pedido">      
-								   <a type="submit" class="btn btn-primary" th:href="@{/scv/pedido}"> Consultar Pedidos</a> 
+						 <input type="text" th:field="*{produtoId}" class="txt-form" id="produtoId" placeholder="Código Produto">      
+						  <span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}" class="txt-aviso"> </span> 
+								</div>
+					 				</div>
+					  <div class="row"> <div class="form-group col-md-8">
+							  <label for="quantidade" class="col-form-label">Quantidade</label>  
+							  <input type="text" th:field="*{quantidade}" class="txt-form" id="quantidade" placeholder="Quantidade">
+							  <span th:if="${#fields.hasErrors('quantidade')}"th:errors="*{quantidade}" class="txt-aviso"></span> 
+							</div> 
+							
+							<div class="form-group col-md-20">       
+								<input type="submit" class="btn-cad-cliente" value="Cadastrar Pedido">      
+								<input type="button" class="btn-cad-cliente" value="Consultar Pedido" onclick="consulta()"> 
 								</div>
 							 </div> 
 							</form>

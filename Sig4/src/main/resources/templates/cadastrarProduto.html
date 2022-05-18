@@ -143,7 +143,7 @@
 			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
 				<div class="row-1-grid">
 
-					<label for="nome">Nome</label>
+					<label for="tipo">Nome do Produto </label>
 					<div>
 						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
 						</span>

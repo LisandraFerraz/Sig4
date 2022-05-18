@@ -14,7 +14,7 @@
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
 	<script type="text/javascript">
 		function consulta() {
-			window.open("/sig/produtos");
+			window.open("/scv/pedidos");
 		}
 		
 
@@ -145,7 +145,8 @@
 		<div class="panel-body" th:switch="${pedidos}"> 
 			
 			<h5 th:case="null">Não existem pedidos cadastrados ainda!</h5> 
-			<div th:case="*"> <table class="table">
+			<div th:case="*"> 
+				<table class="table-exibe">
 				 <thead>
 					  <tr>
 						   <th>ID</th>
