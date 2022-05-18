@@ -14,7 +14,7 @@
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
 	<script type="text/javascript">
 		function consulta() {
-			window.open("/sig/pedidos");
+			window.open("/scv/pedidos");
 		}
 	</script>
 </head>
@@ -52,16 +52,16 @@
 			</ul>
 
 			<ul id="atalhos2">
+			<li>
+				<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+			</li>
+				
 				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
-				</li>
-
-				<li>
-					<a th:href="@{/sig/pedido}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/scv/pedido}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li >
-					<a th:href="@{/sig/pedido}" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/scv/pedido}" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -133,8 +133,6 @@
 			<div class="vw-plugin-top-wrapper"></div>
 		</div>
 	</div>
-
-
 	<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
 	<main id="conteudo">
 		<br />
