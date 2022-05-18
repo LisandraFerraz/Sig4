@@ -13,25 +13,10 @@
 	 
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
 	<script type="text/javascript">
-		function home() {
-			window.open("/");
-		}
-		function acessarTenis() {
-			window.open("/tenis");
-		}
-		function acessarEquipamentos() {
-			window.open("/equipamentos");
-		}
-		function acessarAcessibilidade() {
-			window.open("/acessibilidade");
-		}
 		function consulta() {
-			window.open("/sig/produtos");
+			window.open("/scv/pedidos");
 		}
-		function cretornaFormDeConsultaTodosClientes() {
-			window.open("/sig/clientes");
-		}
-
+		
 
 	</script>
 
@@ -77,14 +62,12 @@
 				</li>
 
 				<li>
-					<a th:href="@{/sig/pedidos}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/scv/pedidos}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li >
-					<a th:href="@{/sig/clientes}" title="sem Contraste" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/scv/clientes}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
-
-				
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
@@ -159,40 +142,35 @@
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo"> Lista de Pedidos </h3>
-		<div class="panel-body" th:switch="${pedidos}">
-			<h5 th:case="null">Não existem pedidos cadastrados ainda!</h5>
-			<br />
-			<div th:case="*">
+		<div class="panel-body" th:switch="${pedidos}"> 
+			
+			<h5 th:case="null">Não existem pedidos cadastrados ainda!</h5> 
+			<div th:case="*"> 
 				<table class="table-exibe">
-					<thead>
-						<tr>
-                            <th>IdPedido</th>
-							<th>CPF</th>
-							<th>produtoId</th>
-							<th>quantidade</th>
-
-						</tr>
-					</thead>
+				 <thead>
+					  <tr>
+						   <th>ID</th>
+						    <th>CPF</th>
+							<th>Data Emissão</th>
+							<th>Valor total</th> 
+						</tr> 
+					</thead> 
 					<tbody>
-						<tr th:each="pedido : ${pedidos}">
-                            <td th:text="${pedido.id}"></td>
-                            <td th:text="${pedido.cpf}"></td>
-							<td th:text="${pedido.produtoId}"></td>
-							<td th:text="${pedido.quantidade}"></td>
-							
-							<td>
-								<div class="btn-exibe-group">
-									<a th:href="@{/sig/pedidos/{id}(id=${pedido.id})}" >
-										<button class="btn-exibe"> Editar </button></a>
-									<a th:href="@{/sig/pedidos/id/{id}(id=${pedido.id})}">
-										<button class="btn-exibe">Excluir</button></a>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+						 <tr th:each="pedido : ${pedidos}">
+				 <td th:text="${pedido.id}"></td> 
+				 <td th:text="${pedido.cpf}"></td> 
+				 <td th:text="${pedido.dataEmissao}"></td> 
+				 <td th:text="${pedido.getValorTotal}"></td>
+				  <td> <div class="btn-group pull-right">
+					   <a class="btn btn-sm btn-primary" th:href="@{/scv/pedidos/{cpf}(cpf=${pedido.cpf})}">Cancelar</a>
+					    <a class="delete btn btn-sm btn-danger" th:href="@{/scv/pedidos/id/{id}(id=${pedido.id})}">Excluir</a> 
+					</div>
+				 </td> 
+				</tr>
+			 </tbody> 
+			</table> 
+		</div> 
+	</div> 
 
 	</main>
 

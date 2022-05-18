@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 @Controller
-@RequestMapping(path = "/sig")
+@RequestMapping(path = "/scv")
 public class GUIPedidoController {
  Logger logger = LogManager.getLogger(this.getClass());
  @Autowired
@@ -30,7 +30,7 @@ public class GUIPedidoController {
  public ModelAndView cadastrarPedido(PedidoDTO umPedido) {
  logger.info(">>>>>> 1. controller pagina cadastrar pedido chamada ");
  ModelAndView mv = new ModelAndView("cadastrarPedido");
- mv.addObject("pedido", new PedidoDTO());
+ mv.addObject("umPedido", new PedidoDTO());
  return mv;
  }
  @GetMapping("/pedidos")
