@@ -166,15 +166,16 @@
 				<table class="table-exibe">
 					<thead>
 						<tr>
-							
+                            <th>IdPedido</th>
 							<th>CPF</th>
-							<th>produtoId}</th>
+							<th>produtoId</th>
 							<th>quantidade</th>
 
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="pedido : ${pedidos}">
+                            <td th:text="${pedido.id}"></td>
                             <td th:text="${pedido.cpf}"></td>
 							<td th:text="${pedido.produtoId}"></td>
 							<td th:text="${pedido.quantidade}"></td>
