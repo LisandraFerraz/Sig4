@@ -141,6 +141,7 @@
 		<div class="form-cadastro-cliente">
 			<br>
 			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
+
 				<div class="row-1-grid">
 
 					<label for="tipo">Nome do Produto </label>
@@ -150,6 +151,7 @@
 						<input type="text" th:field="*{nome}" id="nome" class="txt-form"
 							placeholder="Informe o nome do produto">
 					</div>
+
 
 					<label for="tipo">Tipo do Produto</label>
 					<div>

@@ -14,7 +14,7 @@
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
 	<script type="text/javascript">
 		function consulta() {
-			window.open("/scv/pedidos");
+			window.open("/sig/pedidos");
 		}
 		
 
@@ -62,11 +62,11 @@
 				</li>
 
 				<li>
-					<a th:href="@{/scv/pedidos}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/sig/pedidos}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li >
-					<a th:href="@{/scv/clientes}" title="sem Contraste" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/sig/clientes}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -162,8 +162,8 @@
 				 <td th:text="${pedido.dataEmissao}"></td> 
 				 <td th:text="${pedido.getValorTotal}"></td>
 				  <td> <div class="btn-group pull-right">
-					   <a class="btn btn-sm btn-primary" th:href="@{/scv/pedidos/{cpf}(cpf=${pedido.cpf})}">Cancelar</a>
-					    <a class="delete btn btn-sm btn-danger" th:href="@{/scv/pedidos/id/{id}(id=${pedido.id})}">Excluir</a> 
+					   <a class="btn btn-sm btn-primary" th:href="@{/sig/pedidos/{cpf}(cpf=${pedido.cpf})}">Cancelar</a>
+					    <a class="delete btn btn-sm btn-danger" th:href="@{/sig/pedidos/id/{id}(id=${pedido.id})}">Excluir</a> 
 					</div>
 				 </td> 
 				</tr>
