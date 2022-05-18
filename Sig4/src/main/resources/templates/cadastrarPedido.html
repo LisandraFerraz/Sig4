@@ -139,7 +139,7 @@
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo">Cadastrar Pedido</h3>
-		<div class="form-cadastro-pedido">
+		<div class="form-cadastro-cliente">
 			<br>
 			<form action="#" th:action="@{/sig/pedidos}" th:object="${pedido}" method="post">
 
@@ -161,7 +161,7 @@
 							placeholder="Informe o Código do produto">
 					</div>
 
-                    <label for="quantidade">quantidade</label>
+                    <label for="quantidade">Quantidade</label>
 					<div>
 						<span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}" class="txt-aviso">
 						</span>
@@ -178,6 +178,7 @@
 			</form>
 
 			<h6 th:text="${message}" class="txt-aviso"></h6>
+		</div>
 		</div>
 
 	</main>
