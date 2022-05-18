@@ -133,6 +133,13 @@ public class Produto {
 		this.dataCadastro = dataAtual.toString(fmt);
 	}
 
+    public Long getProdutoId() {
+        return null;
+    }
+
+    public void setProdutoId(long parseLong) {
+    }
+
 	// equals e tostring omitidos. Cliado na aula de 05/04/2022
 
 }
