@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(path = "/scv")
+@RequestMapping(path = "/sig")
 public class GUIPedidoController {
     Logger logger = LogManager.getLogger(this.getClass());
     @Autowired
