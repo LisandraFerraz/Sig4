@@ -57,11 +57,11 @@
 				</li>
 
 				<li>
-					<a th:href="@{/sig/produto}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/sig/pedido}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li >
-					<a th:href="@{/sig/produto}" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/sig/pedido}" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -139,9 +139,9 @@
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo">Cadastrar Pedido</h3>
-		<div class="form-cadastro-cliente">
+		<div class="form-cadastro-pedido">
 			<br>
-			<form action="#" th:action="@{/sig/PedidoDTO}" th:object="${PedidoDTO}" method="post">
+			<form action="#" th:action="@{/sig/pedidos}" th:object="${pedido}" method="post">
 
 				<div class="row-1-grid">
 
@@ -171,8 +171,8 @@
 
 
 				<div class="btt-cad-cliente-grid">
-					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
-					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta()">
+					<input type="submit" class="btn-cad-cliente" value="Cadastrar Pedido">
+					<input type="button" class="btn-cad-cliente" value="Consultar Pedido" onclick="consulta()">
 				</div>
 
 			</form>

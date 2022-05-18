@@ -26,14 +26,14 @@ public class GUIPedidoController {
  Logger logger = LogManager.getLogger(this.getClass());
  @Autowired
  MantemPedido mantemPedido;
- @GetMapping("/pedidos")
+ @GetMapping("/pedido")
  public ModelAndView cadastrarPedido(PedidoDTO umPedido) {
  logger.info(">>>>>> 1. controller pagina cadastrar pedido chamada ");
  ModelAndView mv = new ModelAndView("cadastrarPedido");
- mv.addObject("umPedido", new PedidoDTO());
+ mv.addObject("pedido", new PedidoDTO());
  return mv;
  }
- @GetMapping("/pedido")
+ @GetMapping("/pedidos")
  public ModelAndView consultaPedidos() {
  ModelAndView mv = new ModelAndView("consultarPedido");
  logger.info(">>>>>> 1. controller chamou a api nativa de consulta de pedidos");
