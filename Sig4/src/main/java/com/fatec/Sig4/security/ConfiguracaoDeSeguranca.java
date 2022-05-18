@@ -21,13 +21,6 @@ public class ConfiguracaoDeSeguranca extends WebSecurityConfigurerAdapter {
 				.logoutSuccessUrl("/login?logout");
 
 	}
-	protected void configureContraste(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/clientesContraste").hasAnyRole("ADMIN", "VEND") //
-				.antMatchers("/fornecedores").hasRole("ADMIN") // somente login maria
-				.anyRequest().authenticated().and().formLogin().loginPage("/loginContraste").permitAll().and().logout()
-				.logoutSuccessUrl("/loginContraste?logout");
-
-	}
 
 	// configuracao de autenticacao
 	@Override
@@ -37,12 +30,6 @@ public class ConfiguracaoDeSeguranca extends WebSecurityConfigurerAdapter {
 				.withUser("1").password(pc().encode("1")).roles("TEST");
 	}
 
-	public void configureContraste(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("jose").password(pc().encode("123")).roles("ADMIN").and()
-				.withUser("maria").password(pc().encode("456")).roles("VEND").and()
-				.withUser("1").password(pc().encode("1")).roles("TEST");
-
-	}
 
 	@Bean
 	public BCryptPasswordEncoder pc() {
@@ -51,9 +38,6 @@ public class ConfiguracaoDeSeguranca extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/static/**", "/css/**", "/js/**", "/images/**", "/h2-console/**");
-	}
-	public void configureContraste(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/static/**", "/css/**", "/js/**", "/images/**", "/h2-console/**");
 	}
 }

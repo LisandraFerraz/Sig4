@@ -6,6 +6,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+#modoClaro{
+    display: none;    
+}
+
 body{
     background-color: #2e2e31;
     grid-template-columns: auto;

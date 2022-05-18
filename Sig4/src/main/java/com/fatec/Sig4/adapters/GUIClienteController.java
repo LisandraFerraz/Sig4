@@ -27,14 +27,6 @@ public class GUIClienteController {
 		modelAndView.addObject("clientes", servico.consultaTodos());
 		return modelAndView;
 	}
-	//contraste
-	@GetMapping("/clientesContraste")
-	public ModelAndView retornaFormDeConsultaTodosClientesContraste() {
-		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarClienteContraste");
-		modelAndView.addObject("clientesContraste", servico.consultaTodos());
-		return modelAndView;
-	}
-	//contraste
 	////////////////////////////////////////////////////////////////////////////////////////////
 	@GetMapping("/cliente")
 	public ModelAndView retornaFormDeCadastroDe(Cliente cliente) {
@@ -42,14 +34,6 @@ public class GUIClienteController {
 		mv.addObject("cliente", cliente);
 		return mv;
 	}
-	//contraste
-	@GetMapping("/clienteContraste")
-	public ModelAndView retornaFormDeCadastroDeContraste(Cliente cliente) {
-		ModelAndView mv = new ModelAndView("paginasContraste/cadastrarClienteContraste");
-		mv.addObject("clienteContraste", cliente);
-		return mv;
-	}
-
 	////////////////////////////////////////////////////////////////////////////////////////////
 	@GetMapping("/clientes/{cpf}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarCliente(@PathVariable("cpf") String cpf) {
@@ -57,14 +41,6 @@ public class GUIClienteController {
 		modelAndView.addObject("cliente", servico.consultaPorCpf(cpf).get()); // retorna um objeto do tipo cliente
 		return modelAndView; // addObject adiciona objetos para view
 	}
-	//contraste
-	@GetMapping("/clientesContraste/{cpf}") // diz ao metodo que ira responder a uma requisicao do tipo get
-	public ModelAndView retornaFormParaEditarClienteContraste(@PathVariable("cpf") String cpf) {
-		ModelAndView modelAndView = new ModelAndView("paginasContraste/atualizarClienteContraste");
-		modelAndView.addObject("cliente", servico.consultaPorCpf(cpf).get()); // retorna um objeto do tipo cliente
-		return modelAndView; // addObject adiciona objetos para view
-	}
-	
 	///////////////////////////////////////////////////
 	@GetMapping("/clientes/id/{id}")
 	public ModelAndView excluirNoFormDeConsultaCliente(@PathVariable("id") Long id) {
@@ -74,17 +50,7 @@ public class GUIClienteController {
 		modelAndView.addObject("clientes", servico.consultaTodos());
 		return modelAndView;
 	}
-	//contraste
-	@GetMapping("/clientesContraste/id/{id}")
-	public ModelAndView excluirNoFormDeConsultaClienteContraste(@PathVariable("id") Long id) {
-		servico.delete(id);
-		logger.info(">>>>>> 1. servico de exclusao chamado para o id => " + id);
-		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarClienteContraste");
-		modelAndView.addObject("clientesContraste", servico.consultaTodos());
-		return modelAndView;
-	}
 	//////////////////////////////////////////////////////////////////////
-
 	@PostMapping("/clientes")
 	public ModelAndView save(@Valid Cliente cliente, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarCliente");
@@ -102,26 +68,7 @@ public class GUIClienteController {
 		}
 		return modelAndView;
 	}
-	//contraste
-	@PostMapping("/clientesContraste")
-	public ModelAndView saveContraste(@Valid Cliente cliente, BindingResult result) {
-		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarClienteContraste");
-		if (result.hasErrors()) {
-			modelAndView.setViewName("paginasContraste/cadastrarClienteContraste");
-		} else {
-			if (servico.save(cliente).isPresent()) {
-				logger.info(">>>>>> controller chamou adastrar e consulta todos");
-				modelAndView.addObject("clientesContraste", servico.consultaTodos());
-			} else {
-				logger.info(">>>>>> controller cadastrar com dados invalidos");
-				modelAndView.setViewName("paginasContraste/cadastrarClienteContraste");
-				modelAndView.addObject("message", "Dados invalidos");
-			}
-		}
-		return modelAndView;
-	}
 	//////////////////////////////////////////////////////////////////////////////////////////////////
-
 	@PostMapping("/clientes/id/{id}")
 	public ModelAndView atualizaCliente(@PathVariable("id") Long id, @Valid Cliente cliente, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarCliente");
@@ -135,20 +82,5 @@ public class GUIClienteController {
 			modelAndView.addObject("clientes", servico.consultaTodos());
 		}
 		return modelAndView;
-	}
-	//contraste
-	@PostMapping("/clientesContraste/id/{id}")
-	public ModelAndView atualizaClienteContraste(@PathVariable("id") Long id, @Valid Cliente cliente, BindingResult result) {
-		ModelAndView modelAndView = new ModelAndView("paginasContraste/consultarClienteContraste");
-		logger.info(">>>>>> servico para atualizacao de dados chamado para o id => " + id);
-		if (result.hasErrors()) {
-			logger.info(">>>>>> servico para atualizacao de dados com erro => " + result.getFieldError().toString());
-			cliente.setId(id);
-			return new ModelAndView("paginasContraste/atualizarClienteContraste");
-		} else {
-			servico.altera(cliente);
-			modelAndView.addObject("clientesContraste", servico.consultaTodos());
-		}
-		return modelAndView;
-	}
+	}	
 }

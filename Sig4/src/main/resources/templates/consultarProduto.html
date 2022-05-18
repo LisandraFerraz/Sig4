@@ -8,29 +8,7 @@
 	<title>Lista de clientes</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/estiloLoja.css}" />
-	<!--<link rel="stylesheet" type="text/css" th:href="@{/css/contraste.css}" /> -->
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
-	<script type="text/javascript">
-		function home() {
-			window.open("/");
-		}
-		function acessarTenis() {
-			window.open("/tenis");
-		}
-		function acessarEquipamentos() {
-			window.open("/equipamentos");
-		}
-		function acessarAcessibilidade() {
-			window.open("/acessibilidade");
-		}
-		function consulta() {
-			window.open("/sig/produtos");
-			window.open("/sig/produtosContraste");
-		}
-
-	</script>
-
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
@@ -72,7 +50,11 @@
 				</li>
 
 				<li>
-					<a th:href="@{/sig/produtosContraste}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/sig/produtos}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+				</li>
+
+				<li >
+					<a th:href="@{/sig/produtos}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
 
 
@@ -225,6 +207,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 <script th:src="@{/js/fonte.js}"></script>
+<script th:src="@{/js/contraste.js}"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');
