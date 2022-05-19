@@ -69,7 +69,7 @@
 				<a th:href="@{/}"><img th:src="@{/imagem/fullSportLogo.png}" alt="Logo da loja"></a>
 			</div>
 
-			<div>
+			<div id="conjuntoIcones">
 				<!-- Icones de redes sociais -->
 				<ul class="conjuntoIcones">
 					<li>
@@ -106,22 +106,24 @@
 				<li> <a th:href="@{/sig/pedido}">Pedidos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
-			</ul>
-			
-			<h1 class="titulo__cabecalho"><button class="cabecalho__munu" aria-label="Menu"><i></i></button>Menu</h1>
+			</ul>	
 		</nav>
 
+			<nav class="barra__menu">
+				<h1 class="titulo__cabecalho"><button class="cabecalho__munu" aria-label="Menu"><i></i></button>Menu</h1>
+			</nav>
 	
 
 				<nav class="menu-lateral">
 					<ul>
-						<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
-						<li> <a th:href="@{/sig/produto}">Produtos</a></li>
-						<li> <a th:href="@{/scv/pedido}">Pedidos</a></li>
-						<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
-						<li><a th:href="@{/login?logout}">Logout</a></li>
+						<li> <a th:href="@{/sig/cliente}" class="menu-lateral__link menu-lateral__link--inicio "> Clientes </a> </li>
+						<li> <a th:href="@{/sig/produto}"  class="menu-lateral__link menu-lateral__link--PortifolioDesign">Produtos</a></li>
+						<li> <a th:href="@{/scv/pedido}" class="menu-lateral__link menu-lateral__link--PortifolioDesign">Pedidos</a></li>
+						<li><a th:href="@{/equipamentos}" class="menu-lateral__link menu-lateral__link--PortifolioDesign">Equipamentos</a></li>
+						<li><a th:href="@{/login?logout}" class="menu-lateral__link menu-lateral__link--PortifolioDesign">Logout</a></li>
 					</ul>
 				</nav>
+
 	</header>
 
 	<!-- Vlibras -->
