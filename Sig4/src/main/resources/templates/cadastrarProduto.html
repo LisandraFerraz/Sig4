@@ -118,12 +118,28 @@
 
 		<nav id="menu">
 			<ul>
-				<li class="active"><a th:href="@{/}">Home</a></li>
 				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
+				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
+				<li> <a th:href="@{/sig/pedido}">Pedidos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
-			</ul>
+			</ul>	
 		</nav>
+
+			<nav class="barra__menu">
+				<h1 class="titulo__cabecalho"><button class="cabecalho__munu" aria-label="Menu"><i></i></button>Menu</h1>
+			</nav>
+	
+
+				<nav class="menu-lateral">
+					<ul>
+						<li> <a th:href="@{/sig/cliente}" class="menu-lateral__link menu-lateral__link--inicio "> Clientes </a> </li>
+						<li> <a th:href="@{/sig/produto}"  class="menu-lateral__link menu-lateral__link--PortifolioDesign">Produtos</a></li>
+						<li> <a th:href="@{/scv/pedido}" class="menu-lateral__link menu-lateral__link--PortifolioDesign">Pedidos</a></li>
+						<li><a th:href="@{/equipamentos}" class="menu-lateral__link menu-lateral__link--PortifolioDesign">Equipamentos</a></li>
+						<li><a th:href="@{/login?logout}" class="menu-lateral__link menu-lateral__link--PortifolioDesign">Logout</a></li>
+					</ul>
+				</nav>
 	</header>
 	<!-- Vlibrs -->
 	<div vw class="enabled">
@@ -252,6 +268,7 @@
 	crossorigin="anonymous"></script>
 <script th:src="@{/js/fonte.js}"></script>
 <script th:src="@{/js/contraste.js}"></script>
+<script th:src="@{/js/botao.js}"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
 	new window.VLibras.Widget('https://vlibras.gov.br/app');

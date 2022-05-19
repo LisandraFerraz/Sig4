@@ -431,17 +431,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 <script th:src="@{/js/fonte.js}"></script>
-<script> 
-	const botaoMenu = document.querySelector('.cabecalho__munu');
-			const menu = document.querySelector('.menu-lateral');
-			const EsconderVideo = document.querySelector('.conteudo')
-			
-							botaoMenu.addEventListener('click', ()=>{
-											menu.classList.toggle('menu-lateral--ativo');
-											EsconderVideo.classList.toggle('esconder__videos')
-
-							});
-							</script>
+<script th:src="@{/js/botao.js}"></script>
 <script th:src="@{/js/contraste.js}"></script>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
