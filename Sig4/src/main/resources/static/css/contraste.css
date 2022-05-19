@@ -31,8 +31,17 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid #686868; 
 }
 
-
+.cabecalho__munu{
+    display: none;
+}
+.titulo__cabecalho{
+    display: none;
+}
+.menu-lateral{
+    display: none;
+}
 /* HEADER */
+
 *{
     margin: 0;
     padding: 0;
@@ -1263,3 +1272,6 @@ form button {
 }
 
 
+@media screen and (max-width:999px){
+
+}
