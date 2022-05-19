@@ -154,7 +154,7 @@ header * {
 .logo{
     margin-left: auto;
     margin-right: auto;
-    height: 100px;
+    height: 20%;
 }
 
 .pesquisa{
@@ -1118,8 +1118,9 @@ form button {
 @media screen and (max-width:999px){
     header * {
         background-color: #ebebeb;
+
     }
-    
+
     #acessibilidade * {
         background-color: #ebebeb;
     }
@@ -1164,8 +1165,9 @@ form button {
     }
     
     .conjuntoIcones{
-        margin-top: 5%;
+        margin-top: 7%;
         float: right;
+        margin: 10%;
     }
     
     .conjuntoIcones img{
@@ -1174,7 +1176,7 @@ form button {
     }
     
     .conjuntoIcones li{
-        margin-left: 10%;
+        margin-left: 5%;
         display: inline;
         color: rgb(255, 255, 255);
     }
@@ -1182,13 +1184,16 @@ form button {
     .conjuntoIcones a {
         text-decoration: none;
     }
+
+    #conjuntoIcones{
+        height: 0;
+    }
     
     .navGrid{
         justify-content: center;
         display: grid;
-        grid-template-columns: repeat(3, 200px);
-        grid-auto-rows: minmax(120px,auto);
-        /* width: 100%; */
+        grid-template-columns: repeat(3, 250px);
+        height: 90px;
     }
     
     
@@ -1199,32 +1204,33 @@ form button {
     }
     
     #barraPesquisa input{
-        padding: 8px;
-        width: 50px;
+        padding: 4px;
+        width: 100px;
         height: 25px;
-        border: 1px solid #fff;
+        border: 3px solid #fff;
         border-radius: 20px;
         background-color: #fff;
     }
     
     #barraPesquisa input:active{
-        border: 1px solid #fff;
+        border: 2px solid #fff;
     }
     
     #barraPesquisa{
         margin-top: 12%;
         float: left;
+        height: 1%;
     }
 
     .logo img{
-        height: 50%;
+        height: 60px;
        
     }
     
     .logo{
         margin-left: auto;
         margin-right: auto;
-        height: 25%;
+        height: 1%;
     }
     
     .pesquisa{
@@ -1238,11 +1244,11 @@ form button {
         
         .titulo__cabecalho{
             display: flex;
-            font-family: 'My Soul', cursive;
             font-family: 'Oswald', sans-serif;
             color: rgb(0, 0, 0);
             font-size: 2em;
             position: static;
+            background-color: #a6e65a;
         }
         
         .cabecalho__munu i::before{
@@ -1251,6 +1257,9 @@ form button {
         }
         .menu-cabecalho{
             display: flex;
+        }
+        .barra__menu{
+            background-color: #a6e65a;
         }
         
         .menu-link{
@@ -1266,6 +1275,7 @@ form button {
             height: 40px;
         }
         /*menu lateral*/
+       
         .menu-lateral{
             display: flex;
             position: absolute;
@@ -1277,8 +1287,36 @@ form button {
             transition: .100s;
             left: -90000vh;
             border-radius: 19px;
-        
+            
         }
+        
+        
+        .menu-latera ul {
+            text-align: center;
+            list-style:none;
+        }
+        .menu-latera ul li {
+            display: inline;
+        }
+        
+        .menu-latera ul li a {
+            padding: 2px 10px;
+            display: inline-block;
+            border: 10px solid #a6e65a;
+            /* visual do link */
+            background-color: #a6e65a;
+            color: #2e2e2e;
+            text-decoration: none;
+        }
+        
+        .menu-latera ul a:hover {
+            /* height: 35px; */
+            background-color:#a6e65a;
+            border: 10px solid #a7e65ab4;
+            color: #000000;
+        }
+
+        /***************************************************/
         .menu-lateral--ativo{
             left: 0vh;
             transition: .100s;
@@ -1286,17 +1324,17 @@ form button {
         }
         .menu-lateral__link{
             height: 64px;
-            color:#FFFF;
+            color:rgb(0, 0, 0);
             padding-left: 64px;
             display: flex;
             align-items: center;
-            background-color: #0b45f3;
+            background-color: #a6e65a;
             margin: 1%;
             border-radius: 15px;
-            box-shadow: 3px 4px #0b45f3bd;
+            box-shadow: 3px 4px #a7e65a9d;
         }
         .menu-lateral__link--ativo{
-            color: #FFFF;
+            color: rgb(0, 0, 0);
             padding-left: 56px;
             border-left: 8px solid #FFFF;
         }
@@ -1314,6 +1352,7 @@ form button {
         /*menuPc*/
         .cabecalho__munu{
             width: 20px;
+            background-color: #a6e65a;
         }
         #menu *{
             background-color: #a6e65a;
@@ -1399,6 +1438,40 @@ form button {
     line-height: 15px;
 }
 /* FIM ACESSIBILIDADE */
+
+.propaganda img {
+    width: 100%;
+    height: auto;
+    /* height: 470px; */
+}
+.conjuntoNovidades {
+    margin: 30px 0 0 0;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 10px;
+    
+}
+
+/*CardNov*/
+/*conteudo*/
+#conteudo{
+    width: 100%;
+    height: auto;
+}
+.cardNov{
+    width: 100%;
+    height: auto;
+}
+
+.cardNov img{ 
+    height: 54px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+
+
 }
 
 
