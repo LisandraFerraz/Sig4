@@ -289,7 +289,7 @@ header * {
 #marcas{
     margin: 80px 0 0 0;
 }
-
+/******************************/
 .doubleGrid{
     justify-content: center;
     margin: 0 40px 0 40px;
@@ -1115,7 +1115,7 @@ form button {
 
 
 /*responsividade*/
-@media screen and (max-width:999px){
+@media screen and (max-width:750px){
     header * {
         background-color: #ebebeb;
 
@@ -1171,8 +1171,8 @@ form button {
     }
     
     .conjuntoIcones img{
-        height: 15%;
-        width: 15%;
+        height: auto;
+        width: 16%;
     }
     
     .conjuntoIcones li{
@@ -1187,12 +1187,13 @@ form button {
 
     #conjuntoIcones{
         height: 0;
+        padding-top: 27%;
     }
     
     .navGrid{
         justify-content: center;
         display: grid;
-        grid-template-columns: repeat(3, 250px);
+        grid-template-columns: repeat(3, 120px);
         height: 90px;
     }
     
@@ -1223,7 +1224,7 @@ form button {
     }
 
     .logo img{
-        height: 60px;
+        height: 70px;
        
     }
     
@@ -1439,6 +1440,7 @@ form button {
 }
 /* FIM ACESSIBILIDADE */
 
+/*conteutdo*/
 .propaganda img {
     width: 100%;
     height: auto;
@@ -1448,14 +1450,11 @@ form button {
     margin: 30px 0 0 0;
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(2, auto);
     grid-auto-rows: minmax(auto, auto);
     grid-gap: 10px;
-    
-}
 
-/*CardNov*/
-/*conteudo*/
+}
 #conteudo{
     width: 100%;
     height: auto;
@@ -1466,12 +1465,219 @@ form button {
 }
 
 .cardNov img{ 
-    height: 54px;
+    height: 90px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 
+#produtosProcurados{
+    margin: 25px 0;
+}
+.tituloSec{
+    text-align: center;
+}
 
+.conjuntoCard{
+    justify-content: center;
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 10px;
+    margin: 0 40px 0 40px;
+
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 18px;
+    
+}
+.conjuntoCard::-webkit-scrollbar {
+    max-width: auto;
+    height: auto;
+}
+  
+.conjuntoCard::-webkit-scrollbar-track {
+    background: rgba(253, 254, 255, .9);
+    border-radius: 20px;
+}
+  
+.conjuntoCard::-webkit-scrollbar-thumb {
+    display: block;
+    background-color: rgba(153, 153, 153, 0.3);
+    border-radius: 20px;
+    border: 1px solid transparent; 
+}
+
+
+.card *{
+    background-color: #fff;
+}
+
+.card{
+    line-height: 25px;
+    padding: 10px;
+    /* box-shadow: -5px 5px 5px rgba(0, 0, 0, .1); */
+    width: fit-content;
+    background-color: #fff;
+}
+
+.card img{
+    height: 280px;
+}
+
+.descCard{
+    color: #1b1b1b;
+}
+
+.corpoCard h3{
+    color: #1b1b1b;
+    font-size: 19px;
+}
+
+.frtGrtsCard{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    /* width: max-content; */
+    color: #62aa0b;
+    /* background-color: #a6e65a; */
+}
+
+.tituloCard{
+    font-size: 16px;
+    color: #1b1b1b;
+}
+
+.precoAnterior{
+    color: #1b1b1b;
+    text-decoration: line-through;
+}
+
+h3.precoAtual{
+	text-align: left;
+}
+/******************************/
+.doubleGrid{
+    width: 98%;
+    height: auto;
+    justify-content: center;
+    grid-template-columns: repeat(1, auto);
+    grid-auto-rows: minmax(auto, auto);
+
+}
+
+.card-FTZ *{
+    background-color: #fff;
+}
+
+.anuncioFutureZ img{
+    height: auto;
+    width: 98%;
+    margin: 1%;
+}
+
+.imgTenisFTZ{
+    text-align: center;
+}
+
+.card-FTZ img{
+    height: 190px;
+}
+
+.card-FTZ{
+    line-height: 25px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    width: fit-content;
+    background-color: #fff;
+}
+
+.card-FTZ:hover{
+    transition: .3s;
+    box-shadow: 0 0 6px rgba(143, 106, 106, .6);
+}
+
+.conjuntoTenisFZ{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 5px;
+    margin: 2%;
+}
+
+.conjuntoMarcas{
+    display: flex;
+    overflow-x: auto;
+    justify-content: center;
+    /* margin: 0 40px 0 40px; */
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 50px;
+}
+
+.conjuntoMarcas img{
+    height: auto;
+    width: 5%;
+}
+
+#marcas{
+    margin: 80px 0 0 0;
+}
+
+
+.categorias-grid{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 24px;
+}
+
+
+.tituloSec{
+    text-align: center;
+    margin: 5px 0 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 22px;
+    color: rgb(49, 49, 49);
+}
+
+#categorias img {
+    height: 430px;
+}
+
+.zoom {
+	overflow: hidden;
+}
+
+.zoom img {
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.zoom:hover img {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.zoom1 {
+	overflow: hidden;
+}
+
+.zoom1 img {
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.zoom1:hover img {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
 }
 
 
