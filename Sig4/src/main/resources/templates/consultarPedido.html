@@ -5,25 +5,13 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Lista de clientes</title>
+	<title>Lista de Pedidos</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-	 
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
-	<script type="text/javascript">
-		function consulta() {
-			window.open("/sig/pedidos");
-		}
-		
-
-	</script>
-
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
-
 
 <body>
 	<!-- cabecalho -->
@@ -62,12 +50,13 @@
 				</li>
 
 				<li>
-					<a th:href="@{/sig/pedidos}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/sig/produtos}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li >
-					<a th:href="@{/sig/clientes}" title="sem Contraste" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/sig/produtos}" title="sem Contraste" id="modoClaro">Modo Claro</a>
 				</li>
+
 
 				<li>
 					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
@@ -126,11 +115,13 @@
 				<li class="active"><a th:href="@{/}">Home</a></li>
 				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
+                <li> <a th:href="@{/sig/pedidos}">Pedidos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
+
 	<!-- Vlibrs -->
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -141,37 +132,41 @@
 
 	<main id="conteudo">
 		<br />
-		<h3 class="exibe-titulo"> Lista de Pedidos </h3>
-		<div class="panel-body" th:switch="${pedidos}"> 
-			
-			<h5 th:case="null">Não existem pedidos cadastrados ainda!</h5> 
-			<div th:case="*"> 
+		<h3 class="exibe-titulo">Lista de Pedidos</h3>
+		<div class="panel-body" th:switch="${pedidos}">
+			<br />
+			<div th:case="*">
 				<table class="table-exibe">
-				 <thead>
-					  <tr>
-						   <th>ID</th>
-						    <th>CPF</th>
-							<th>Data Emissão</th>
-							<th>Valor total</th> 
-						</tr> 
-					</thead> 
-					<tbody>
-						 <tr th:each="pedido : ${pedidos}">
-				 <td th:text="${pedido.id}"></td> 
-				 <td th:text="${pedido.cpf}"></td> 
-				 <td th:text="${pedido.dataEmissao}"></td> 
-				 <td th:text="${pedido.getValorTotal}"></td>
-				  <td> <div class="btn-group pull-right">
-					   <a class="btn btn-sm btn-primary" th:href="@{/sig/pedidos/{cpf}(cpf=${pedido.cpf})}">Cancelar</a>
-					    <a class="delete btn btn-sm btn-danger" th:href="@{/sig/pedidos/id/{id}(id=${pedido.id})}">Excluir</a> 
-					</div>
-				 </td> 
-				</tr>
-			 </tbody> 
-			</table> 
-		</div> 
-	</div> 
-
+					<thead>
+			<th>ID</th>
+			<th>CPF</th>
+			<th>Data Emissão</th>
+			<th>Valor total</th>
+		   
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:each="pedido : ${pedidos}">
+			<td th:text="${pedido.id}"></td>
+			<td th:text="${pedido.cpf}"></td>
+			<td th:text="${pedido.dataEmissao}"></td>
+			<td th:text="${pedido.getValorTotal}"></td>
+		   
+		   
+			<td>
+			<div class="btn-group pull-right">
+			<a class="btn btn-sm btn-primary"
+		   
+			th:href="@{/sig/pedidos/{cpf}(cpf=${pedido.cpf})}">Cancelar</a>
+			<a class="delete btn btn-sm btn-danger"
+			th:href="@{/sig/pedidos/id/{id}(id=${pedido.id})}">Excluir</a>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
 	</main>
 
 	<footer id="rodape">

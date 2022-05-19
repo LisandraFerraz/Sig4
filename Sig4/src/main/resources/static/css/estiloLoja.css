@@ -545,13 +545,6 @@ input.txt-form{
     grid-gap: 25px;
 }
 
-.row-3-grid{
-	display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-auto-rows: minmax(auto, auto);
-    grid-gap: 25px;
-}
-
 .input-cad-cliente{
 	background-color: #f7f7f7;
 	border: 1px solid rgb(192, 192, 192);

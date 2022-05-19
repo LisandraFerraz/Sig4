@@ -15,11 +15,11 @@ public class ItemDePedido {
  Long id;
  @OneToOne //cada item do pedido esta associado a um produto
  @JoinColumn(name="produtoId")
- Produto produto;
+ PedidoProduto produto;
  @NotNull
  int quantidade;
- public ItemDePedido(Produto produto, int quantidade) {
- this.produto = produto;
+ public ItemDePedido(PedidoProduto produtoComprado1, int quantidade) {
+ this.produto = produtoComprado1;
  this.quantidade = quantidade;
  }
  public ItemDePedido() {
@@ -30,14 +30,14 @@ public class ItemDePedido {
  public void setId(Long id) {
  this.id = id;
  }
- public Produto getProduto() {
+ public PedidoProduto getProduto() {
  return produto;
  }
- public void setProduto(Produto produto) {
- this.produto = produto;
+ public void setProduto(PedidoProduto pedidoProduto) {
+ this.produto = pedidoProduto;
  }
  public double getSubTotal() {
- return quantidade * getProduto().getPreco();
+ return quantidade * getProduto().getCusto();
  }
  public int getQuantidade() {
  return quantidade;

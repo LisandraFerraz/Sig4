@@ -52,16 +52,16 @@
 			</ul>
 
 			<ul id="atalhos2">
-			<li>
-				<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
-			</li>
-				
 				<li>
-					<a th:href="@{/sig/pedido}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
+				</li>
+
+				<li>
+					<a th:href="@{/sig/produto}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li >
-					<a th:href="@{/sig/pedido}" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/sig/produto}" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -133,17 +133,19 @@
 			<div class="vw-plugin-top-wrapper"></div>
 		</div>
 	</div>
+
+
 	<!--]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]-->
 	<main id="conteudo">
 		<br />
 		<h3 class="exibe-titulo">Cadastrar Pedido</h3>
 		<div class="form-cadastro-cliente">
 			<br>
-			<form action="#" th:action="@{/sig/pedidos}" th:object="${pedido}" method="post">
+			<form action="#" th:action="@{/sig/pedidos}" th:object="${umPedido}" method="post">
 
 				<div class="row-1-grid">
 
-					<label for="cpf">CPF</label>
+					<label for="cpf" class="col-form-label">CPF</label>
 					<div>
 						<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="txt-aviso">
 						</span>
@@ -151,7 +153,7 @@
 							placeholder="Informe o CPF">
 					</div>
 
-                    <label for="produtoId">Código do Produto</label>
+                    <label for="produtoId" class="col-form-label">Código do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}" class="txt-aviso">
 						</span>
@@ -159,7 +161,7 @@
 							placeholder="Informe o Código do produto">
 					</div>
 
-                    <label for="quantidade">Quantidade</label>
+                    <label for="quantidade" class="col-form-label">Quantidade</label>
 					<div>
 						<span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}" class="txt-aviso">
 						</span>
@@ -169,14 +171,13 @@
 
 
 				<div class="btt-cad-cliente-grid">
-					<input type="submit" class="btn-cad-cliente" value="Cadastrar Pedido">
-					<input type="button" class="btn-cad-cliente" value="Consultar Pedido" onclick="consulta()">
+					<input type="submit" class="btn-cad-cliente" value="Finalizar Produto">
+					<input type="button" class="btn-cad-cliente" value="Consultar Pedidos" onclick="consulta()">
 				</div>
 
 			</form>
 
 			<h6 th:text="${message}" class="txt-aviso"></h6>
-		</div>
 		</div>
 
 	</main>
