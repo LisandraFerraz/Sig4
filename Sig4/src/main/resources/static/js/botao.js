@@ -6,4 +6,4 @@ const botaoMenu = document.querySelector('.cabecalho__munu');
 											menu.classList.toggle('menu-lateral--ativo');
 											EsconderVideo.classList.toggle('esconder__videos')
 
-							});
+							});  
