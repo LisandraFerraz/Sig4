@@ -1,6 +1,5 @@
 var fonte = 16;
 
-
 $(document).ready(function(){
     $('#aumentaFonte').click(function(){
         if(fonte<20){
@@ -37,6 +36,4 @@ $(document).ready(function(){
     });
 
 });
-
-
 // $('body').css({'font-size': fonte+'pt'});
