@@ -1583,11 +1583,11 @@ form button {
                 grid-template-columns: repeat(3, 100px);
                 grid-auto-columns: auto;
             }
-            #rodapeRsponsivo{
+            #rodapeRsponsivo {
                 width: 100%;
                 height: auto;
-                background-color: #fff;
-                color: #313131;
+                background-color: #212124;
+                color: #ffffff;
                 text-align: center;
                 font-size: 18px;
             }
