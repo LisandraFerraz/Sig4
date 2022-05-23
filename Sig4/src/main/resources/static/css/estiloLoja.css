@@ -1366,6 +1366,10 @@ form button {
                         width: 20px;
                         background-color: #a6e65a;
                     }
+                    .cabecalho__munu ::before{
+                        width: 20px;
+                        background-color: #a6e65a;
+                    }
                     #menu *{
                         background-color: #a6e65a;
                     }
