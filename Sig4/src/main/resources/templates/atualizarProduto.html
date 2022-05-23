@@ -127,15 +127,16 @@
 			</nav>
 	
 
-				<nav class="menu-lateral">
-					<ul>
-						<li> <a th:href="@{/sig/cliente}" class="menu-lateral__link menu-lateral__link--inicio "> Clientes </a> </li>
-						<li> <a th:href="@{/sig/produto}"  class="menu-lateral__link menu-lateral__link--Proditos">Produtos</a></li>
-						<li> <a th:href="@{/scv/pedido}" class="menu-lateral__link menu-lateral__link--Pedidos">Pedidos</a></li>
-						<li><a th:href="@{/equipamentos}" class="menu-lateral__link menu-lateral__link--Equipamentos">Equipamentos</a></li>
-						<li><a th:href="@{/login?logout}" class="menu-lateral__link menu-lateral__link--Logout">Logout</a></li>
-					</ul>
-				</nav>
+			<nav class="menu-lateral">
+				<ul>
+					<li> <a th:href="@{/}" class="menu-lateral__link menu-lateral__link--inicio menu-lateral__link--ativo"> Home </a> </li>
+					<li> <a th:href="@{/sig/cliente}" class="menu-lateral__link menu-lateral__link--inicio "> Clientes </a> </li>
+					<li> <a th:href="@{/sig/produto}"  class="menu-lateral__link menu-lateral__link--produtos">Produtos</a></li>
+					<li> <a th:href="@{/scv/pedido}" class="menu-lateral__link menu-lateral__link--pedidos">Pedidos</a></li>
+					<li><a th:href="@{/equipamentos}" class="menu-lateral__link menu-lateral__link--equipamentos">Equipamentos</a></li>
+					<li><a th:href="@{/login?logout}" class="menu-lateral__link menu-lateral__link--logout">Logout</a></li>
+				</ul>
+			</nav>
 	</header>
 	<!-- Vlibrs -->
 	<div vw class="enabled">
