@@ -170,11 +170,11 @@
 							placeholder="Informe o CPF">
 					</div>
 
-                    <label for="produtoId" class="col-form-label">Código do Produto</label>
+                    <label for="id" class="col-form-label">Código do Produto</label>
 					<div>
-						<span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}" class="txt-aviso">
+						<span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{produtoId}" id="produtoId" class="txt-form"
+						<input type="text" th:field="*{id}" id="produtoId" class="txt-form"
 							placeholder="Informe o Código do produto">
 					</div>
 

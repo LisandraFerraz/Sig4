@@ -6,25 +6,25 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 public class PedidoProduto {
  @Id
- private Long produtoId;
+ private Long id;
  private String descricao;
- private double custo;
+ private double preco;
  private int quantidade;
 
-public PedidoProduto(Long id, String descricao, double custo, int quantidade) {
- this.produtoId = id;
+public PedidoProduto(Long id, String descricao, double preco, int quantidade) {
+ this.id = id;
  this.descricao = descricao;
  this.quantidade = quantidade;
- this.custo = custo;
+ this.preco = preco;
  }
  public PedidoProduto() {
  }
 
- public Long getProdutoId() {
- return produtoId;
+ public Long getId() {
+ return id;
  }
- public void setProdutoId(Long produtoId) {
- this.produtoId = produtoId;
+ public void setId(Long id) {
+ this.id = id;
  }
  public String getDescricao() {
  return descricao;
@@ -38,10 +38,10 @@ public PedidoProduto(Long id, String descricao, double custo, int quantidade) {
  public void setQuantidade(int quantidade) {
  this.quantidade = quantidade;
  }
- public double getCusto() {
- return custo;
+ public double getPreco() {
+ return preco;
  }
- public void setCusto(double custo) {
- this.custo = custo;
+ public void setPreco(double preco) {
+ this.preco = preco;
  }
 } 
