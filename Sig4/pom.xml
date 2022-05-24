@@ -4,10 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-	compression="on"
-compressionMinSize="10"
-noCompressionUserAgents="gozilla, traviata" 
-compressableMimeType="text/html,text/xml,text/css,text/javascript, application/x-javascript,application/javascript"
+	
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.4</version>
