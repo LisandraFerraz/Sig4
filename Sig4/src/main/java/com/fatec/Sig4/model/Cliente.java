@@ -32,6 +32,7 @@ public class Cliente {
 	private String cpf;
 	@NotBlank(message = "O CEP é obritatório.")
 	private String cep;
+	@NotBlank(message = "O endereço deve ser informado")
 	private String endereco;
 	@NotBlank(message = "O complemento deve ser informado")
 	private String complemento;
