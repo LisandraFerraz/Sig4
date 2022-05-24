@@ -1414,7 +1414,7 @@ form button {
             
             .cabecalho__munu i::before{
                 content: url(../imagem/botao-de-menu-de-tres-linhas-horizontais.png);
-                
+                background-color: #a6e65a;
             }
             .menu-cabecalho{
                 display: flex;
@@ -1820,7 +1820,7 @@ form button {
             text-transform: uppercase;
             font-weight: 600;
             font-size: 22px;
-            color: rgb(49, 49, 49);
+            color: rgb(255, 255, 255);
         }
 
         #categorias img {
