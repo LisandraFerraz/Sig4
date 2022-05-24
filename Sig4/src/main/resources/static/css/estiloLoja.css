@@ -421,50 +421,42 @@ header * {
 	transform: scale(1.1);
 }
 
+/*GRUPO DE CARDS 1*/
+
 #produtosProcurados{
-    margin: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.grpBtn{
+    padding: 25px 0;
+    text-align: center;
 }
 
 .conjuntoCard{
-    justify-content: center;
     display: flex;
     overflow-x: auto;
-    padding: 10px 10px;
-    margin: 0 40px 0 40px;
-
-    display: grid;
-    grid-template-columns: repeat(10, auto);
-    grid-auto-rows: minmax(auto, auto);
-    grid-gap: 18px;
-    
-}
-.conjuntoCard::-webkit-scrollbar {
-    max-width: auto;
-    height: auto;
-}
-  
-.conjuntoCard::-webkit-scrollbar-track {
-    background: rgba(253, 254, 255, .9);
-    border-radius: 20px;
-}
-  
-.conjuntoCard::-webkit-scrollbar-thumb {
-    display: block;
-    background-color: rgba(153, 153, 153, 0.3);
-    border-radius: 20px;
-    border: 1px solid transparent; 
+    scroll-behavior: smooth;
+    margin: 0 70px;
 }
 
-.card *{
-    background-color: #fff;
+.conjuntoCard::-webkit-scrollbar{
+    display: none;
 }
 
 .card{
+    background-color: #fff;
     line-height: 25px;
     padding: 10px;
-    /* box-shadow: -5px 5px 5px rgba(0, 0, 0, .1); */
     width: fit-content;
     background-color: #fff;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.card::hover{
+    transition: .3s;
+    box-shadow: 0 0 6px rgba(143, 106, 106, .6);
 }
 
 .card img{
