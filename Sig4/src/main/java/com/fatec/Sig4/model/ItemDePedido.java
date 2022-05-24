@@ -14,7 +14,7 @@ public class ItemDePedido {
  @GeneratedValue(strategy = GenerationType.AUTO)
  Long id;
  @OneToOne //cada item do pedido esta associado a um produto
- @JoinColumn(name="produtoId")
+ @JoinColumn(name="id")
  PedidoProduto produto;
  @NotNull
  int quantidade;
@@ -37,7 +37,7 @@ public class ItemDePedido {
  this.produto = pedidoProduto;
  }
  public double getSubTotal() {
- return quantidade * getProduto().getCusto();
+ return quantidade * getProduto().getPreco();
  }
  public int getQuantidade() {
  return quantidade;

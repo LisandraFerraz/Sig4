@@ -56,7 +56,7 @@ public class GUIPedidoController {
  pedido.setCpf(umPedido.getCpf());
  ItemDePedido item = new ItemDePedido();
  PedidoProduto produto = new PedidoProduto();
- produto.setProdutoId(Long.parseLong(umPedido.getProdutoId()));
+ produto.setId(Long.parseLong(umPedido.getId()));
  item.setProduto(produto);
  item.setQuantidade(Integer.parseInt(umPedido.getQuantidade()));
  List<ItemDePedido> itens = new ArrayList<ItemDePedido>();

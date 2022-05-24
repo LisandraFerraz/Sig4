@@ -84,6 +84,4 @@ public class Sig4Application implements CommandLineRunner {
 	pedido3.getItens().addAll(Arrays.asList(ip1));
 	servico.cadastrarPedido(pedido3);
 	}
-
-	
    }

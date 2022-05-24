@@ -5,12 +5,12 @@ public class PedidoDTO {
     @CPF
     String cpf;
     @NotBlank
-    String produtoId;
+    String id;
     @NotBlank
     String quantidade;
-    public PedidoDTO(String cpf, String produtoId, String quantidade) {
+    public PedidoDTO(String cpf, String id, String quantidade) {
     this.cpf = cpf;
-    this.produtoId = produtoId;
+    this.id = id;
     this.quantidade = quantidade;
     }
     public PedidoDTO() {
@@ -21,11 +21,11 @@ public class PedidoDTO {
     public void setCpf(String cpf) {
     this.cpf = cpf;
     }
-    public String getProdutoId() {
-    return produtoId;
+    public String getId() {
+    return id;
     }
-    public void setProdutoId(String produtoId) {
-    this.produtoId = produtoId;
+    public void setId(String id) {
+    this.id = id;
     }
     public String getQuantidade() {
     return quantidade;
