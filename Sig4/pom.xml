@@ -91,13 +91,6 @@
 		</plugins>
 	</build>
 
-<Connector port="8080" protocol="HTTP/1.1"
-               connectionTimeout="20000"
-               redirectPort="8443" 
-			   compression="on"
-			   compressionMinSize="1024"
-			   noCompressionUserAgents="gozilla, traviata"
-			   compressableMimeType="application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css,image/jpeg" />
- 
+
 
 </project>
