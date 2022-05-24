@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: #efefef;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -9,6 +8,7 @@
 body{
     grid-template-columns: auto;
     grid-auto-columns: auto;
+    background-color: #efefef;
 }
 
 
