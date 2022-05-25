@@ -1115,7 +1115,7 @@ form button {
 }
 }
 
-@media screen and (max-width:750px){
+@media screen and (max-width:760px) and (min-width:380px){
                 header * {
                     background-color: #ebebeb;
 
@@ -1708,7 +1708,7 @@ form button {
                     position: relative;
                     z-index: 1;
                     background: #FFFFFF;
-                    max-width: 360px;
+                    min-width: 380px;
                     margin: 0 auto 100px;
                     padding: 45px;
                     text-align: center;
@@ -1789,4 +1789,54 @@ form button {
                     color: #EF3B3A;
                 }
 
+
+                /* CadastraCliente*/
+            h3{
+                text-align: center;
+            }
+            .cadastro-cliente-grid{
+                background-color: rgb(186, 189, 182);
+                width: 76%;
+                height: auto;
+                margin: 8px;
+                margin-left: 10%;
+                font-size: 14px;
+                border-radius: 16px;
+                text-align: center;
+            }
+
+            orm-group col-md-8{
+                display:flex;
+                margin-right: 25%;
+                margin-left: 35%;
+            }
+
+            .form-cadastro-cliente {
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                background-color: rgb(255, 255, 255);
+                box-shadow: 1px 1px 8px rgb(70 70 70 / 20%);
+                padding: 2%;
+                width: 90%;
+                height: auto;
+                font-size: 12px;
+                border-radius: 10px;
+            }
+
+
+            input.btn-cad-cliente {
+                justify-content: center;
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+                border: none;
+                background-color: #313131;
+                color: rgb(243, 243, 243);
+                font-size: 14px;
+                width: 160px;
+                height: 44px;
+            }
+            
                 }
