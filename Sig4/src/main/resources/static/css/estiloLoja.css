@@ -117,7 +117,7 @@ header * {
 .navGrid{
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, 30%);
     grid-auto-rows: minmax(120px,auto);
     /* width: 100%; */
 }
@@ -126,7 +126,7 @@ header * {
 /* MENU*/
 .Buscar{
     border-radius: 10px;
-    width: 450px;
+    width: 75%;
     height: 25px
 } 
 
@@ -141,7 +141,7 @@ header * {
 }
 
 #barraPesquisa{
-    margin: 20px 0;
+    margin: 8% 0;
     float: left;
 }
 
@@ -370,9 +370,8 @@ header * {
 
 
 .propaganda img {
-    min-width: 100%;
-    height: auto;
-    /* height: 470px; */
+    width: 100%;
+     height: 470px; 
 }
 
 .categorias-grid{
