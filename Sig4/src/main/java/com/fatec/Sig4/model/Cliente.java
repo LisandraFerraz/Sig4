@@ -19,21 +19,29 @@ import org.joda.time.format.DateTimeFormatter;
 public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private Long id;
+
 	@NotBlank(message = "Nome é requerido")
+	@Column(name = "NOME", nullable = false, length = 50)
 	private String nome;
+	@Column(name = "DATA", nullable = false, length = 10)
 	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
 	// https://www.regular-expressions.info/
 	private String dataNascimento;
 	private String dataCadastro;
+	@Column(name = "SEXO", nullable = false, length = 1)
 	private String sexo;
 	@CPF
 	@Column(unique = true) // nao funciona com @Valid tem que tratar na camada de persistencia
 	private String cpf;
+	@Column(name = "CEP", nullable = false, length = 9)
 	@NotBlank(message = "O CEP é obritatório.")
 	private String cep;
+	@Column(name = "ENDERECO", nullable = false, length = 50)
 	@NotBlank(message = "O endereço deve ser informado")
 	private String endereco;
+	@Column(name = "COMPLEMENTO", nullable = false, length = 50)
 	@NotBlank(message = "O complemento deve ser informado")
 	private String complemento;
 
@@ -46,8 +54,8 @@ public class Cliente {
 		this.complemento = complemento;
 	}
 
+	@Deprecated
 	public Cliente() {
-
 	}
 
 	public Long getId() {

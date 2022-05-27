@@ -25,21 +25,34 @@ import org.joda.time.format.DateTimeFormatter;
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private Long id;
+
+	@Column(name = "TIPO", nullable = false, length = 50)
 	@NotBlank(message = "Tipo é requerido")
 	private String tipo;
+
+	@Column(name = "COR", nullable = false, length = 50)
 	@NotBlank(message = "Cor é requerida")
 	private String cor;
 	@CNPJ
 	@Column(unique = true) // nao funciona com @Valid tem que tratar na camada de persistencia
 	private String cnpj;
+
+	@Column(name = "NOME", nullable = false, length = 50)
 	@NotBlank(message = "Nome é requerido")
 	private String nome;
+
+	@Column(name = "QTDESTOQUE", nullable = false, length = 4)
 	@Min(value = 1, message = "Valor Minimo para estoque é 1.")
 	@Max(value = 1000, message = "Valor Máximo para estoque é 1000.")
 	private int qtdEstoque;
+
+	@Column(name = "PRECO", nullable = false, length = 50)
 	@NotNull(message = "Preço é requerido")
 	private Double preco;
+
+	@Column(name = "DATA", nullable = false, length = 10)
 	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
 	private String dataCadastro;
 
@@ -49,6 +62,7 @@ public class Produto {
 
 	}
 
+	@Deprecated
 	public Produto() {
 
 	}
