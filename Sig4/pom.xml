@@ -54,7 +54,11 @@
 			<scope>test</scope>
 		</dependency>
 
-
+		<dependency>
+			<groupId>io.github.gasparbarancelli</groupId>
+			<artifactId>spring-native-query</artifactId>
+			<version>1.0.29</version>
+		</dependency>
 		<!-- spring security -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

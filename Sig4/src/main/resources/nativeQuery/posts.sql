@@ -1,0 +1,16 @@
+SELECT
+    Produto.TITLE as postTitle,
+    Pedido.DESCRIPTION as tagDescription,
+    Cliente.NAME as authorName
+FROM Produto
+INNER JOIN PRODUTO_PEDIDO ON PRODUTO_PEDIDO.ID_PRODUTO = PRODUTO.ID
+INNER JOIN PEDIDO ON PEDIDO.ID = PRODUTO_TAG.ID_PEDIDO
+INNER JOIN POST_CLIENTE ON PRODUTO_CLIENTE.ID_PRODUTO = PRODUTO.ID
+INNER JOIN CLIENTE ON CLIENTE.ID = PRODUTO_CLIENTE.ID_CLIENTE
+WHERE 1=1
+/* if (authorId != null) */
+  and CLIENTE.ID = :clienteId
+/* endif  */
+/* if (tagId != null) */
+  and PEDIDO.ID = :pedidoId
+/* endif  */
