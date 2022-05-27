@@ -33,9 +33,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.github.gasparbarancelli</groupId>
-			<artifactId>spring-native-query</artifactId>
-			<version>1.0.29</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
