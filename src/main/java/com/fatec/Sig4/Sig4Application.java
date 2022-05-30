@@ -14,7 +14,6 @@ import com.fatec.Sig4.model.PedidoProduto;
 import com.fatec.Sig4.ports.MantemCliente;
 import com.fatec.Sig4.ports.MantemPedido;
 import com.fatec.Sig4.ports.PedidoProdutoRepository;
-
 @SpringBootApplication
 public class Sig4Application implements CommandLineRunner {
 	@Autowired
