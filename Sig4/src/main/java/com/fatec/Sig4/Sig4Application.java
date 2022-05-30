@@ -1,5 +1,4 @@
 package com.fatec.Sig4;
-
 import java.util.Arrays;
 import java.util.Optional;
 import org.apache.logging.log4j.LogManager;
