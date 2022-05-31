@@ -134,6 +134,7 @@ header * {
     padding: 8px;
     background-color: rgb(65, 65, 65); 
     border: 1px solid rgb(45, 45, 45);
+    color: #e3e3e3;
 }
 
 #barraPesquisa input:active{
@@ -543,7 +544,7 @@ h3.precoAtual{
 	margin-right: auto;
 	margin-bottom: 20px;
 	margin-top: 20px;
-	background-color: rgb(255, 255, 255);
+	background-color: #3d3d3e;
 	box-shadow: 1px 1px 8px rgb(70, 70, 70, 0.2);
 	
 	padding: 2%;
@@ -565,15 +566,20 @@ h3.precoAtual{
 	margin: 1px;  
 }
 
+.row-1-grid label, .exibe-titulo{
+    color: #e3e3e3;
+}
+
 .txt-form{
-	background-color: rgb(234, 234, 234);
-	border: 1px solid rgb(175, 175, 175);
-    color: rgb(58, 58, 58);
+	background-color: rgb(91, 90, 90);
+	border: 1px solid rgb(64, 64, 64);
+    color: #e3e3e3;
 }
 
 input.txt-form{
 	border-radius: 5px;
 	height: 25px;
+    color: #e3e3e3;
 }
 
 .row-2-grid{
@@ -731,7 +737,7 @@ input.submit{
 .pink, .blue, .green, .red, .purple, .yellow, .white, .black, .gray {
     width: 15px;
     height: 15px;
-    border: 1px solid #49494980;
+    border: 1px solid #9f9f9f80;
     margin: 2px 0;
 }
 
@@ -747,7 +753,7 @@ input.submit{
     padding-bottom: 10px;
     margin: 15px 0;
     border-bottom: 1px solid rgba(0, 0, 0,.1);
-    color: #2e2e2e;
+    color: #e3e3e3;
 }
 
 .filtragem-novi p {
@@ -757,7 +763,7 @@ input.submit{
 .precoFiltra select, option{
     min-height: 24px;
     font-size: 14px;
-    background-color: #fff;
+    background-color: #3d3d3e;
 }
 
 .dispoFiltra input{
@@ -769,7 +775,7 @@ input.submit{
 }
 .categoFiltra li label{
     margin-left: 10px;
-    color: #1b1b1b;
+    color: #e3e3e3;
 }
 
 /* fim equipamentos */
@@ -782,12 +788,11 @@ input.submit{
 }
 
 .gridVisuPrd *{
-    background-color: rgb(255, 255, 255);
+    background-color: #3d3d3e;
 }
 
 .gridVisuPrd{
     justify-content: center;
-    /* POSSIVEL MUDANÇA PARA 1200PX */
     width: 90%;
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -851,7 +856,7 @@ input.submit{
 }
 
 .descAnunPrd{
-    color: #313131;
+    color: #e3e3e3;
     border: 2px solid rgba(0, 0, 0, 0.123);
 }
 
@@ -892,7 +897,7 @@ input.submit{
     width: 45px;
     font-size: 15px;
     text-align: center;
-    border: 1px solid rgba(5, 5, 5, 0.527);
+    border: 1px solid #e3e3e3;
 }
 
 .tmnhQtd input:focus{
@@ -913,9 +918,9 @@ input.btn-cad-cliente {
     display: block;
 	
     border: none;
-    background-color: #313131;
+    background-color: #222;
     
-    color: rgb(243, 243, 243);
+    color: #e3e3e3;
     font-size: 14px;
 
     width: 160px;
@@ -963,6 +968,7 @@ input.btn-cad-cliente:hover{
     line-height: 50px;
     margin: 15px 0 ;
     text-align: center;
+    color: #e3e3e3;
 }
 
 .btnLinkPrd input{
@@ -989,7 +995,7 @@ input.btn-cad-cliente:hover{
 }
 
 .btnLinkPrd a{
-    color: #313131;
+    color: #e3e3e3;
 }
 
 /* FIM Visualização de produto */
@@ -1020,13 +1026,19 @@ input.btn-cad-cliente:hover{
 
 .table-exibe th {
 	font-size: 13pt;
-	color: rgb(232, 232, 232);
-	background-color: #4c4f54;
+	color: #e3e3e3;
+	background-color: rgb(34, 35, 36);
 }
 
 .table-exibe td {
 	font-size: 12pt;
-	background-color: rgb(254, 254, 250);
+	color: #e3e3e3;
+    padding: 5px;
+	background-color: #3d3d3e;
+}
+
+#conteudo h3{
+	color: #e3e3e3;
 }
 
 /* CadastraCliente*/
