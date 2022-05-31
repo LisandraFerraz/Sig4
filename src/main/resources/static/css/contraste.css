@@ -117,20 +117,20 @@ header * {
 .navGrid{
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, 430px);
     grid-auto-rows: minmax(120px,auto);
     /* width: 100%; */
 }
 
-
 /* MENU*/
 .Buscar{
-    border-radius: 10px;
+    border-radius: 6px;
     width: 450px;
-    height: 25px
+    height: 23px
 } 
 
 #barraPesquisa input{
+    margin: 10px 0;
     padding: 8px;
     background-color: rgb(65, 65, 65); 
     border: 1px solid rgb(45, 45, 45);
@@ -295,7 +295,7 @@ header * {
 }
 
 .card-FTZ *{
-    background-color: #fff;
+    background-color: #3d3d3e;
 }
 
 .anuncioFutureZ img{
@@ -314,8 +314,9 @@ header * {
     line-height: 25px;
     padding: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    width: fit-content;
-    background-color: #fff;
+    width: 220px;
+    background-color: #3d3d3e;
+    border-radius: 10px;
 }
 
 .card-FTZ:hover{
@@ -386,11 +387,11 @@ header * {
 
 .tituloSec{
     text-align: center;
-    margin: 5px 0 30px;
+    margin: 35px 0;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 22px;
-    color: rgb(49, 49, 49);
+    color: #e3e3e3;
 }
 
 #categorias img {

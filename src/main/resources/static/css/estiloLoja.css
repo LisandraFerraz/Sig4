@@ -117,11 +117,9 @@ header * {
 .navGrid{
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, 430px);
     grid-auto-rows: minmax(120px,auto);
-    /* width: 100%; */
 }
-
 
 /* MENU*/
 .Buscar{
@@ -131,6 +129,7 @@ header * {
 } 
 
 #barraPesquisa input{
+    margin: 10px 0;
     padding: 8px;
     background-color: #f0f0f0; 
     border: 1px solid rgba(60, 60, 60, 0.807);
@@ -314,7 +313,7 @@ header * {
     line-height: 25px;
     padding: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    width: fit-content;
+    width: 220px;
     background-color: #fff;
 }
 
@@ -420,7 +419,28 @@ header * {
     overflow: hidden;
 }
 
-imgCard
+.grpBtn{
+    padding: 25px 0;
+    text-align: center;
+}
+
+.grpBtn button{
+    background-color: transparent;
+    border: none;
+    margin: 0 10px;
+}
+
+.grpBtn button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.btnSides{
+    font-size: 20px;
+    font-weight: 800;
+    color: #1b1b1b;
+}
+
 
 .conjuntoCard{
     display: flex;
