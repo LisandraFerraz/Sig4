@@ -30,7 +30,7 @@ public class GUIPedidoController {
  public ModelAndView cadastrarPedido(PedidoDTO umPedido) {
  logger.info(">>>>>> 1. controller pagina cadastrar pedido chamada ");
  ModelAndView mv = new ModelAndView("cadastrarPedido");
- mv.addObject("umPedido", new PedidoDTO());
+ ModelAndView addObject = mv.addObject("umPedido", new PedidoDTO());
  return mv;
  }
  @GetMapping("/pedidos")
@@ -43,7 +43,7 @@ public class GUIPedidoController {
  @PostMapping("/pedidos")
  public ModelAndView save(@Valid PedidoDTO umPedido, BindingResult result) {
  ModelAndView mv = new ModelAndView("consultarPedido");
- Pedido pedido = new Pedido();
+ var pedido = new Pedido();
  logger.info(">>>>>> 1. controller save iniciado ");
  if (result.hasErrors()) {
  logger.info(">>>>>> 1. erro no pedido dto ");

@@ -13,6 +13,7 @@ public class PedidoDTO {
     this.id = id;
     this.quantidade = quantidade;
     }
+    @Deprecated
     public PedidoDTO() {
     }
     public String getCpf() {

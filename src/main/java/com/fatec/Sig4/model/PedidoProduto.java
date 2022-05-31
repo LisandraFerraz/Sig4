@@ -17,6 +17,7 @@ public PedidoProduto(Long id, String descricao, double preco, int quantidade) {
  this.quantidade = quantidade;
  this.preco = preco;
  }
+ @Deprecated
  public PedidoProduto() {
  }
 

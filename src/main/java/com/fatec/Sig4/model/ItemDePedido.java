@@ -1,4 +1,5 @@
 package com.fatec.Sig4.model;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class ItemDePedido {
  @Id
  @GeneratedValue(strategy = GenerationType.AUTO)
+@Column(name = "ID")
  Long id;
  @OneToOne //cada item do pedido esta associado a um produto
  @JoinColumn(name="id")
@@ -22,6 +24,8 @@ public class ItemDePedido {
  this.produto = produtoComprado1;
  this.quantidade = quantidade;
  }
+
+ @Deprecated
  public ItemDePedido() {
  }
  public Long getId() {
