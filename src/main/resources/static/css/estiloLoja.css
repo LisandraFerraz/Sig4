@@ -125,19 +125,20 @@ header * {
 
 /* MENU*/
 .Buscar{
-    border-radius: 10px;
+    border-radius: 6px;
     width: 450px;
-    height: 25px
+    height: 23px
 } 
 
 #barraPesquisa input{
     padding: 8px;
-    background-color: #d1d1d1; 
-    border: 1px solid #fff;
+    background-color: #f0f0f0; 
+    border: 1px solid rgba(60, 60, 60, 0.807);
 }
 
 #barraPesquisa input:active{
-    border: 1px solid #fff;
+    border: 1px solid rgba(60, 60, 60);
+    outline: none;
 }
 
 #barraPesquisa{
@@ -419,10 +420,7 @@ header * {
     overflow: hidden;
 }
 
-.grpBtn{
-    padding: 25px 0;
-    text-align: center;
-}
+imgCard
 
 .conjuntoCard{
     display: flex;
@@ -453,6 +451,7 @@ header * {
 .imgCard{
     width: 220px;
     height: 220px;
+    margin: 10px 0;
 }
 
 .imgCard img{
@@ -462,7 +461,12 @@ header * {
 }
 
 .descCard{
+    font-size: 13px;
     color: #1b1b1b;
+}
+
+.corpoCard{
+    margin: 5px 0;
 }
 
 .corpoCard h3{
@@ -486,7 +490,7 @@ header * {
 }
 
 .precoAnterior{
-    color: #1b1b1b;
+    color: #262626;
     text-decoration: line-through;
 }
 
@@ -495,11 +499,11 @@ h3.precoAtual{
 }
 
 .starsFeedback{
-    float: bottom;
+    margin: 10px 0;
 }
 
 .starFeed{
-    font-size: 16px;
+    font-size: 14px;
     color: #f7bd00;
 }
 
