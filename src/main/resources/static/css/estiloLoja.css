@@ -1530,30 +1530,12 @@ form button {
                     overflow-x: auto;
                     padding: 10px 10px;
                     margin: 0 40px 0 40px;
-
-                    display: grid;
                     grid-template-columns: repeat(10, auto);
                     grid-auto-rows: minmax(auto, auto);
-                    grid-gap: 18px;
+                    grid-gap: 12px;
                     
                 }
-                .conjuntoCard::-webkit-scrollbar {
-                    max-width: auto;
-                    height: auto;
-                }
-                
-                .conjuntoCard::-webkit-scrollbar-track {
-                    background: rgba(253, 254, 255, .9);
-                    border-radius: 20px;
-                }
-                
-                .conjuntoCard::-webkit-scrollbar-thumb {
-                    display: block;
-                    background-color: rgba(153, 153, 153, 0.3);
-                    border-radius: 20px;
-                    border: 1px solid transparent; 
-                }
-
+               
 
                 .card *{
                     background-color: #fff;
