@@ -62,11 +62,4 @@ public class MantemProdutoI implements MantemProduto {
 			return Optional.empty();
 		}
 	}
-
-	@Override
-	public Optional<Produto> consultaPorNome(String nome) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

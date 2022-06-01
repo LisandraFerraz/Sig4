@@ -14,7 +14,7 @@
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
 	<script type="text/javascript">
 		function consulta() {
-			window.open("/sig/pedidos");
+			window.open("/sig/pedido");
 		}
 	</script>
 </head>
@@ -57,11 +57,11 @@
 				</li>
 
 				<li>
-					<a th:href="@{/sig/produto}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
+					<a th:href="@{/sig/pedidos}" title="Contraste preto" id="modoEscuro">Modo escuro</a>
 				</li>
 
 				<li >
-					<a th:href="@{/sig/produto}" id="modoClaro">Modo Claro</a>
+					<a th:href="@{/sig/pedidos}" id="modoClaro">Modo Claro</a>
 				</li>
 
 				<li>
@@ -170,12 +170,12 @@
 							placeholder="Informe o CPF">
 					</div>
 
-                    <label for="id" class="col-form-label">Código do Produto</label>
+                    <label for="produtoId" class="col-form-label">Código do Produto</label>
 					<div>
-						<span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{id}" id="produtoId" class="txt-form"
-							placeholder="Informe o Código do produto">
+						<input type="text" th:field="*{produtoId}" class="form-control" id="produtoId"
+						placeholder="Informe o Código do produto">
+					<span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}"
+						class="txt-aviso"> </span>
 					</div>
 
                     <label for="quantidade" class="col-form-label">Quantidade</label>

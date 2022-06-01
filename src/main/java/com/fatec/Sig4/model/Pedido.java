@@ -43,11 +43,11 @@ public class Pedido {
  public void setId(Long id) {
  this.id = id;
  }
- public double getValorTotal() {
- double soma = 0.0;
- for (ItemDePedido ip : itens) {
- soma = soma + ip.getSubTotal();
- }
+ public double getValorTotal() { 
+  double soma = 0.0; 
+  for (ItemDePedido ip : itens) { 
+  soma = soma + ip.getSubTotal(); 
+  } 
  return soma;
  }
  public String getCpf() {
