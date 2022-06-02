@@ -26,10 +26,12 @@ public class MantemProdutoI implements MantemProduto {
 	}
 
 	@Override
-	public Optional<Produto> consultaPorId(Long id) {
+	public Optional<Produto> consultaPorId(Long idProduto) {
 		logger.info(">>>>>> servico consultaPorId chamado");
-		return repository.findById(id);
+		return repository.findById(idProduto);
 	}
+	
+	
 
 	@Override
 	public Optional<Produto> save(Produto produto) {
@@ -38,9 +40,9 @@ public class MantemProdutoI implements MantemProduto {
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void delete(Long idProduto) {
 		logger.info(">>>>>> servico delete por id chamado");
-		repository.deleteById(id);
+		repository.deleteById(idProduto);
 	}
 
 	@Override
@@ -49,7 +51,7 @@ public class MantemProdutoI implements MantemProduto {
 		Optional<Produto> umProduto = consultaPorId(produto.getId());
 
 		if (umProduto.isPresent()) {
-			Produto produtoModificado = new Produto(produto.getNome(), produto.getPreco());
+			Produto produtoModificado = new Produto(produto.getNome(), produto.getPreco(), produto.getTipo(), produto.getCor(), produto.getCnpj() );
 			produtoModificado.setId(produto.getId());
 			produtoModificado.setQtdEstoque(produto.getQtdEstoque());
 			produtoModificado.setTipo(produto.getTipo());

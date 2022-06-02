@@ -12,11 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import org.hibernate.validator.constraints.br.CNPJ;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.br.CNPJ;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -56,13 +56,15 @@ public class Produto {
 	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
 	private String dataCadastro;
 
-	public Produto(String nome, Double preco) {
+	public Produto(String nome, Double preco, String tipo, String cor, String cnpj) {
 		this.nome = nome;
+		this.tipo = tipo;
+		this.cor = cor;
+		this.cnpj = cnpj;
 		this.setPreco(preco);
 
 	}
 
-	@Deprecated
 	public Produto() {
 
 	}

@@ -1,6 +1,5 @@
 package com.fatec.Sig4.model;
 
-
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.br.CPF;

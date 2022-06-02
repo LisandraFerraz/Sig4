@@ -48,7 +48,7 @@ public class GUIPedidoController {
 	@PostMapping("/pedidos")
 	public ModelAndView save(@Valid PedidoDTO umPedido, BindingResult result) {
 		ModelAndView mv = new ModelAndView("consultarPedido");
-		Pedido pedido = Pedido();
+		Pedido pedido = new Pedido();
 		logger.info(">>>>>> 1. controller save iniciado ");
 		if (result.hasErrors()) {
 			logger.info(">>>>>> 1. erro no pedido dto ");
@@ -60,7 +60,7 @@ public class GUIPedidoController {
 			logger.info(">>>>>> 1. controller save dados validos");
 			pedido.setCpf(umPedido.getCpf());
 			ItemDePedido item = new ItemDePedido();
-			Produto produto = produto();
+			Produto produto = new Produto();
 			produto.setId(Long.parseLong(umPedido.getProdutoId()));
 			item.setProduto(produto);
 			item.setQuantidade(Integer.parseInt(umPedido.getQuantidade()));
@@ -74,15 +74,7 @@ public class GUIPedidoController {
 		return mv;
 	}
 
-	private Pedido Pedido() {
-    return null;
-  }
-
-  private Produto produto() {
-    return null;
-  }
-
-  @GetMapping("/pedidos/id/{id}")
+	@GetMapping("/pedidos/id/{id}")
 	public ModelAndView excluirPedido(@PathVariable("id") Long id) {
 		logger.info(">>>>>> 1. servico de exclusao chamado ");
 		mantemPedido.excluiPedido(id);
