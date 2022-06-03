@@ -1004,7 +1004,7 @@ input.btn-cad-cliente:hover{
 	box-shadow: 1px 1px 8px rgb(70, 70, 70, 0.2);
 	border-collapse: separate;
 	border-spacing: 5px 0;
-	
+	padding-bottom: 5%;
 	line-height: 35px;
 }
 
