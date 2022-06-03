@@ -115,7 +115,7 @@
                 <li> <a th:href="@{/}"> Home </a> </li>
 				<li> <a th:href="@{/sig/cliente}"> Clientes </a> </li>
 				<li> <a th:href="@{/sig/produto}">Produtos</a></li>
-				<li> <a th:href="@{/sig/pedido}">Pedidos</a></li>
+				<li> <a th:href="@{/sig/pedidos}">Pedidos</a></li>
 				<li><a th:href="@{/equipamentos}">Equipamentos</a></li>
 				<li><a th:href="@{/login?logout}">Logout</a></li>
 			</ul>	
@@ -131,7 +131,7 @@
 					<li> <a th:href="@{/}" class="menu-lateral__link menu-lateral__link--inicio menu-lateral__link--ativo"> Home </a> </li>
 					<li> <a th:href="@{/sig/cliente}" class="menu-lateral__link menu-lateral__link--inicio "> Clientes </a> </li>
 					<li> <a th:href="@{/sig/produto}"  class="menu-lateral__link menu-lateral__link--produtos">Produtos</a></li>
-					<li> <a th:href="@{/sig/pedido}" class="menu-lateral__link menu-lateral__link--pedidos">Pedidos</a></li>
+					<li> <a th:href="@{/sig/pedidos}" class="menu-lateral__link menu-lateral__link--pedidos">Pedidos</a></li>
 					<li><a th:href="@{/equipamentos}" class="menu-lateral__link menu-lateral__link--equipamentos">Equipamentos</a></li>
 					<li><a th:href="@{/login?logout}" class="menu-lateral__link menu-lateral__link--logout">Logout</a></li>
 				</ul>
@@ -168,16 +168,14 @@
 			<td th:text="${pedido.dataEmissao}"></td>
 			<td th:text="${pedido.getValorTotal}"></td>
 
-		   
-		   
+
 			<td>
-			<div class="btn-group pull-right">
-			<a class="btn btn-sm btn-primary"
-		   
-			th:href="@{/sig/pedidos/id/{id}(id=${pedido.id})}">Cancelar</a>
-			<a class="delete btn btn-sm btn-danger"
-			th:href="@{/sig/pedidos/id/{id}(id=${pedido.id})}">Excluir</a>
-			</div>
+				<div class="btn-exibe-group">
+					<a th:href="@{/sig/pedidos/id/{id}(id=${pedido.id})}">
+						<button class="btn-exibe"> Cancelar </button></a>
+					<a th:href="@{/sig/pedidos/id/{id}(id=${pedido.id})}">
+						<button class="btn-exibe">Excluir</button></a>
+				</div>
 			</td>
 			</tr>
 			</tbody>
