@@ -182,7 +182,13 @@
 					<div>
 						<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{sexo}" class="txt-form" id="sexo" placeholder="M/F">
+						<select name="sexo"  type="text" th:field="*{sexo}" class="txt-form" id="sexo" placeholder="M/F/O/Prefiro Não Dizer">
+							<option value="#"></option>
+							<option value="M">Masculino</option>
+							<option value="F">Feminino</option>
+							<option value="O">Outros</option>
+							<option value="*">Prefiro Não Dizer</option>
+						</select>
 					</div>
 
 					<label for="cep" class="col-form-label">CEP</label>
