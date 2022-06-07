@@ -12,11 +12,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
-	<script type="text/javascript">
-		function consulta() {
-			window.open("/sig/produtos");
-		}
-	</script>
 </head>
 
 <body>
@@ -226,7 +221,7 @@
 
 				<div class="btt-cad-cliente-grid">
 					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
-					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta()">
+					<a th:href="@{/sig/produtos}"><input type="button" class="btn-cad-cliente" value="Consultar Produto" ></a>
 				</div>
 
 			</form>
