@@ -216,6 +216,11 @@
 						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form"
 							placeholder="Informe o CPNJ do fornecedor">
 					</div>
+					
+					<label>Adicionar fotos do produto:</label> 
+					<div >
+                        <input type="file" name="image[]" multiple="multiple">
+                    </div>
 
 				</div>
 
@@ -224,6 +229,7 @@
 					<a th:href="@{/sig/produtos}"><input type="button" class="btn-cad-cliente" value="Consultar Produto" ></a>
 				</div>
 
+				
 			</form>
 
 			<h6 th:text="${message}" class="txt-aviso"></h6>
