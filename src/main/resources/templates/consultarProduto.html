@@ -164,7 +164,6 @@
 							<th>Preço</th>
 							<th>Dt.Cadastro</th>
 							<th>Qtd.Estoque</th>
-							<th>ImagemProduto</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -177,10 +176,6 @@
 							<td th:text="${produto.preco}"></td>
 							<td th:text="${produto.dataCadastro}"></td>
 							<td th:text="${produto.qtdEstoque}"></td>
-							<td>
-								<img alt="Image" th:src="|/imagem/${produto.id}|" />
-							</td> 
-							
 							<td>
 								<div class="btn-exibe-group">
 									<a th:href="@{/sig/produtos/{id}(id=${produto.id})}">
