@@ -57,8 +57,22 @@ public class Produto {
 	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
 	private String dataCadastro;
 
-	
+@Lob
+@Column(name = "IMAGEM")
+private byte[] imagem;
 
+
+	public Produto(byte[] imagem) {
+		this.imagem = imagem;
+	}
+
+	public byte[] getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(byte[] imagem) {
+		this.imagem = imagem;
+	}
 
 	public Produto(String nome, Double preco, String tipo, String cor, String cnpj) {
 		this.nome = nome;
