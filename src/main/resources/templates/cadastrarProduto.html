@@ -219,7 +219,8 @@
 					
 					<label>Adicionar fotos do produto:</label> 
 					<div >
-                        <input type="file" name="image[]" multiple="multiple">
+                        <input type="file" multiple="multiple" th:field="*{imagem}" id="imagem" 
+						placeholder="Carregue uma imagem">
                     </div>
 
 				</div>
