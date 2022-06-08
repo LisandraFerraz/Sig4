@@ -61,15 +61,7 @@ public class GUIProdutoController {
 	
 	////////////////////////////////////////////////////////////////////////////////
 	@PostMapping("/produtos")
-	public ModelAndView save(@Valid Produto produto, BindingResult result, @RequestParam("fileProduto") MultipartFile file) {
-		
-		try {
-			produto.setImagem(file.getBytes());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+	public ModelAndView save(@Valid Produto produto, BindingResult result) {
 
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
 		if (result.hasErrors()) {
@@ -101,10 +93,5 @@ public class GUIProdutoController {
 		return modelAndView;
 	}
 	
-	@GetMapping("/imagem/{id}")
-	@ResponseBody
-	public byte[] exibirImagen(Model model, @PathVariable("id") Integer id){
-		Produto produto = this.servico.getOne(id);
-		return produto.getImagem();
-	}
+	
 }
