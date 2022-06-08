@@ -58,7 +58,7 @@ public class Produto {
 	private String dataCadastro;
 
 	@Lob
-	@Column(name = "imagem")
+	@Column(name = "IMAGEM")
 	@NotNull(message = "a imagem é requerido")
 	private byte[] imagem;
 

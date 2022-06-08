@@ -177,7 +177,10 @@
 							<td th:text="${produto.preco}"></td>
 							<td th:text="${produto.dataCadastro}"></td>
 							<td th:text="${produto.qtdEstoque}"></td>
-							<td th:file="${produto.imagem}"></td>
+							<td>
+								<img alt="Image" th:src="|/imagem/${produto.id}|" />
+							</td> 
+							
 							<td>
 								<div class="btn-exibe-group">
 									<a th:href="@{/sig/produtos/{id}(id=${produto.id})}">

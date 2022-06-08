@@ -152,7 +152,7 @@
 		<h3 class="exibe-titulo">Cadastrar Produto</h3>
 		<div class="form-cadastro-cliente">
 			<br>
-			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
+			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post" enctype="multipart/form-data">
 
 				<div class="row-1-grid">
 
@@ -219,7 +219,8 @@
 					
 					<label>Adicionar fotos do produto:</label> 
 					<div >
-                        <input type="file" multiple="multiple" th:field="*{imagem}" id="imagem" 
+						<!--multiple="multiple"-->
+                        <input type="file"  class="imagemProduto" id="imagem" name="fileProduto"
 						placeholder="Carregue uma imagem">
                     </div>
 

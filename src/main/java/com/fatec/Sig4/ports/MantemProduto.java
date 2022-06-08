@@ -11,4 +11,5 @@ public interface MantemProduto {
 	Optional<Produto> save(Produto produto);
 	void delete(Long idProduto);
 	Optional<Produto> altera(Produto produto);
+    Produto getOne(Integer id);
 }

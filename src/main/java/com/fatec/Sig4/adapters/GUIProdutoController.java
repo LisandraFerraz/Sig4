@@ -1,16 +1,22 @@
 package com.fatec.Sig4.adapters;
 
+import java.io.IOException;
+
 import javax.validation.Valid;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fatec.Sig4.model.Produto;
@@ -55,7 +61,16 @@ public class GUIProdutoController {
 	
 	////////////////////////////////////////////////////////////////////////////////
 	@PostMapping("/produtos")
-	public ModelAndView save(@Valid Produto produto, BindingResult result) {
+	public ModelAndView save(@Valid Produto produto, BindingResult result, @RequestParam("fileProduto") MultipartFile file) {
+		
+		try {
+			produto.setImagem(file.getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
 		if (result.hasErrors()) {
 			modelAndView.setViewName("cadastrarProduto");
@@ -86,4 +101,10 @@ public class GUIProdutoController {
 		return modelAndView;
 	}
 	
+	@GetMapping("/imagem/{id}")
+	@ResponseBody
+	public byte[] exibirImagen(Model model, @PathVariable("id") Integer id){
+		Produto produto = this.servico.getOne(id);
+		return produto.getImagem();
+	}
 }
