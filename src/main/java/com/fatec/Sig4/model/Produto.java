@@ -57,21 +57,15 @@ public class Produto {
 	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
 	private String dataCadastro;
 
-@Lob
-@Column(name = "IMAGEM")
-private byte[] imagem;
+	private String nomeImagem;
 
 
-	public Produto(byte[] imagem) {
-		this.imagem = imagem;
+	public String getNomeImagem() {
+		return nomeImagem;
 	}
 
-	public byte[] getImagem() {
-		return imagem;
-	}
-
-	public void setImagem(byte[] imagem) {
-		this.imagem = imagem;
+	public void setNomeImagem(String nomeImagem) {
+		this.nomeImagem = nomeImagem;
 	}
 
 	public Produto(String nome, Double preco, String tipo, String cor, String cnpj) {
@@ -86,8 +80,6 @@ private byte[] imagem;
 	public Produto() {
 
 	}
-
-
 	
 	public Long getId() {
 		return id;
@@ -168,13 +160,5 @@ private byte[] imagem;
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
 		this.dataCadastro = dataAtual.toString(fmt);
 	}
-
-
-
-		
-		
-
-
-	// equals e tostring omitidos. Cliado na aula de 05/04/2022
 
 }

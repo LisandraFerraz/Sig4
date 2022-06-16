@@ -177,9 +177,10 @@
 							<td th:text="${produto.preco}"></td>
 							<td th:text="${produto.dataCadastro}"></td>
 							<td th:text="${produto.qtdEstoque}"></td>
-							<td>
-								<img alt="Image" th:src="|/sig/imagem/${produto.id}|" />
-							</td> 
+							<td >
+								<img th:src="@{/sig/produtos/mostrarImagem/{imagem}(imagem=${produto.nomeImagem})}" width="100"/>
+							</td>
+							
 							
 							<td>
 								<div class="btn-exibe-group">

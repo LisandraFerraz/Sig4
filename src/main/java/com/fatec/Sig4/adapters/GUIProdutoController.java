@@ -1,6 +1,10 @@
 package com.fatec.Sig4.adapters;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.validation.Valid;
 
@@ -25,6 +29,8 @@ import com.fatec.Sig4.ports.MantemProduto;
 @Controller
 @RequestMapping(path = "/sig")
 public class GUIProdutoController {
+	private static String caminhoImagens = "C:/Users/renan/git/Sig4/src/main/resources/static/imagem/ProdutoCadastrado/";
+
 	Logger logger = LogManager.getLogger(GUIProdutoController.class);
 	@Autowired
 	MantemProduto servico;
@@ -58,22 +64,28 @@ public class GUIProdutoController {
 		modelAndView.addObject("produtos", servico.consultaTodos());
 		return modelAndView;
 	}
+
+	@GetMapping("/produtos/mostrarImagem/{imagem}")
+	@ResponseBody
+	public byte[] retornarImagem(@PathVariable("imagem") String imagem) throws IOException {
+		File imagemArquivo = new File(caminhoImagens+imagem);
+		if(imagem!=null || imagem.trim().length()>0){
+		
+		return Files.readAllBytes(imagemArquivo.toPath());
+		}
+		return null;
+	}
 	
 	////////////////////////////////////////////////////////////////////////////////
 	@PostMapping("/produtos")
-	public ModelAndView save(@Valid Produto produto, BindingResult result,@RequestParam("imagem")MultipartFile file) {
-		try {
-			produto.setImagem(file.getBytes());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-
-		ModelAndView modelAndView = new ModelAndView("consultarProduto");
+	public ModelAndView save(@Valid Produto produto, BindingResult result,
+	@RequestParam("file")MultipartFile arquivo) {
+	
+		ModelAndView modelAndView = new ModelAndView(  "consultarProduto");
 		if (result.hasErrors()) {
 			modelAndView.setViewName("cadastrarProduto");
-		} else {
+		}
+		 else {
 			if (servico.save(produto).isPresent()) {
 				logger.info(">>>>>> controller chamou adastrar e consulta todos");
 				modelAndView.addObject("produtos", servico.consultaTodos());
@@ -82,7 +94,20 @@ public class GUIProdutoController {
 				modelAndView.setViewName("cadastrarProduto");
 				modelAndView.addObject("message", "Dados invalidos");
 			}
+			try{
+				if(!arquivo.isEmpty()){
+					byte[] bytes = arquivo.getBytes();
+					Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getId())+arquivo.getOriginalFilename());
+					Files.write(caminho, bytes);
+
+					produto.setNomeImagem(String.valueOf(produto.getId())+arquivo.getOriginalFilename());
+					
+				}
+			}catch(IOException e){
+				e.printStackTrace();
+			}
 		}
+		
 		return modelAndView;
 	}
 	@PostMapping("/produtos/id/{id}")
@@ -98,13 +123,6 @@ public class GUIProdutoController {
 			modelAndView.addObject("produtos", servico.consultaTodos());
 		}
 		return modelAndView;
-	}
-	
-	@PostMapping("/imagem/{id}")
-	@ResponseBody
-	public byte[] exibirImagen(Model model, @PathVariable("id") Integer id){
-		Produto produto = this.servico.getOne(id);
-		return produto.getImagem();
 	}
 	
 }
