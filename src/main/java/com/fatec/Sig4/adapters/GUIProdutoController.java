@@ -30,7 +30,7 @@ import com.fatec.Sig4.ports.MantemProduto;
 @Controller
 @RequestMapping(path = "/sig")
 public class GUIProdutoController {
-	private static String caminhoImagens = "C:/Users/renan/git/Sig4/src/main/resources/static/imagem/ProdutoCadastrado/";
+	private static String caminhoImagens = "/home/renan/git/Sig4/src/main/resources/static/imagem/ProdutoCadastrado/";
 
 	Logger logger = LogManager.getLogger(GUIProdutoController.class);
 	@Autowired
@@ -87,7 +87,15 @@ public class GUIProdutoController {
 			modelAndView.setViewName("cadastrarProduto");
 			return modelAndView;
 		}
-		
+		if(!arquivo.isEmpty()){
+			produto.setNomeImagem(arquivo.getName());
+			byte[] bytes = arquivo.getBytes();
+			Path caminho = Paths.get(caminhoImagens+arquivo.getName());
+			Files.write(caminho, bytes);
+
+			
+		}
+
 		if (servico.save(produto).isPresent()) {
 			logger.info(">>>>>> controller chamou adastrar e consulta todos");
 			modelAndView.addObject("produtos", servico.consultaTodos());
@@ -96,17 +104,7 @@ public class GUIProdutoController {
 			modelAndView.setViewName("cadastrarProduto");
 			modelAndView.addObject("message", "Dados invalidos");
 		}
-		
-		if(!arquivo.isEmpty()){
-			produto.setNomeImagem(String.valueOf(produto.getId())+arquivo.getOriginalFilename());
-			
-			byte[] bytes = arquivo.getBytes();
-			Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getId())+arquivo.getOriginalFilename());
-			Files.write(caminho, bytes);
-
-			
-		}
-		
+	
 		
 		return modelAndView;
 	}
