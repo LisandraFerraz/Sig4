@@ -53,25 +53,33 @@ public class Produto {
 	@NotNull(message = "Preço é requerido")
 	private Double preco;
 
-	@Column(unique = true)
+	@Column(name = "DATA", nullable = false, length = 10)
 	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
 	private String dataCadastro;
 
-	
+	@Column(name = "NOMEIMAGEM")
+	private String nomeImagem;
 
-	public Produto(String nome, Double preco, String tipo, String cor, String cnpj) {
+	public String getNomeImagem() {
+		return nomeImagem;
+	}
+
+	public void setNomeImagem(String nomeImagem) {
+		this.nomeImagem = nomeImagem;
+	}
+
+	public Produto(String nome, Double preco, String tipo, String cor, String cnpj,String nomeImagem) {
 		this.nome = nome;
 		this.tipo = tipo;
 		this.cor = cor;
 		this.cnpj = cnpj;
 		this.setPreco(preco);
-
+		this.nomeImagem=nomeImagem;
 	}
 
 	public Produto() {
 
 	}
-
 	
 	public Long getId() {
 		return id;
@@ -154,11 +162,6 @@ public class Produto {
 	}
 
 
-
-		
-		
-
-
-	// equals e tostring omitidos. Cliado na aula de 05/04/2022
+	
 
 }
