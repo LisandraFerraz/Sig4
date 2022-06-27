@@ -60,6 +60,8 @@ public class Produto {
 	@Column(name = "NOMEIMAGEM")
 	private String nomeImagem;
 
+	
+
 	public String getNomeImagem() {
 		return nomeImagem;
 	}
@@ -160,5 +162,8 @@ public class Produto {
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
 		this.dataCadastro = dataAtual.toString(fmt);
 	}
+
+
+	
 
 }

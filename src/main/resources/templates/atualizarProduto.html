@@ -153,7 +153,7 @@
 		<div class="form-cadastro-cliente">
 			<br />
 			<br>
-			<form action="#" th:action="@{/sig/produtos/id/{id} (id=${produto.id}) }" th:object="${produto}"
+			<form action="#" th:action="@{/sig/produtos/id/{id} (id=${produto.id}) }" th:object="${produto}" enctype="multipart/form-data"
 				method="post">
 				<div class="row-1-grid">
 
@@ -209,6 +209,12 @@
 						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form"
 							placeholder="Informe o CPNJ do fornecedor">
 					</div>
+
+					<label>fotos do produto:</label> 
+					<div >
+						<!--multiple="multiple"-->
+                        <input type="file"  accept="image/png,image/jpeg" id="imagem" name="file">
+                    </div>
 
 				</div>
 				<div class="btt-cad-cliente-grid">

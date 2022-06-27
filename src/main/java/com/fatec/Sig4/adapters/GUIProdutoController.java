@@ -26,11 +26,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fatec.Sig4.model.Produto;
 import com.fatec.Sig4.ports.MantemProduto;
+import com.fatec.Sig4.ports.ProdutoRepository;
 
 @Controller
 @RequestMapping(path = "/sig")
 public class GUIProdutoController {
-	private static String caminhoImagens = "/home/renan/git/Sig4/src/main/resources/static/imagem/ProdutoCadastrado/";
+	private static String caminhoImagens = "../Sig4/src/main/resources/static/imagem/ProdutoCadastrado/";
 
 	Logger logger = LogManager.getLogger(GUIProdutoController.class);
 	@Autowired
@@ -88,12 +89,12 @@ public class GUIProdutoController {
 			return modelAndView;
 		}
 		if(!arquivo.isEmpty()){
-			produto.setNomeImagem(arquivo.getName());
+			
 			byte[] bytes = arquivo.getBytes();
-			Path caminho = Paths.get(caminhoImagens+arquivo.getName());
+			Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
 			Files.write(caminho, bytes);
 
-			
+			produto.setNomeImagem(String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
 		}
 
 		if (servico.save(produto).isPresent()) {
@@ -108,8 +109,9 @@ public class GUIProdutoController {
 		
 		return modelAndView;
 	}
+	
 	@PostMapping("/produtos/id/{id}")
-	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result) {
+	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result, @RequestParam("file")MultipartFile arquivo) throws IOException {
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
 		logger.info(">>>>>> servico para atualizacao de dados chamado para o id => " + id);
 		if (result.hasErrors()) {
@@ -117,6 +119,14 @@ public class GUIProdutoController {
 			produto.setId(id);
 			return new ModelAndView("atualizarProduto");
 		} 
+		if(!arquivo.isEmpty()){
+			
+			byte[] bytes = arquivo.getBytes();
+			Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
+			Files.write(caminho, bytes);
+
+			produto.setNomeImagem(String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
+		}
 		
 		servico.altera(produto);
 		modelAndView.addObject("produtos", servico.consultaTodos());
