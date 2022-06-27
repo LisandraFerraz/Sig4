@@ -60,8 +60,6 @@ public class Produto {
 	@Column(name = "NOMEIMAGEM")
 	private String nomeImagem;
 
-	
-
 	public String getNomeImagem() {
 		return nomeImagem;
 	}
