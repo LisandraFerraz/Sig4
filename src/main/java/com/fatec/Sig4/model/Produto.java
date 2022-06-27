@@ -53,11 +53,8 @@ public class Produto {
 	@NotNull(message = "Preço é requerido")
 	private Double preco;
 
-	@Column(name = "DATA", nullable = false, length = 10)
-	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
 	private String dataCadastro;
 
-	@Column(name = "NOMEIMAGEM")
 	private String nomeImagem;
 
 	public String getNomeImagem() {
@@ -68,13 +65,15 @@ public class Produto {
 		this.nomeImagem = nomeImagem;
 	}
 
-	public Produto(String nome, Double preco, String tipo, String cor, String cnpj,String nomeImagem) {
+	public Produto(String nome, Double preco, String tipo, String cor, String cnpj,String nomeImagem,String dataCadastro) {
 		this.nome = nome;
 		this.tipo = tipo;
 		this.cor = cor;
 		this.cnpj = cnpj;
 		this.setPreco(preco);
 		this.nomeImagem=nomeImagem;
+		this.setDataCadastro(dataCadastro);
+
 	}
 
 	public Produto() {

@@ -185,15 +185,6 @@
 						<input type="text" th:field="*{preco}" class="txt-form" id="nome" placeholder="Preço Produto">
 					</div>
 
-					<label for="dataNascimento" class="col-form-label">Data de Cadastro do Produto</label>
-					<div>
-						<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
-							class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{dataCadastro}" class="txt-form" id="dataCadastro"
-							placeholder="Data Cadastro">
-					</div>
-
 					<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
 					<div>
 						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
@@ -210,10 +201,13 @@
 							placeholder="Informe o CPNJ do fornecedor">
 					</div>
 
-					<label>fotos do produto:</label> 
+					<label for="nomeImagem">fotos do produto:</label> 
 					<div >
 						<!--multiple="multiple"-->
-                        <input type="file"  accept="image/png,image/jpeg" id="imagem" name="file">
+						<span th:if="${#fields.hasErrors('nomeImagem')}" th:errors="*{nomeImagem}" class="txt-aviso">
+						</span>
+                        <input type="file"  accept="image/png,image/jpeg" id="imagem" name="file"
+						th:field="*{nomeImagem}" class="txt-form">
                     </div>
 
 				</div>

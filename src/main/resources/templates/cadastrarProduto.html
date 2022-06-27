@@ -213,14 +213,18 @@
 					<div>
 						<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form"
+						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form" 
 							placeholder="Informe o CPNJ do fornecedor">
 					</div>
 					
-					<label>Adicionar fotos do produto:</label> 
+					<label for="nomeImagem">fotos do produto:</label> 
 					<div >
 						<!--multiple="multiple"-->
-                        <input type="file" accept="image/png,image/jpeg" id="imagem" name="file">
+						<span th:if="${#fields.hasErrors('nomeImagem')}" th:errors="*{nomeImagem}" class="txt-aviso">
+						</span>
+						<!--multiple="multiple"-->
+                        <input type="file" accept="image/png,image/jpeg" id="imagem" name="file" 
+						placeholder="faça uma upload de uma iamgem imagem">
                     </div>
 				</div>
 

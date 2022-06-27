@@ -95,6 +95,7 @@ public class GUIProdutoController {
 			Files.write(caminho, bytes);
 
 			produto.setNomeImagem(String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
+			servico.save(produto);
 		}
 
 		if (servico.save(produto).isPresent()) {
@@ -111,7 +112,8 @@ public class GUIProdutoController {
 	}
 	
 	@PostMapping("/produtos/id/{id}")
-	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result, @RequestParam("file")MultipartFile arquivo) throws IOException {
+	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result, 
+	@RequestParam("file")MultipartFile arquivo) throws IOException {
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
 		logger.info(">>>>>> servico para atualizacao de dados chamado para o id => " + id);
 		if (result.hasErrors()) {
@@ -119,6 +121,8 @@ public class GUIProdutoController {
 			produto.setId(id);
 			return new ModelAndView("atualizarProduto");
 		} 
+		
+		servico.altera(produto);
 		if(!arquivo.isEmpty()){
 			
 			byte[] bytes = arquivo.getBytes();
@@ -126,9 +130,9 @@ public class GUIProdutoController {
 			Files.write(caminho, bytes);
 
 			produto.setNomeImagem(String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
+			servico.altera(produto);
 		}
 		
-		servico.altera(produto);
 		modelAndView.addObject("produtos", servico.consultaTodos());
 	
 		return modelAndView;
