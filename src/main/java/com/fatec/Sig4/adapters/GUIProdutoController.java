@@ -1,12 +1,17 @@
 package com.fatec.Sig4.adapters;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.validation.Valid;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.couchbase.CouchbaseProperties.Io;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,10 +26,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fatec.Sig4.model.Produto;
 import com.fatec.Sig4.ports.MantemProduto;
+import com.fatec.Sig4.ports.ProdutoRepository;
 
 @Controller
 @RequestMapping(path = "/sig")
 public class GUIProdutoController {
+	private static String caminhoImagens = "../Sig4/src/main/resources/static/imagem/ProdutoCadastrado/";
+
 	Logger logger = LogManager.getLogger(GUIProdutoController.class);
 	@Autowired
 	MantemProduto servico;
@@ -58,39 +66,72 @@ public class GUIProdutoController {
 		modelAndView.addObject("produtos", servico.consultaTodos());
 		return modelAndView;
 	}
+
+	@GetMapping("/produtos/mostrarImagem/{imagem}")
+	@ResponseBody
+	public byte[] retornarImagem(@PathVariable("imagem") String imagem) throws IOException {
+		File imagemArquivo = new File(caminhoImagens+imagem);
+		if(imagem!=null || imagem.trim().length()>0){
+		
+		return Files.readAllBytes(imagemArquivo.toPath());
+		}
+		return null;
+	}
 	
 	////////////////////////////////////////////////////////////////////////////////
 	@PostMapping("/produtos")
-	public ModelAndView save(@Valid Produto produto, BindingResult result) {
-		ModelAndView modelAndView = new ModelAndView("consultarProduto");
+	public ModelAndView save(@Valid Produto produto, BindingResult result,
+	@RequestParam("file")MultipartFile arquivo) throws IOException {
+	
+		ModelAndView modelAndView = new ModelAndView(  "consultarProduto");
 		if (result.hasErrors()) {
 			modelAndView.setViewName("cadastrarProduto");
-		} else {
-			if (servico.save(produto).isPresent()) {
-				logger.info(">>>>>> controller chamou adastrar e consulta todos");
-				modelAndView.addObject("produtos", servico.consultaTodos());
-			} else {
-				logger.info(">>>>>> controller cadastrar com dados invalidos");
-				modelAndView.setViewName("cadastrarProduto");
-				modelAndView.addObject("message", "Dados invalidos");
-			}
+			return modelAndView;
 		}
+		if(!arquivo.isEmpty()){
+			
+			byte[] bytes = arquivo.getBytes();
+			Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
+			Files.write(caminho, bytes);
+
+			produto.setNomeImagem(String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
+		}
+
+		if (servico.save(produto).isPresent()) {
+			logger.info(">>>>>> controller chamou adastrar e consulta todos");
+			modelAndView.addObject("produtos", servico.consultaTodos());
+		} else {
+			logger.info(">>>>>> controller cadastrar com dados invalidos");
+			modelAndView.setViewName("cadastrarProduto");
+			modelAndView.addObject("message", "Dados invalidos");
+		}
+	
+		
 		return modelAndView;
 	}
+	
 	@PostMapping("/produtos/id/{id}")
-	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result) {
+	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result, @RequestParam("file")MultipartFile arquivo) throws IOException {
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
 		logger.info(">>>>>> servico para atualizacao de dados chamado para o id => " + id);
 		if (result.hasErrors()) {
 			logger.info(">>>>>> servico para atualizacao de dados com erro => " + result.getFieldError().toString());
 			produto.setId(id);
 			return new ModelAndView("atualizarProduto");
-		} else {
-			servico.altera(produto);
-			modelAndView.addObject("produtos", servico.consultaTodos());
+		} 
+		if(!arquivo.isEmpty()){
+			
+			byte[] bytes = arquivo.getBytes();
+			Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
+			Files.write(caminho, bytes);
+
+			produto.setNomeImagem(String.valueOf(produto.getId()) +arquivo.getOriginalFilename());
 		}
+		
+		servico.altera(produto);
+		modelAndView.addObject("produtos", servico.consultaTodos());
+	
 		return modelAndView;
 	}
-	
 	
 }
