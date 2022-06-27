@@ -12,12 +12,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
-	<script type="text/javascript">
-		function consulta() {
-			window.open("/sig/produtos");
-		}
-	</script>
-	</head>
+</head>
 
 <body>
 	<!-- cabecalho -->
@@ -157,7 +152,7 @@
 		<h3 class="exibe-titulo">Cadastrar Produto</h3>
 		<div class="form-cadastro-cliente">
 			<br>
-			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
+			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post" enctype="multipart/form-data">
 
 				<div class="row-1-grid">
 
@@ -196,6 +191,15 @@
 							placeholder="Informe o preço do produto">
 					</div>
 
+					<label for="data">Data de Cadastro do Produto</label>
+					<div>
+						<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
+							class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{dataCadastro}" id="preco" class="txt-form"
+							placeholder="Informe a data de cadastro">
+					</div>
+
 					<label for="qtdEstoque">Quantidade de produtos</label>
 					<div>
 						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
@@ -212,12 +216,17 @@
 						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form"
 							placeholder="Informe o CPNJ do fornecedor">
 					</div>
-
+					
+					<label>Adicionar fotos do produto:</label> 
+					<div >
+						<!--multiple="multiple"-->
+                        <input type="file" accept="image/png,image/jpeg" id="imagem" name="file">
+                    </div>
 				</div>
 
 				<div class="btt-cad-cliente-grid">
 					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
-					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta();">
+					<a th:href="@{/sig/produtos}"><input type="button" class="btn-cad-cliente" value="Consultar Produto" ></a>
 				</div>
 
 				
