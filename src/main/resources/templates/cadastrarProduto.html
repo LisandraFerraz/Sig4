@@ -156,76 +156,67 @@
 
 				<div class="row-1-grid">
 
-					<label for="nome">Nome</label>
+					<label for="cnpj" class="col-form-label">Nome do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{nome}" id="nome" class="txt-form"
-							placeholder="Informe o nome do produto">
+						<input type="text" th:field="*{nome}" class="txt-form" id="nome" placeholder="Nome Produto">
 					</div>
 
-
-					<label for="tipo">Tipo do Produto</label>
+					<label for="tipo" class="col-form-label">Tipo do Produto</label>
 					<div>
-						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{tipo}" class="txt-aviso">
+						<span th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{tipo}" id="tipo" class="txt-form"
-							placeholder="Informe qual o tipo de produto">
+						<input type="text" th:field="*{tipo}" class="txt-form" id="nome" placeholder="Tipo do Produto">
 					</div>
 
-
-					<label for="cor">Cor do Produto</label>
+					<label for="cor" class="col-form-label">Cor do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{cor}" id="cor" class="txt-form"
-							placeholder="Informe a cor do produto">
+						<input type="text" th:field="*{cor}" class="txt-form" id="nome" placeholder="Cor do Produto">
 					</div>
 
-
-					<label for="preco">Preço</label>
+					<label for="nome" class="col-form-label">Preço do Produto</label>
 					<div>
 						<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{preco}" id="preco" class="txt-form"
-							placeholder="Informe o preço do produto">
+						<input type="text" th:field="*{preco}" class="txt-form" id="nome" placeholder="Preço Produto">
+					</div>
+
+					<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
+					<div>
+						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
+						</span>
+						<input type="text" th:field="*{qtdEstoque}" class="txt-form" id="qtdEstoque"
+							placeholder="qtdEstoque">
 					</div>
 
 					<label for="data">Data de Cadastro do Produto</label>
-					<div>
-						
-						<div  id="dataCadastro" class="txt-form">
+						<div  id="dataNacismento" class="txt-form">
 							<script>
 								date = new Date().toLocaleDateString();
 								document.write(date);
 								</script>
 						</div>
 
-					<label for="qtdEstoque">Quantidade de produtos</label>
-					<div>
-						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="txt-aviso">
-						</span>
-						<input type="text" th:field="*{qtdEstoque}" id="qtdEstoque" class="txt-form"
-							placeholder="Informe quantidade de produtos">
-					</div>
-
-
 					<label for="cnpj">CNPJ</label>
 					<div>
 						<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="txt-aviso">
 						</span>
-						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form" 
+						<input type="text" th:field="*{cnpj}" id="cnpj" class="txt-form"
 							placeholder="Informe o CPNJ do fornecedor">
 					</div>
-					
+
 					<label for="nomeImagem">fotos do produto:</label> 
 					<div >
 						<!--multiple="multiple"-->
 						<span th:if="${#fields.hasErrors('nomeImagem')}" th:errors="*{nomeImagem}" class="txt-aviso">
 						</span>
-						<!--multiple="multiple"-->
-                        <input type="file" accept="image/png,image/jpeg" id="imagem" name="file">
+                        <input type="file"  accept="image/png,image/jpeg" id="imagem" name="file"
+						 class="txt-form">
                     </div>
+
 				</div>
 
 				<div class="btt-cad-cliente-grid">

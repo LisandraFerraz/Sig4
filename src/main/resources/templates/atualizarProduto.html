@@ -5,11 +5,6 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Atualizar Produto</title>
-	<script type="text/javascript">
-		function consulta() {
-			window.open("/sig/produtos");
-		}
-	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" th:type="@{imagem/favicon.ico}" th:href="@{/imagem/Favicon.ico}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
@@ -193,6 +188,14 @@
 							placeholder="qtdEstoque">
 					</div>
 
+					<label for="data">Data de Cadastro do Produto</label>
+						<div  id="dataNacismento" class="txt-form">
+							<script>
+								date = new Date().toLocaleDateString();
+								document.write(date);
+								</script>
+						</div>
+
 					<label for="cnpj">CNPJ</label>
 					<div>
 						<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="txt-aviso">
@@ -212,8 +215,8 @@
 
 				</div>
 				<div class="btt-cad-cliente-grid">
-					<input type="submit" class="btn-cad-cliente" value="Atualizar Produto">
-					<input type="button" class="btn-cad-cliente" value="Consultar Produto" onclick="consulta();">
+					<input type="submit" class="btn-cad-cliente" value="Cadastrar Produto">
+					<a th:href="@{/sig/produtos}"><input type="button" class="btn-cad-cliente" value="Consultar Produto" ></a>
 				</div>
 			</form>
 		</div>

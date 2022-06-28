@@ -464,7 +464,7 @@ header * {
     border-radius: 10px;
 }
 
-.card::hover{
+.card :hover{
     transition: .3s;
     box-shadow: 0 0 6px rgba(143, 106, 106, .6);
 }
@@ -602,6 +602,20 @@ input.txt-form{
 span.txt-aviso{
 	color: rgb(155, 36, 36);
 	font-size: 7pt;
+}
+
+#dataNacismento {
+    text-align: center;
+    border-radius: 5px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+}
+
+#Cadastroimagem{
+    text-align: center;
+    border-radius: 5px;
+    height: 55px;
+    color: rgb(255, 255, 255);
 }
 
 ***********************************

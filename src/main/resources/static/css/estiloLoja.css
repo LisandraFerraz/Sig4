@@ -30,7 +30,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (min-width:1024px){
-
+    #dataEsconde{
+        display: none;
+    }
     .cabecalho__munu{
         display: none;
     }
@@ -551,6 +553,21 @@ h3.precoAtual{
     height: auto;
     font-size: 12pt;
     border-radius: 10px;
+}
+#dataNacismento {
+    text-align: center;
+    border-radius: 5px;
+    height: 25px;
+    color: rgb(58, 58, 58);
+}
+
+#Cadastroimagem{
+    text-align: center;
+    border-radius: 5px;
+    height: 55px;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(175, 175, 175);
+    color: rgb(58, 58, 58);
 }
 
 .row-1-grid{

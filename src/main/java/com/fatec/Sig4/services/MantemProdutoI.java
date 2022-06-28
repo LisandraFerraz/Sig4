@@ -52,9 +52,8 @@ public class MantemProdutoI implements MantemProduto {
 
 		if (umProduto.isPresent()) {
 			Produto produtoModificado = new Produto(produto.getNome(), produto.getPreco(), produto.getTipo(), produto.getCor(), 
-			produto.getCnpj(),produto.getNomeImagem(),produto.getDataCadastro());
-
-			produtoModificado.setDataCadastro(produto.getDataCadastro());
+			produto.getCnpj(),produto.getNomeImagem());
+			
 			produtoModificado.setId(produto.getId());
 			produtoModificado.setQtdEstoque(produto.getQtdEstoque());
 			produtoModificado.setTipo(produto.getTipo());

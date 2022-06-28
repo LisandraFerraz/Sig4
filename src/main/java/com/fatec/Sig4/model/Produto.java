@@ -65,19 +65,17 @@ public class Produto {
 		this.nomeImagem = nomeImagem;
 	}
 
-	public Produto(String nome, Double preco, String tipo, String cor, String cnpj,String nomeImagem,String dataCadastro) {
+	public Produto(String nome, Double preco, String tipo, String cor, String cnpj,String nomeImagem) {
 		this.nome = nome;
 		this.tipo = tipo;
 		this.cor = cor;
 		this.cnpj = cnpj;
 		this.setPreco(preco);
 		this.nomeImagem=nomeImagem;
-		this.setDataCadastro(dataCadastro);
-
 	}
 
+	@Deprecated
 	public Produto() {
-
 	}
 	
 	public Long getId() {
