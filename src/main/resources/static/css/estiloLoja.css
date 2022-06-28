@@ -30,9 +30,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (min-width:1024px){
-    #dataEsconde{
-        display: none;
-    }
+
     .cabecalho__munu{
         display: none;
     }
@@ -465,7 +463,7 @@ header * {
     border-radius: 10px;
 }
 
-.card::hover{
+.card:hover{
     transition: .3s;
     box-shadow: 0 0 6px rgba(143, 106, 106, .6);
 }
