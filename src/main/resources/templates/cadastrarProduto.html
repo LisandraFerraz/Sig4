@@ -192,13 +192,13 @@
 					</div>
 
 					<label for="data">Data de Cadastro do Produto</label>
-					<div>
+					<!--<div>
 						<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
 							class="txt-aviso">
 						</span>
 						<input type="text" th:field="*{dataCadastro}" id="preco" class="txt-form"
 							placeholder="Informe a data de cadastro">
-					</div>
+					</div>-->
 
 					<label for="qtdEstoque">Quantidade de produtos</label>
 					<div>
@@ -223,8 +223,7 @@
 						<span th:if="${#fields.hasErrors('nomeImagem')}" th:errors="*{nomeImagem}" class="txt-aviso">
 						</span>
 						<!--multiple="multiple"-->
-                        <input type="file" accept="image/png,image/jpeg" id="imagem" name="file" 
-						placeholder="faça uma upload de uma iamgem imagem">
+                        <input type="file" accept="image/png,image/jpeg" id="imagem" name="file">
                     </div>
 				</div>
 
