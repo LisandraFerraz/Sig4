@@ -370,7 +370,10 @@ header * {
     border: 1px solid transparent; 
   }
 
-
+.propaganda{
+    width: 100%;
+    height: 100%;
+}
 .propaganda img {
     min-width: 100%;
     height: auto;
