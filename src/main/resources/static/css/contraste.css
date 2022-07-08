@@ -6,6 +6,7 @@
 
 
 body{
+    width: 100%;
     grid-template-columns: auto;
     grid-auto-columns: auto;
     background-color: #2e2e31;
