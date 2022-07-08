@@ -9,6 +9,7 @@ body{
     grid-template-columns: auto;
     grid-auto-columns: auto;
     background-color: #efefef;
+    overflow-x: hidden;
 }
 
 
